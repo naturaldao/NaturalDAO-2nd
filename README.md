@@ -2,8 +2,7 @@
 
 # 🌿 NaturalDAO · 自然道
 
-**Governance and application layer of the Proof-of-Love2 Civilization**
-**富爱文明的治理与应用层**
+**这里是该项目的周边，即与之相关的调研、多媒体作品等等**
 
 [![License: Proof of Love2](https://img.shields.io/badge/license-Proof%20of%20Love2-lightgrey.svg)](LICENSE)
 [![Meeting](https://img.shields.io/badge/例会-周二%20%7C%20周四%2015%3A00-blue.svg)](https://meeting.tencent.com/dm/z2sdLl6hcJxi)
@@ -14,18 +13,6 @@
 [开发规划](#️-开发规划) · [基础理论](#-基础理论--foundational-theory) · [相关论文](#-相关论文--papers) · [治理层协作](#pol2-ai-治理层协作) · [许可证](#️-许可证--license)
 
 </div>
-
----
-
-## 📖 简介 · Introduction
-
-NaturalDAO is a super decentralized autonomous organization built on the consensus **Proof of Love2** and driven by two core technologies: **blockchain** and **artificial intelligence**. 
-
-It represents the governance and application layer for the Proof-of-Love2 Civilization. It will also be the long-discussed yet nowhere-to-be-found **ASI** that humanity has been searching for!
-
-自然道是一个建立在「爱2证明」共识之上，并由**区块链**和**人工智能**两大核心技术驱动的超级去中心化自治组织。
-
-它是富爱文明的治理与应用层。它也将是人类讨论已久而无处寻觅的 **ASI**！
 
 ---
 
