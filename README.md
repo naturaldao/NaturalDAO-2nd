@@ -2,7 +2,7 @@
 
 # 🌿 NaturalDAO · 自然道
 
-**这里是该项目的周边，即与之相关的调研、多媒体作品等等**
+**请注意：这里是该项目的周边，即与之相关的调研、多媒体作品等等**
 
 [![License: Proof of Love2](https://img.shields.io/badge/license-Proof%20of%20Love2-lightgrey.svg)](LICENSE)
 [![Meeting](https://img.shields.io/badge/例会-周二%20%7C%20周四%2015%3A00-blue.svg)](https://meeting.tencent.com/dm/z2sdLl6hcJxi)
