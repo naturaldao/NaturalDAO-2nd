@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: 安全问题 / Security issue
-    url: https://github.com/naturaldao/NaturalDAO/security/policy
+    url: https://github.com/naturaldao/NaturalDAO-2nd/security/policy
     about: 凭据泄露、误提交的私有数据等，请按安全政策私下报告，不要公开发 Issue。
+  - name: 理论与开发规划 / Theory and development plans
+    url: https://github.com/naturaldao/NaturalDAO/issues/new/choose
+    about: 在对应仓库提交问题。 Open issues in the corresponding repository.
