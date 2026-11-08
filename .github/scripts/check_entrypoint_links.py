@@ -40,9 +40,17 @@ def main():
         companion: repository_paths(args.companion),
     }
 
+    own_files, own_directories = paths[args.repository]
+    local_candidates = own_files | own_directories
+    research_indexes = sorted(
+        file for file in own_files
+        if file.startswith("Research/") and file.endswith("/README.md")
+        and file.count("/") <= 2
+    )
+
     failures = []
     checked = 0
-    for entrypoint in ENTRYPOINTS:
+    for entrypoint in (*ENTRYPOINTS, *research_indexes):
         for line_number, line in enumerate(
             Path(entrypoint).read_text(encoding="utf-8").splitlines(), start=1
         ):
@@ -59,8 +67,11 @@ def main():
                     files, directories = paths[repository]
                     candidates = files if kind == "blob" else directories
                 else:
-                    files, directories = paths[args.repository]
-                    candidates = files | directories
+                    path = (
+                        path.lstrip("/") if path.startswith("/")
+                        else posixpath.join(posixpath.dirname(entrypoint), path)
+                    )
+                    candidates = local_candidates
                 checked += 1
                 if posixpath.normpath(path) not in candidates:
                     failures.append(f"{entrypoint}:{line_number}: missing target {link}")

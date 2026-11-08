@@ -16,6 +16,18 @@ Thanks for contributing to NaturalDAO. Find the workflow and checks for the area
 
 理论、翻译与开发规划改动请提交到 [NaturalDAO](https://github.com/naturaldao/NaturalDAO)，参阅其[贡献指南](https://github.com/naturaldao/NaturalDAO/blob/main/CONTRIBUTING.md)。
 
+## 提交研究 · Submit research
+
+研究任务认领、进度记录和研究 PR 都在本仓。治理评测任务沿用 [任务看板](PoL-Governance/TASKS.md) 的任务分支流程。
+
+- [ ] 报告和图件放到 [Research](Research/README.md) 的相应主题，实验代码、评测和结果按 [PoL-Governance](PoL-Governance/README.md) 的现有目录提交。Steward 服务及接入说明放在 [POL2-Steward](POL2-Steward/README.md)。
+- [ ] 在对应主题的 README 登记研究问题、材料状态（例如提案、先导或已复现）、报告与结果链接，以及复现入口。同一问题的重跑更新原条目，被替代的版本放入主题归档并链接替代稿。
+- [ ] 写清复现步骤、输入数据与模型版本、评测口径和结论边界。保留失败和负结果。外部资料给原始出处，阶段性证据使用可定位的版本链接。
+- [ ] 完整数据、权重及大视频通过 Hugging Face、Release 或项目已采用的外部托管交付。在仓库保留样例或清单，并登记版本、下载链接和校验值。上传前核对许可和数据公开范围。
+- [ ] 提交前打开报告、结果和复现链接，按受影响项目的说明运行检查。
+
+**Research submission.** Claim and track research work in this repository. Update the topic index with the research question, status, report and result links, and reproduction instructions. Record input and model versions, evaluation limits, and checksums for externally hosted assets.
+
 ## PoL-Governance
 
 任务领取、分支命名（`pol/<任务ID>/<短名>`）、任务页、数据边界和交付检查都写在 [PoL-Governance/AGENTS.md](PoL-Governance/AGENTS.md)，以那里为准。两条最重要的：

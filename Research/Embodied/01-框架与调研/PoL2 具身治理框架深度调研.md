@@ -50,9 +50,9 @@ PoL2-EG 的命名建议是 **Proof of Love2 Embodied Governance (PoL2-EG)**。�
 
 这一区分还关系到“规范从哪里来”。若目标是完全无人工的运行时治理，仍可以把固定理论版本视为系统输入；但如果主张整个系统从规范起源、规则修订、测试标准制定、设备运维到责任承担均没有人类参与，现有 PoL2 文本并未定义这样的治理权来源。由 AI 生成一个新规范、再由同一 AI 家族证明新规范合格，会形成自我授权闭环。任何“不变规则”“根密钥”“测试预言机”或“信任锚”都会重新引入权威来源问题。工程上可以提出不同信任模型，但必须公开其假设，不能以哈希签名或多个代理同意代替授权基础。
 
-当前仓库成熟度也需要准确描述。PoL2 理论文本、EAP、数据契约、类型化判定词表、治理模拟和合成 fixtures 已存在；这些材料可作为规范映射与接口开发的起点，却不是一个已集成的自主治理产品。`PoL-Governance/SPEC.md` 和数据集契约保留人工仲裁、人工复核或 `human_reviewed` 标签；DAO Governance Lab 中尚有人工升级路径；本次检查未发现 PoL2 Policy Enforcement Point (PEP) 与 PX4 的实现、SIH/SITL 记录、HITL 记录或实飞评估（[PoL-Governance SPEC](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/SPEC.md)；[数据集契约](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/datasets/pol2/README.md)；[DAO Governance Lab 概念映射](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/research/PoL2-DAO-Governance-Lab/docs/concept-mapping.md)）。
+当前仓库成熟度也需要准确描述。PoL2 理论文本、EAP、数据契约、类型化判定词表、治理模拟和合成 fixtures 已存在；这些材料可作为规范映射与接口开发的起点，却不是一个已集成的自主治理产品。`PoL-Governance/SPEC.md` 和数据集契约保留人工仲裁、人工复核或 `human_reviewed` 标签；DAO Governance Lab 中尚有人工升级路径；本次检查未发现 PoL2 Policy Enforcement Point (PEP) 与 PX4 的实现、SIH/SITL 记录、HITL 记录或实飞评估（[PoL-Governance SPEC](../../../PoL-Governance/SPEC.md)；[数据集契约](../../../PoL-Governance/datasets/pol2/README.md)；[DAO Governance Lab 概念映射](../../../PoL-Governance/research/PoL2-DAO-Governance-Lab/docs/concept-mapping.md)）。
 
-已检查的 pilot 报告列出 1,904 个生成案例、17 个案例家族、36,176 个类型化问题等，但该批材料是生成/契约校验管线，不是人工审定的决策语义金标准或治理模型性能数据；报告没有给出私有封存 holdout。正式 benchmark 的 14 个合成 fixture 适合当作软件测试样例，不足以代表广泛行为分布（[PoL2 v0.1 pilot report](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/datasets/pol2/v0.1-pilot/pilot-report.md)；[benchmark README 与 fixture 边界](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/benchmark/pol2/README.md#L125-L181)）。当前 ontology 也把若干语义事项标成待审：`unclear` 与 `neither` 的边界、沉默是否表示同意、议题排序，以及工具动作是否在原条文范围内等（[PoL2 ontology](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/datasets/pol2/ontology/pol2-labels.v0.1.json#L85-L100)）。这些未决项不能靠 TDM 置信度补上。
+已检查的 pilot 报告列出 1,904 个生成案例、17 个案例家族、36,176 个类型化问题等，但该批材料是生成/契约校验管线，不是人工审定的决策语义金标准或治理模型性能数据；报告没有给出私有封存 holdout。正式 benchmark 的 14 个合成 fixture 适合当作软件测试样例，不足以代表广泛行为分布（[PoL2 v0.1 pilot report](../../../PoL-Governance/datasets/pol2/v0.1-pilot/pilot-report.md)；[benchmark README 与 fixture 边界](../../../PoL-Governance/benchmark/pol2/README.md?plain=1#L125-L181)）。当前 ontology 也把若干语义事项标成待审：`unclear` 与 `neither` 的边界、沉默是否表示同意、议题排序，以及工具动作是否在原条文范围内等（[PoL2 ontology](../../../PoL-Governance/datasets/pol2/ontology/pol2-labels.v0.1.json#L85-L100)）。这些未决项不能靠 TDM 置信度补上。
 
 将规则变为具身动作政策，必须增加一层明确的条款—策略映射。每一条机器规则至少需要：规范来源及版本哈希、适用主体和动作、保护利益、动作谓词、所需事实与可信来源、阈值和时效、例外条件、冲突优先级、适用动作包络、拒绝/暂停处理、测试案例 ID、版本兼容与撤销语义。自然语言解释可以保留用于审计，但不能本身充当 PEP 的执行谓词。尤其要把 **分类输出** 与 **授权结论** 分开：`conforming / violating / insufficient` 表示判断状态，`ALLOW / CONSTRAIN / REPAIR / DEFER / BLOCK / SAFE_STATE` 是机器动作；三态结果不能直接决定是否安全地让无人机继续、悬停、返航或降落。
 
@@ -167,10 +167,10 @@ PoL2-EG 最有研究价值的切口不是笼统宣称“AI 能治理具身智能
 
 - [Proof of Love2 EAP](https://github.com/naturaldao/NaturalDAO/blob/main/PoL/4.%20PoL2%E4%B9%8B%E4%BC%A6%E7%90%86%E5%AF%B9%E9%BD%90%E5%8D%8F%E8%AE%AE.md)
 - [Proof of Love2 公共福利治理协议](https://github.com/naturaldao/NaturalDAO/blob/main/PoL/7.%20%E4%BA%BA%E7%B1%BB%E5%85%AC%E5%85%B1%E7%A6%8F%E5%88%A9%E7%9A%84%E6%B2%BB%E7%90%86%E5%8D%8F%E8%AE%AE.md)
-- [PoL-Governance SPEC](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/SPEC.md)
-- [PoL2 数据集契约与标注等级](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/datasets/pol2/README.md)
-- [PoL2 pilot report](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/datasets/pol2/v0.1-pilot/pilot-report.md)
-- [PoL2 ontology](https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/datasets/pol2/ontology/pol2-labels.v0.1.json)
+- [PoL-Governance SPEC](../../../PoL-Governance/SPEC.md)
+- [PoL2 数据集契约与标注等级](../../../PoL-Governance/datasets/pol2/README.md)
+- [PoL2 pilot report](../../../PoL-Governance/datasets/pol2/v0.1-pilot/pilot-report.md)
+- [PoL2 ontology](../../../PoL-Governance/datasets/pol2/ontology/pol2-labels.v0.1.json)
 - [MAVLink Mission Protocol](https://mavlink.io/en/services/mission.html) and [Message Signing](https://mavlink.io/en/guide/message_signing.html)
 - [PX4 Mission Mode](https://docs.px4.io/v1.17/en/flight_modes_mc/mission), [Offboard Mode](https://docs.px4.io/v1.17/en/flight_modes/offboard), and [Safety Configuration](https://docs.px4.io/v1.17/zh/config/safety)
 - [PX4 SIH](https://docs.px4.io/v1.17/en/sim_sih/) and [Gazebo SITL](https://docs.px4.io/v1.17/en/sim_gazebo_gz/)
