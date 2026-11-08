@@ -1,17 +1,24 @@
-# 🌿 NaturalDAO-2nd · 自然道治理与研究
+<div align="center">
 
-这里是自然道的研究与复现仓库，收录研究报告、治理评测、公开数据与模型入口，以及 POL2 Steward 服务。
+# 🌿 NaturalDAO-2nd
 
-NaturalDAO-2nd is NaturalDAO's research and reproducibility repository. It hosts research reports, governance evaluations, links to public datasets and models, and the POL2 Steward service.
+**自然道研究与复现 · Research & Reproducibility**
 
-## 项目入口 · Start here
+在这里阅读自然道的研究、复现治理实验，并运行 POL2 Steward。<br>
+Explore NaturalDAO research, reproduce governance experiments, and run POL2 Steward.
 
-| 你想做什么 · I want to | 从哪里开始 · Where to start |
+</div>
+
+---
+
+## 从这里开始 · Start here
+
+| 入口 · Explore | 你会找到 · What you’ll find |
 | :--- | :--- |
-| **看研究 · Explore research** | [研究总索引 / Research index](Research/README.md) |
-| **跑评测与复现 · Run evaluations or reproduce results** | [评测工具 / Benchmarks](PoL-Governance/benchmark/README.md) · [结果索引 / Results](PoL-Governance/results/README.md) · [数据 / Datasets](PoL-Governance/datasets/README.md) · [模型 / Models](PoL-Governance/models/README.md) |
-| **运行 Steward · Run Steward** | [POL2 Steward（开发者预览 / Developer preview）](POL2-Steward/README.md) · [安装与 Agent 接入 / Setup and integration](POL2-Steward/pol2-service/README.md) |
-| **提交研究 · Contribute research** | [研究提交清单 / Submission checklist](CONTRIBUTING.md#提交研究--submit-research) · [任务看板 / Tasks](PoL-Governance/TASKS.md) · [Agent 协作 / Agent guide](PoL-Governance/AGENTS.md) |
+| **[研究总索引 · Research index](Research/README.md)** | 按研究问题浏览报告、论文、结果与复现说明。 |
+| **[评测工具 · Benchmarks](PoL-Governance/benchmark/README.md)** | 运行治理评测，核对[结果与实验条件](PoL-Governance/results/README.md)。 |
+| **[POL2 Steward](POL2-Steward/README.md)** | 开发者预览。查看[安装与 Agent 接入](POL2-Steward/pol2-service/README.md)。 |
+| **[研究协作 · Contribute](#研究协作--contribute)** | 查看任务、认领工作、提交研究成果。 |
 
 ## 🪾 最近更新 · Recent Activity
 
@@ -39,14 +46,21 @@ Main branch updates from the past seven days, grouped by contributor and day (UT
 
 [查看完整提交历史 · View full commit history](https://github.com/naturaldao/NaturalDAO-2nd/commits/main/)
 
-## 更多入口 · More resources
+## 研究协作 · Contribute
 
-- 研究资产 · Research assets · [Hugging Face](https://huggingface.co/NaturalDAO) · [POL2 Score-v2 研究预发布 / Research prerelease](https://github.com/naturaldao/NaturalDAO/releases/tag/pol2-score-v2-v1.0.0)
-- 理论与规划 · Theory and planning · [NaturalDAO 主仓](https://github.com/naturaldao/NaturalDAO) · [理论 / 中文](https://github.com/naturaldao/NaturalDAO/blob/main/PoL/Readme.md) · [Theory / English](https://github.com/naturaldao/NaturalDAO/blob/main/PoLEn/Readme.md) · [开发规划 / 中文](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.zh.md) · [Development plan / English](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.en.md)
-- [项目媒体 · Project media](media/README.md)
+后续研究在本仓认领、跟进与提交。新贡献从这三步开始。
+
+1. **查任务。** 打开[副仓任务看板](PoL-Governance/TASKS.md)，先确认谁在做以及有哪些交付物。
+2. **记录进展。** 按 [Agent 协作指南](PoL-Governance/AGENTS.md) 使用任务分支，在任务页记录进展、证据和下一步。
+3. **交付研究。** 按[研究提交清单](CONTRIBUTING.md#提交研究--submit-research)更新主题索引，并把 PR 提交到本仓。
+
+## 相关资源 · Resources
+
+- **数据与模型 · Data and models** · [数据卡](PoL-Governance/datasets/README.md) · [模型目录](PoL-Governance/models/README.md) · [Hugging Face](https://huggingface.co/NaturalDAO) · [POL2 Score-v2 研究预发布](https://github.com/naturaldao/NaturalDAO/releases/tag/pol2-score-v2-v1.0.0)
+- **理论与规划 · Theory and planning** · [NaturalDAO 主仓](https://github.com/naturaldao/NaturalDAO) · [中文理论](https://github.com/naturaldao/NaturalDAO/blob/main/PoL/Readme.md) · [English theory](https://github.com/naturaldao/NaturalDAO/blob/main/PoLEn/Readme.md) · [开发规划](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.zh.md) · [English plan](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.en.md)
+- **项目媒体 · Media** · [图片与演示](media/README.md)
 
 ## 许可证 · License
 
-本项目遵循共识机制 [Proof of Love2](LICENSE)。
-
+本项目遵循共识机制 [Proof of Love2](LICENSE)。<br>
 This project is released under the consensus of [Proof of Love2](LICENSE).

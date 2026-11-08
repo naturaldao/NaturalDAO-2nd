@@ -18,7 +18,7 @@ Thanks for contributing to NaturalDAO. Find the workflow and checks for the area
 
 ## 提交研究 · Submit research
 
-研究任务认领、进度记录和研究 PR 都在本仓。治理评测任务沿用 [任务看板](PoL-Governance/TASKS.md) 的任务分支流程。
+研究任务认领、进度记录和研究 PR 都在 NaturalDAO-2nd。开始治理评测任务前，按[任务看板](PoL-Governance/TASKS.md#刷新看板)拉取本仓任务分支；新任务从本仓最新的 `main` 开分支。
 
 - [ ] 报告和图件放到 [Research](Research/README.md) 的相应主题，实验代码、评测和结果按 [PoL-Governance](PoL-Governance/README.md) 的现有目录提交。Steward 服务及接入说明放在 [POL2-Steward](POL2-Steward/README.md)。
 - [ ] 在对应主题的 README 登记研究问题、材料状态（例如提案、先导或已复现）、报告与结果链接，以及复现入口。同一问题的重跑更新原条目，被替代的版本放入主题归档并链接替代稿。
