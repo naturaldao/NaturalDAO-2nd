@@ -80,31 +80,32 @@ jobs:
       - name: 使用内存存储运行服务测试
         run: python -m pytest -q tests
 
-  wiki-preview:
-    name: 首页与 Wiki 生成预检
+  entrypoints:
+    name: Repository entrypoints
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: 测试首页最近更新
-        run: python3 -m unittest discover -s .github/scripts -p 'test_readme_activity.py'
-      - name: 检查理论文档生成
-        env:
-          WIKI_SOURCE_BRANCH: ${{ github.event.repository.default_branch }}
-        run: |
-          wiki_dir="$(mktemp -d)"
-          python3 .github/scripts/sync_wiki.py \
-            --main . \
-            --wiki "$wiki_dir" \
-            --repo "$GITHUB_REPOSITORY" \
-            --branch "$WIKI_SOURCE_BRANCH" \
-            --dry-run --strict
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: naturaldao/NaturalDAO
+          path: companion
+          ref: main
+          sparse-checkout: .github
+          persist-credentials: false
+      - name: 测试最近活动生成
+        run: python3 -m unittest discover -s .github/scripts -p test_readme_activity.py
+      - name: 检查两仓入口链接
+        run: python3 .github/scripts/check_entrypoint_links.py NaturalDAO-2nd companion
 
   gate:
-    name: 合并检查
+    name: Governance and reproduction
     runs-on: ubuntu-latest
-    needs: [governance, dao-lab, steward, wiki-preview]
+    needs: [governance, dao-lab, steward, entrypoints]
     if: ${{ always() }}
     steps:
       - name: 确认所有检查通过

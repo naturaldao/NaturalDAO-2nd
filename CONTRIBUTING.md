@@ -6,19 +6,15 @@ Thanks for contributing to NaturalDAO. Find the workflow and checks for the area
 
 | 你要改的内容 | 位置 | 流程 |
 | :--- | :--- | :--- |
-| 理论文档（爱2证明） | `PoL/`（中文）、`PoLEn/`（English） | 见下文「理论文档」 |
 | AI 治理层协作（数据、评测、模型、任务） | `PoL-Governance/` | 见 [AGENTS.md](PoL-Governance/AGENTS.md) 和 [README](PoL-Governance/README.md) |
 | 治理服务与 Agent 接入 · Runtime and Agent integration | [POL2-Steward/](POL2-Steward/README.md) | 从[服务说明](POL2-Steward/pol2-service/README.md)查找测试和接入步骤 |
 | 研究报告与图件 · Research reports and figures | [Research/](Research/README.md) | 按主题归档并更新索引。可复现实验按其项目说明提交 |
-| 开发规划 | `docs/development-plan.zh.md`（中文）、`docs/development-plan.en.md`（English） | 与理论文档相同 |
 
-## 理论文档 · Theory documents
+## 提交改动 · Submit changes
 
-1. **从最新的 `main` 开分支**，不要直接推 `main`。可信成员直接在本仓库开分支；没有写权限的话，先 fork，再从你的 fork 提 PR。
-2. **中英文对应**：`PoL/` 与 `PoLEn/` 的同编号文件互为对照。改了一边，请在 PR 里说明另一边是否需要同步，以及由谁来做。
-3. **标明出处**：引用、改写或沿用他人的文字、公理、定义或数据，要在正文或参考文献中写明来源（作者、标题、链接或 DOI）。拿不准来源时，在 PR 里说明，不要略过。
-4. **不要直接改 Wiki**：Wiki 由 `.github/workflows/sync-wiki.yml` 从 `PoL/`、`PoLEn/` 同步，请改仓库里的文件。
-5. **小步提交**：一个 PR 讲一件事，提交信息写清改了什么、为什么。
+从最新的 `main` 开分支并提交 PR。Agent 的试验请使用任务分支。涉及引用或复用时，在改动中注明来源。
+
+理论、翻译与开发规划改动请提交到 [NaturalDAO](https://github.com/naturaldao/NaturalDAO)，参阅其[贡献指南](https://github.com/naturaldao/NaturalDAO/blob/main/CONTRIBUTING.md)。
 
 ## PoL-Governance
 
@@ -37,10 +33,10 @@ Thanks for contributing to NaturalDAO. Find the workflow and checks for the area
 
 ## 提问与讨论 · Questions
 
-- 概念、理论、文档问题：开 Issue，选择对应模板。
-- 例会：见 [README](README.md) 中的例会信息。
+- 治理评测、数据、服务与复现问题：在本仓开 Issue，选择对应模板。
+- 例会：见 [主仓首页](https://github.com/naturaldao/NaturalDAO)中的例会信息。
 - 安全与敏感内容：见 [SECURITY.md](SECURITY.md)，不要公开发 Issue。
 
 ---
 
-**English summary.** Work from the latest `main` on a branch (trusted members push branches here; others fork). Keep `PoL/` and `PoLEn/` in step or say in the PR which side is pending. Credit the source of any text, axiom, definition or data you reuse. Edit the repository files, not the Wiki, which is synced from them. For `PoL-Governance/`, follow its `AGENTS.md`; never commit private hold-out sets, credentials or private conversations. The current repository license declaration is Proof of Love2. Earlier releases under CC0 or another license retain their existing grants; third-party materials keep their own licenses. Disclose AI assistance in the PR.
+**English summary.** Branch from the latest `main` and open a PR here for governance, Steward, or research changes. Use a task branch for agent experiments. Follow [the agent guide](PoL-Governance/AGENTS.md) for governance work. Submit theory, translation, and planning changes to [NaturalDAO](https://github.com/naturaldao/NaturalDAO). Credit reused material and disclose AI assistance. Earlier releases and third-party materials keep their existing grants and licenses.

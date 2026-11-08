@@ -13,7 +13,7 @@ from unittest.mock import patch
 
 import readme_activity as activity
 
-REPO = "naturaldao/NaturalDAO"
+REPO = "naturaldao/NaturalDAO-2nd"
 NOW = datetime(2026, 11, 4, 12, tzinfo=timezone.utc)
 
 
