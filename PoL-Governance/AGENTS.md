@@ -2,10 +2,12 @@
 
 目标：实现 [SPEC](SPEC.md)。共同数据与评估，模型和方法自由。
 
+[NaturalDAO-2nd](https://github.com/naturaldao/NaturalDAO-2nd) 是研究协作入口。研究任务认领、进展记录和研究 PR 都在副仓。自然道主仓维护理论与开发规划。
+
 ## 一次任务怎么做
 
-1. **发现**：`git fetch origin`，在本目录运行 `python tools/board.py`，再读 [TASKS](TASKS.md)。看板只反映已拉取分支，不能把空白当无人领取。
-2. **领取**：从已有本目录的公共基线开 `pol/<任务ID>/<短名>` 分支，复制 [模板](tasks/TEMPLATE.md) 为 `tasks/<任务ID>-<短名>.md`。填“领取人 / Agent”和“状态 / 最近进展”，先推送领取记录，再开始长时间实验。无需领取 PR。
+1. **发现**：按 [TASKS](TASKS.md#刷新看板) 拉取副仓的 `main` 和 `pol/*`，再看任务页。看板只反映已拉取分支，空白需要先核对来源和分支。
+2. **领取**：从副仓最新公共基线开 `pol/<任务ID>/<短名>` 分支，复制 [模板](tasks/TEMPLATE.md) 为 `tasks/<任务ID>-<短名>.md`。填“领取人 / Agent”和“状态 / 最近进展”，先推送领取记录，再开始长时间实验。无需领取 PR。
 3. **实验**：仅在任务分支内改动。多人/多个 agent 同机时使用各自 checkout 或 worktree，不在共享目录切换分支。专用环境、输出目录和资源预算写任务页，先小样本跑通再扩大；不覆盖他人的数据、结果或进程。
 4. **更新**：每次推送、遇到阻塞或结束工作时更新任务页：已做什么、证据、下一步、更新时间。交流也写该页；留言者标身份与时间，保留原记录。共同写一个分支前先协调文件归属，拉取后提交，不强推。
 5. **交付**：提交数据/模型/结果卡，跑 `uv run --no-project --offline python tools/check.py`，检查 `git diff --cached`，标“待集成”。纳入公共基线时才开 PR；合并后标“完成”。实验无收益也交付真实记录。
@@ -27,7 +29,7 @@
 在本目录、已有公共基线的 checkout 中执行，将 yourname 改为短名：
 
 ```sh
-git switch -c pol/DATA-01/yourname
+git switch -c pol/DATA-01/yourname origin/main
 # 复制 tasks/TEMPLATE.md 为 tasks/DATA-01-yourname.md 并填写
 git add tasks/DATA-01-yourname.md
 git diff --cached
@@ -35,4 +37,4 @@ git commit -m "Claim DATA-01: independent annotation"
 git push -u origin pol/DATA-01/yourname
 ```
 
-可信成员直接开主仓库分支，不需 fork；无写权限者在自己仓库保持同结构，并分享分支/结果链接。不要直接推主分支；引用其他任务未合并的改动时注明其 commit。
+有写权限的成员将任务分支推送到 NaturalDAO-2nd，并通过 PR 集成到副仓的 `main`。使用 fork 时，从副仓 `upstream/main` 开分支，推送到自己的 fork，在副仓分享分支与结果链接，并向副仓提 PR。引用其他任务尚未集成的改动时，记录对应的 commit。
