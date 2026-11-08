@@ -97,6 +97,8 @@ jobs:
           ref: main
           sparse-checkout: .github
           persist-credentials: false
+      - name: 测试最近活动生成
+        run: python3 -m unittest discover -s .github/scripts -p test_readme_activity.py
       - name: 检查两仓入口链接
         run: python3 .github/scripts/check_entrypoint_links.py NaturalDAO-2nd companion
 

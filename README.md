@@ -19,7 +19,7 @@ This repository hosts NaturalDAO's governance evaluations, the POL2 Steward serv
 
 ## 最近更新 · Recent activity
 
-- [NaturalDAO-2nd · 治理评测、Steward 与研究](https://github.com/naturaldao/NaturalDAO-2nd/commits/main/)
+- [最近 7 天研究与仓库更新 · Latest activity](https://github.com/naturaldao/NaturalDAO-2nd/blob/recent-activity/README.md) · [副仓完整提交历史 · Full history](https://github.com/naturaldao/NaturalDAO-2nd/commits/main/)
 - [NaturalDAO · 理论与规划](https://github.com/naturaldao/NaturalDAO/commits/main/)
 
 ## 许可证 · License
