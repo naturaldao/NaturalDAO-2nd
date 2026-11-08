@@ -1,21 +1,17 @@
 # 🌿 NaturalDAO-2nd · 自然道治理与研究
 
-这里维护自然道的治理评测、POL2 Steward 服务、研究与复现材料，以及项目媒体。中英文理论、开发规划与项目总导航见 [NaturalDAO](https://github.com/naturaldao/NaturalDAO)。
+这里是自然道的研究与复现仓库，收录研究报告、治理评测、公开数据与模型入口，以及 POL2 Steward 服务。
 
-This repository hosts NaturalDAO's governance evaluations, the POL2 Steward service, research and replication materials, and project media. See [NaturalDAO](https://github.com/naturaldao/NaturalDAO) for the foundational theory, development plans, and project overview.
+NaturalDAO-2nd is NaturalDAO's research and reproducibility repository. It hosts research reports, governance evaluations, links to public datasets and models, and the POL2 Steward service.
 
 ## 项目入口 · Start here
 
-| 我想 · I want to | 入口 · Start here |
+| 你想做什么 · I want to | 从哪里开始 · Where to start |
 | :--- | :--- |
-| 查看任务或运行评测 · Find tasks or run evaluations | [PoL-Governance](PoL-Governance/README.md) · [任务看板 / Tasks](PoL-Governance/TASKS.md) |
-| 认领任务或接入协作 · Contribute to governance research | [Agent 协作入口](PoL-Governance/AGENTS.md) · [贡献指南 / Contributing](CONTRIBUTING.md) |
-| 安装 Steward 或接入 Agent · Install Steward or integrate an agent | [POL2 Steward](POL2-Steward/README.md) · [安装与接入 / Setup](POL2-Steward/pol2-service/README.md) |
-| 查阅研究与复现材料 · Explore research and replication | [研究索引 / Research](Research/README.md) · [DAO Governance Lab](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md) |
-| 获取公开数据与模型 · Get public data and models | [Hugging Face](https://huggingface.co/NaturalDAO) · [POL2 Score-v2 研究预发布 / Research prerelease](https://github.com/naturaldao/NaturalDAO/releases/tag/pol2-score-v2-v1.0.0) |
-| 阅读基础理论 · Read the foundational theory | [中文](https://github.com/naturaldao/NaturalDAO/blob/main/PoL/Readme.md) · [English](https://github.com/naturaldao/NaturalDAO/blob/main/PoLEn/Readme.md) |
-| 查看开发规划 · Read the development plan | [中文](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.zh.md) · [English](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.en.md) |
-| 查找项目媒体 · Find project media | [媒体索引 / Media](media/README.md) |
+| **看研究 · Explore research** | [研究总索引 / Research index](Research/README.md) |
+| **跑评测与复现 · Run evaluations or reproduce results** | [评测工具 / Benchmarks](PoL-Governance/benchmark/README.md) · [结果索引 / Results](PoL-Governance/results/README.md) · [数据 / Datasets](PoL-Governance/datasets/README.md) · [模型 / Models](PoL-Governance/models/README.md) |
+| **运行 Steward · Run Steward** | [POL2 Steward（开发者预览 / Developer preview）](POL2-Steward/README.md) · [安装与 Agent 接入 / Setup and integration](POL2-Steward/pol2-service/README.md) |
+| **提交研究 · Contribute research** | [研究提交清单 / Submission checklist](CONTRIBUTING.md#提交研究--submit-research) · [任务看板 / Tasks](PoL-Governance/TASKS.md) · [Agent 协作 / Agent guide](PoL-Governance/AGENTS.md) |
 
 ## 🪾 最近更新 · Recent Activity
 
@@ -42,6 +38,12 @@ Main branch updates from the past seven days, grouped by contributor and day (UT
 <!-- readme-activity:end -->
 
 [查看完整提交历史 · View full commit history](https://github.com/naturaldao/NaturalDAO-2nd/commits/main/)
+
+## 更多入口 · More resources
+
+- 研究资产 · Research assets · [Hugging Face](https://huggingface.co/NaturalDAO) · [POL2 Score-v2 研究预发布 / Research prerelease](https://github.com/naturaldao/NaturalDAO/releases/tag/pol2-score-v2-v1.0.0)
+- 理论与规划 · Theory and planning · [NaturalDAO 主仓](https://github.com/naturaldao/NaturalDAO) · [理论 / 中文](https://github.com/naturaldao/NaturalDAO/blob/main/PoL/Readme.md) · [Theory / English](https://github.com/naturaldao/NaturalDAO/blob/main/PoLEn/Readme.md) · [开发规划 / 中文](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.zh.md) · [Development plan / English](https://github.com/naturaldao/NaturalDAO/blob/main/docs/development-plan.en.md)
+- [项目媒体 · Project media](media/README.md)
 
 ## 许可证 · License
 

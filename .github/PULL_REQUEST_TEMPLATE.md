@@ -14,6 +14,8 @@
 - [ ] 涉及 `PoL-Governance/` 时，已在 `PoL-Governance/` 目录运行 `uv run --no-project --offline python tools/check.py`，并检查过 `git diff --cached`
 - [ ] 如使用了 AI 辅助，已在下方说明，并由我本人核对过内容和引用
 
+- [ ] 提交研究材料时，已更新主题索引并核对报告、结果和复现入口。见[研究提交清单](https://github.com/naturaldao/NaturalDAO-2nd/blob/main/CONTRIBUTING.md#提交研究--submit-research)。
+
 ## 已核对 / 未核对 · Checked / not checked
 
 <!-- 写清楚核对了什么、没核对什么。 -->

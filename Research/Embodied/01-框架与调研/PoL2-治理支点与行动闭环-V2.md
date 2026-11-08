@@ -293,10 +293,10 @@ OpenAI 的 PostgreSQL 扩展实践展示了读副本、查询限流、写入整�
 ### NaturalDAO 一手材料
 
 1. [NaturalDAO PoL2 理论文档与伦理对齐协议](https://github.com/naturaldao/NaturalDAO/tree/main/PoL)
-2. [PoL2 治理层规范、数据契约与评测器](https://github.com/naturaldao/NaturalDAO/tree/main/PoL-Governance)
-3. [PoL2 DAO Governance Lab：治理原型、实验设计与结果](https://github.com/naturaldao/NaturalDAO/tree/main/PoL-Governance/research/PoL2-DAO-Governance-Lab)
-4. [类型化决策模型文献综述工作区](https://github.com/naturaldao/NaturalDAO/tree/main/PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey)
-5. [NaturalDAO 运行时集成说明](https://github.com/naturaldao/NaturalDAO/tree/main/PoL-Governance/integrations)
+2. [PoL2 治理层规范、数据契约与评测器](../../../PoL-Governance)
+3. [PoL2 DAO Governance Lab：治理原型、实验设计与结果](../../../PoL-Governance/research/PoL2-DAO-Governance-Lab)
+4. [类型化决策模型文献综述工作区](../../../PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey)
+5. [NaturalDAO 运行时集成说明](../../../PoL-Governance/integrations)
 
 ### AI 反馈与 AI 治理先例
 

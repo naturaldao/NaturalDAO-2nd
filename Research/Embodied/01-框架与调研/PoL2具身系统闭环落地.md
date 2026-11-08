@@ -4,7 +4,7 @@
 
 ## 前期 Kev 先导：闭环止于符号状态
 
-现有试验把 Kev-0.8B 的 `choice` 分布映射到 `deliver / inspect / wait`，在授权拒绝时由确定性门阻止交付，在授权明确时把 `Find → Grab → PutBack` 执行到 VirtualHome 状态图，并检查箱子是否位于篮子上。它还暴露出重要效用风险：PoL2 提示让已授权状态从 `deliver` 转成 `wait`，合法任务因此未完成；长度匹配的 16 案例筛查中，generic、中性提示和 PoL2 都是 13/16 正确、各有 1 次禁行动，中性与 PoL2 的 4 个动作变化有两项改善、两项退化。现有证据支持“类型化提示可改变局部可见选择”，不支持 PoL2 的总体净收益或内部推理改变。([当前试验记录](https://github.com/naturaldao/NaturalDAO/blob/main/Research/Embodied/03-%E7%AD%96%E7%95%A5%E4%B8%8E%E5%86%B3%E7%AD%96%E5%AE%9E%E9%AA%8C/PoL2%E5%85%B7%E8%BA%AB%E6%8E%A8%E7%90%86%E8%BF%87%E7%A8%8B%E5%88%9D%E6%AD%A5%E9%AA%8C%E8%AF%81.md))
+现有试验把 Kev-0.8B 的 `choice` 分布映射到 `deliver / inspect / wait`，在授权拒绝时由确定性门阻止交付，在授权明确时把 `Find → Grab → PutBack` 执行到 VirtualHome 状态图，并检查箱子是否位于篮子上。它还暴露出重要效用风险：PoL2 提示让已授权状态从 `deliver` 转成 `wait`，合法任务因此未完成；长度匹配的 16 案例筛查中，generic、中性提示和 PoL2 都是 13/16 正确、各有 1 次禁行动，中性与 PoL2 的 4 个动作变化有两项改善、两项退化。现有证据支持“类型化提示可改变局部可见选择”，不支持 PoL2 的总体净收益或内部推理改变。([当前试验记录](../03-%E7%AD%96%E7%95%A5%E4%B8%8E%E5%86%B3%E7%AD%96%E5%AE%9E%E9%AA%8C/PoL2%E5%85%B7%E8%BA%AB%E6%8E%A8%E7%90%86%E8%BF%87%E7%A8%8B%E5%88%9D%E6%AD%A5%E9%AA%8C%E8%AF%81.md))
 
 下一阶段应扩展物理任务覆盖并反复观测，而不是再增加一层提示词。MuJoCo 已在本机安装并运行，Panda/Franka 资产已锁定到来源提交并随仓库保留对应许可证；当前控制器已完成一次可复现入口下的抓放闭环。下一步需验证多种初始状态与重复运行的稳定性，并逐步加入感知估计不确定性。([MuJoCo Python API](https://mujoco.readthedocs.io/en/stable/python.html), [MuJoCo PyPI](https://pypi.org/project/mujoco/), [MuJoCo Menagerie](https://github.com/google-deepmind/mujoco_menagerie))
 
@@ -40,7 +40,7 @@ flowchart LR
 
 ## 用三种提示乘两种门控识别各自贡献
 
-下一轮将三种提示条件与门控状态做完整的 **3×2 因子设计**。提示条件为 generic、结构和 token 数匹配的中性指令、PoL2 操作化指令；门控为关闭与开启。PoL2 对中性条件的对照估计提示内容差异，门控开关估计确定性执行约束的贡献，交互项显示两者是否互补。关闭门控只在隔离的仿真器中运行。上一轮“通用无门 vs PoL2 有门”的比较不能单独识别模型提示和执行拦截各自效果，必须由交叉设计替代。([当前试验记录](https://github.com/naturaldao/NaturalDAO/blob/main/Research/Embodied/03-%E7%AD%96%E7%95%A5%E4%B8%8E%E5%86%B3%E7%AD%96%E5%AE%9E%E9%AA%8C/PoL2%E5%85%B7%E8%BA%AB%E6%8E%A8%E7%90%86%E8%BF%87%E7%A8%8B%E5%88%9D%E6%AD%A5%E9%AA%8C%E8%AF%81.md), [EAI 具身评测](https://proceedings.neurips.cc/paper_files/paper/2024/hash/b631da756d1573c24c9ba9c702fde5a9-Abstract-Datasets_and_Benchmarks_Track.html))
+下一轮将三种提示条件与门控状态做完整的 **3×2 因子设计**。提示条件为 generic、结构和 token 数匹配的中性指令、PoL2 操作化指令；门控为关闭与开启。PoL2 对中性条件的对照估计提示内容差异，门控开关估计确定性执行约束的贡献，交互项显示两者是否互补。关闭门控只在隔离的仿真器中运行。上一轮“通用无门 vs PoL2 有门”的比较不能单独识别模型提示和执行拦截各自效果，必须由交叉设计替代。([当前试验记录](../03-%E7%AD%96%E7%95%A5%E4%B8%8E%E5%86%B3%E7%AD%96%E5%AE%9E%E9%AA%8C/PoL2%E5%85%B7%E8%BA%AB%E6%8E%A8%E7%90%86%E8%BF%87%E7%A8%8B%E5%88%9D%E6%AD%A5%E9%AA%8C%E8%AF%81.md), [EAI 具身评测](https://proceedings.neurips.cc/paper_files/paper/2024/hash/b631da756d1573c24c9ba9c702fde5a9-Abstract-Datasets_and_Benchmarks_Track.html))
 
 样本单位是完整仿真回合，不是单次模型调用或一个动作步骤。同一任务族、场景种子和初始物理状态在六个条件下配对重置，并随机化运行顺序；场景族之间按授权规则、物体、障碍和任务目标拆分，未来确认性任务族在冻结模型与规则前不可用于调提示。当前 16 个案例已被反复用于设计和修订，只能作为开发/回归集，不能再冒充盲测集。CALVIN 采用重置后的多步 rollout 评估，SIMPLER 则以配对仿真与真实环境评测任务表现；这类先例都强调完整轨迹与初始条件，而不是只看模型输出。([CALVIN 评测协议](https://github.com/mees/calvin), [SIMPLER，CoRL/PMLR 2025](https://proceedings.mlr.press/v270/li25c.html), [机器人学习实证评测建议](https://arxiv.org/abs/2409.09491))
 
