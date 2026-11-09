@@ -53,9 +53,8 @@ def main():
     text = (f"Title:\n{TITLE}\n\nAuthors:\n{AUTHORS}\n\n"
             f"Abstract ({len(a)} characters; arXiv limit {LIMIT}: {status}):\n{a}\n\n"
             f"Comments:\n{pages.group(1) if pages else '?'} pages, {n_fig} figures. Online appendix: "
-            "https://github.com/naturaldao/NaturalDAO/blob/main/PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/online_appendix.pdf. "
-            "Data, evidence coding, review logs and scripts: https://github.com/naturaldao/NaturalDAO "
-            "(PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey)\n\n"
+            "https://github.com/naturaldao/NaturalDAO-2nd/blob/main/PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/online_appendix.pdf. "
+            "Data, evidence coding, review logs and scripts: https://github.com/naturaldao/NaturalDAO-2nd/tree/main/PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey\n\n"
             "Primary category (suggested): cs.CY (Computers and Society)\n"
             "Cross-list (suggested): cs.AI\n"
             "License (suggested): CC BY 4.0\n")

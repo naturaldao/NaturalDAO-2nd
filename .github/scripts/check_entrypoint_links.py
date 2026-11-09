@@ -10,7 +10,17 @@ from urllib.parse import unquote, urlsplit
 
 REPOSITORIES = ("NaturalDAO", "NaturalDAO-2nd")
 ENTRYPOINTS = ("README.md", "CONTRIBUTING.md", "SECURITY.md")
+SURVEY = "PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey"
+ADDITIONAL_ENTRYPOINTS = {
+    "media/README.md",
+    f"{SURVEY}/README.md",
+    f"{SURVEY}/CITATION.cff",
+    f"{SURVEY}/paper/README.md",
+    f"{SURVEY}/paper/arxiv_metadata.txt",
+    f"{SURVEY}/paper/make_metadata.py",
+}
 MARKDOWN_LINK = re.compile(r"\]\(\s*(<[^>\n]+>|[^\s)]+)")
+TEXT_REPOSITORY_LINK = re.compile(r'https://github\.com/naturaldao/[^)\s"<>}\\]+')
 REPOSITORY_LINK = re.compile(
     r"/naturaldao/(NaturalDAO(?:-2nd)?)/(blob|tree)/main/(.+)"
 )
@@ -28,6 +38,24 @@ def repository_paths(root):
     return files, directories
 
 
+def additional_entrypoints(files):
+    for file in sorted(files):
+        parts = PurePosixPath(file).parts
+        if parts[0] == "Research" and file.endswith(".md") and "99-归档" not in parts:
+            yield file
+        elif file in ADDITIONAL_ENTRYPOINTS or (
+            file.startswith(f"{SURVEY}/paper/") and file.endswith(".tex")
+            and "review" not in parts
+        ):
+            yield file
+
+
+def document_links(document, line):
+    if document.endswith(".md"):
+        return MARKDOWN_LINK.findall(line)
+    return [link.rstrip(".") for link in TEXT_REPOSITORY_LINK.findall(line)]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("repository", choices=REPOSITORIES)
@@ -42,19 +70,14 @@ def main():
 
     own_files, own_directories = paths[args.repository]
     local_candidates = own_files | own_directories
-    research_indexes = sorted(
-        file for file in own_files
-        if file.startswith("Research/") and file.endswith("/README.md")
-        and file.count("/") <= 2
-    )
 
     failures = []
     checked = 0
-    for entrypoint in (*ENTRYPOINTS, *research_indexes):
+    for entrypoint in (*ENTRYPOINTS, *additional_entrypoints(own_files)):
         for line_number, line in enumerate(
             Path(entrypoint).read_text(encoding="utf-8").splitlines(), start=1
         ):
-            for link in MARKDOWN_LINK.findall(line):
+            for link in document_links(entrypoint, line):
                 target = urlsplit(link.strip("<>"))
                 if not target.path:
                     continue
