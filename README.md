@@ -18,9 +18,9 @@
 
 ## 📖 简介 · About
 
-自然道的研究报告、治理评测、实验复现材料与 **POL2 Steward** 服务在这里协作和发布。爱2证明理论与开发规划见 [NaturalDAO 主仓](https://github.com/naturaldao/NaturalDAO)。
+自然道的研究报告、治理评测、实验复现材料在这里协作和发布。爱2证明理论与开发规划见 [NaturalDAO 主仓](https://github.com/naturaldao/NaturalDAO)。
 
-This repository brings together NaturalDAO’s research, governance evaluations, replication materials, and POL2 Steward. The foundational theory and development plans live in the [main repository](https://github.com/naturaldao/NaturalDAO).
+This repository brings together NaturalDAO’s research, governance evaluations, replication materials. The foundational theory and development plans live in the [main repository](https://github.com/naturaldao/NaturalDAO).
 
 ---
 
