@@ -10,7 +10,7 @@
 [![Hugging Face: NaturalDAO](https://img.shields.io/badge/Hugging%20Face-NaturalDAO-E4AD32?style=flat-square)](https://huggingface.co/NaturalDAO)
 [![License: Proof of Love2](https://img.shields.io/badge/License-Proof%20of%20Love2-64748B?style=flat-square)](LICENSE)
 
-[简介](#-简介--about) · [最近更新](#-最近更新--recent-activity) · [仓库结构](#-仓库结构--repository-layout) · [研究与复现](#-研究与复现--research-and-replication) · [参与协作](#-参与协作--contribute) · [相关资源](#-相关资源--resources)
+[简介](#-简介--about) · [仓库结构](#-仓库结构--repository-layout) · [研究与复现](#-研究与复现--research-and-replication) · [参与协作](#-参与协作--contribute) · [最近更新](#-最近更新--recent-activity) · [相关资源](#-相关资源--resources)
 
 </div>
 
@@ -20,7 +20,41 @@
 
 自然道的研究报告、治理评测、实验复现材料在这里协作和发布。爱2证明理论与开发规划见 [NaturalDAO 主仓](https://github.com/naturaldao/NaturalDAO)。
 
-This repository brings together NaturalDAO’s research, governance evaluations, replication materials. The foundational theory and development plans live in the [main repository](https://github.com/naturaldao/NaturalDAO).
+This repository brings together NaturalDAO’s research, governance evaluations, and replication materials. The foundational theory and development plans live in the [main repository](https://github.com/naturaldao/NaturalDAO).
+
+---
+
+## 📂 仓库结构 · Repository Layout
+
+| 入口 · Entry point | 可以在这里找到 · What you’ll find |
+| :--- | :--- |
+| 📚 [研究总索引 · Research](Research/README.md) | 研究问题、报告、论文与复现入口 |
+| 🧪 [运行评测 · Run evaluations](PoL-Governance/benchmark/README.md) | [治理评测项目](PoL-Governance/README.md)的评测工具、[结果索引](PoL-Governance/results/README.md)、数据和模型 |
+| 🛠 [安装 POL2 Steward · Set up Steward](POL2-Steward/pol2-service/README.md) | [治理服务开发者预览](POL2-Steward/README.md)、安装和 Agent 接入 |
+| 🤝 [参与协作 · Contribute](CONTRIBUTING.md) | [任务看板](PoL-Governance/TASKS.md)与研究提交清单 |
+| 🎞 [项目媒体 · Media](media/README.md) | 图片、演示和对外材料 |
+| [合作交流 · Partnerships](BD/README.md) | 公开合作入口与通用邀约模板 |
+
+---
+
+## 📚 研究与复现 · Research and Replication
+
+| 研究方向 · Topic | 阅读 · Read | 复现或核查 · Reproduce or verify |
+| :--- | :--- | :--- |
+| **具身治理** | [授权、撤权与恢复研究](Research/Embodied/README.md) | [具身评测代码与运行说明](PoL-Governance/benchmark/embodied_reasoning/README.md) |
+| **存储与数据基础设施** | [V2 方案与证据边界](Research/Storage/README.md) | [容量复算与假设](Research/Storage/03-复算与支撑/README.md) |
+| **DAO 治理机制** | [投票、资源分配与申诉实验](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#结果) | [运行示例与测试](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#快速开始) |
+| **类型化决策模型** | [PoL2 × Jev 正文](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/main.pdf) · [在线附录](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/online_appendix.pdf) | [文献编码与构建方法](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/README.md#复现) |
+
+智能体记忆与工程设计见[工程研究索引](Research/Engineering/README.md)。
+
+---
+
+## 🤝 参与协作 · Contribute
+
+1. **查任务。** 从[副仓任务看板](PoL-Governance/TASKS.md)查看任务、进展和交付入口。
+2. **做研究。** 按 [Agent 协作指南](PoL-Governance/AGENTS.md)使用任务分支，在任务页记录证据与下一步。
+3. **交付成果。** 按[研究提交清单](CONTRIBUTING.md#提交研究--submit-research)更新主题索引，并把 PR 提交到本仓。
 
 ---
 
@@ -48,38 +82,6 @@ Main branch updates from the past seven days, grouped by contributor and day (UT
 <!-- readme-activity:end -->
 
 [查看完整提交历史 · View full commit history](https://github.com/naturaldao/NaturalDAO-2nd/commits/main/)
-
----
-
-## 📂 仓库结构 · Repository Layout
-
-| 入口 · Entry point | 可以在这里找到 · What you’ll find |
-| :--- | :--- |
-| 📚 [研究总索引 · Research](Research/README.md) | 研究问题、报告、论文与复现入口 |
-| 🧪 [治理评测 · PoL-Governance](PoL-Governance/README.md) | [评测工具](PoL-Governance/benchmark/README.md)、[结果索引](PoL-Governance/results/README.md)、数据和模型 |
-| 🛠 [POL2 Steward](POL2-Steward/README.md) | 治理服务开发者预览与[安装、Agent 接入指南](POL2-Steward/pol2-service/README.md) |
-| 🎞 [项目媒体 · Media](media/README.md) | 图片、演示和对外材料 |
-
----
-
-## 📚 研究与复现 · Research and Replication
-
-| 研究方向 · Topic | 阅读 · Read | 复现或核查 · Reproduce or verify |
-| :--- | :--- | :--- |
-| **具身治理** | [授权、撤权与恢复研究](Research/Embodied/README.md) | [具身评测代码与运行说明](PoL-Governance/benchmark/embodied_reasoning/README.md) |
-| **存储与数据基础设施** | [V2 方案与证据边界](Research/Storage/README.md) | [容量复算与假设](Research/Storage/03-复算与支撑/README.md) |
-| **DAO 治理机制** | [投票、资源分配与申诉实验](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#结果) | [运行示例与测试](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#快速开始) |
-| **类型化决策模型** | [PoL2 × Jev 正文](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/main.pdf) · [在线附录](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/online_appendix.pdf) | [文献编码与构建方法](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/README.md#复现) |
-
-智能体记忆与工程设计见[工程研究索引](Research/Engineering/README.md)。
-
----
-
-## 🤝 参与协作 · Contribute
-
-1. **查任务。** 从[副仓任务看板](PoL-Governance/TASKS.md)查看任务、进展和交付入口。
-2. **做研究。** 按 [Agent 协作指南](PoL-Governance/AGENTS.md)使用任务分支，在任务页记录证据与下一步。
-3. **交付成果。** 按[研究提交清单](CONTRIBUTING.md#提交研究--submit-research)更新主题索引，并把 PR 提交到本仓。
 
 ---
 

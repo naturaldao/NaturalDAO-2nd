@@ -10,7 +10,7 @@ Jev 是 TypeSafe AI 于 2026-09-15 发布的第一个“System One 决策模型�
 
 | 你想要 | 去哪里 |
 |---|---|
-| 读论文（英文，arXiv 投稿版，v0.5） | [paper/main.pdf](paper/main.pdf)（只含正文与参考文献）；在线附录 [paper/online_appendix.pdf](paper/online_appendix.pdf)（A 条款中英对照、B 检索筛选与编码手册、C 每项确定性评级的推导表、D 治理范式对比表与验收清单与结论全表、E 对早期数据集的更正） |
+| 读论文（英文，arXiv 投稿版，v0.5.2） | [paper/main.pdf](paper/main.pdf)（只含正文与参考文献）；在线附录 [paper/online_appendix.pdf](paper/online_appendix.pdf)（A 条款中英对照、B 检索筛选与编码手册、C 每项确定性评级的推导表、D 治理范式对比表与验收清单与结论全表、E 对早期数据集的更正） |
 | 读论文中文译稿（对应 v0.4.1 长版；英文版为正式版本） | [paper/zh/main_zh.pdf](paper/zh/main_zh.pdf)；补充材料见 [paper/zh/supplement_zh.pdf](paper/zh/supplement_zh.pdf) |
 | 看结论（Jev 是否适合作为 PoL2 的治理工具） | 论文 §6.3 与表 “Verdict for PoL2”（全表见在线附录 D） |
 | 看 PoL2 与其他 AI 治理范式的比较 | 论文 §2.3 |

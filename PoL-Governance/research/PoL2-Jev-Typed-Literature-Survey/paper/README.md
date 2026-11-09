@@ -2,7 +2,7 @@
 
 **Can Typed Decision Models Serve as Automated Safeguards? A Clause-Level Assessment Against the Proof of Love2 Specification**（v0.5.2，2026-10-11）
 
-论文：[main.pdf](main.pdf)（投稿版，只含正文与参考文献，正文约 1.2 万词）。在线附录：[online_appendix.pdf](online_appendix.pdf)（27 页；A 条款中英对照、B 检索筛选与编码手册、C 每项确定性评级的推导表、D 治理范式对比表、验收清单与结论全表、E 对早期数据集的更正）。逐项研究的编码、理由与定位见 `../data/`。检索以 2026-10-08 为截止，正文按一次完整检索报告（各次运行日期见在线附录 B），计数由 `../scripts/merge_all.py` 合并生成。中文译稿 [zh/main_zh.pdf](zh/main_zh.pdf)、[zh/supplement_zh.pdf](zh/supplement_zh.pdf) 目前对应 v0.4.1 长版（英文版为正式版本）。arXiv 提交包：`arxiv-submission.zip`（由 `make_arxiv.py` 生成，只含正文，已在干净目录中单独编译通过）。提交表单所需的纯文本元数据：`arxiv_metadata.txt`。
+论文：[main.pdf](main.pdf)（投稿版，只含正文与参考文献，正文约 1.2 万词）。在线附录：[online_appendix.pdf](online_appendix.pdf)（28 页；A 条款中英对照、B 检索筛选与编码手册、C 每项确定性评级的推导表、D 治理范式对比表、验收清单与结论全表、E 对早期数据集的更正）。逐项研究的编码、理由与定位见 `../data/`。检索以 2026-10-08 为截止，正文按一次完整检索报告（各次运行日期见在线附录 B），计数由 `../scripts/merge_all.py` 合并生成。中文译稿 [zh/main_zh.pdf](zh/main_zh.pdf)、[zh/supplement_zh.pdf](zh/supplement_zh.pdf) 目前对应 v0.4.1 长版（英文版为正式版本）。arXiv 提交包：`arxiv-submission.zip`（由 `make_arxiv.py` 生成，只含正文，已在干净目录中单独编译通过）。提交表单所需的纯文本元数据：`arxiv_metadata.txt`。
 
 ## 文件
 
