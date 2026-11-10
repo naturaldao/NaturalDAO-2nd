@@ -1,4 +1,4 @@
-# PoL2 公共化治理实验室
+# PoL2 公共化治理实验室（协议化） 
 
 [简体中文](README.md) · [English（原版）](README.en.md) · [实验结果](docs/results.md) · [复现方法](#运行与复现)
 
