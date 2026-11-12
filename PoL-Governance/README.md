@@ -12,6 +12,7 @@
 | 你要做什么 | 去哪里 |
 |---|---|
 | 领任务、看谁在做 | [TASKS](TASKS.md)；以远端 pol/* 分支中的任务页为实时状态 |
+| 查看例会纪要 | [会议记录](meetings/README.md) |
 | 通用决策数据集 v5 | [datasets/general](datasets/general/README.md) · [HF 托管](datasets/general/HF.md) |
 | 专用 PoL2 决策数据 | [datasets/pol2](datasets/pol2/README.md) · [冻结版数据卡](datasets/pol2/FREEZE-8705-V1.md) |
 | 找模型、贡献调研或适配 | [models](models/README.md) · [模型清单](models/CATALOG.md) |
