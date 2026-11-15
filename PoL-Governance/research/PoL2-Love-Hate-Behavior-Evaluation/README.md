@@ -99,3 +99,5 @@
 | G4 报告发布 | 结果复核、限制说明和复现材料齐备；私有保留内容不公开 |
 
 管理员待确认事项见同目录 ADMIN-INPUTS.md。未确认事项标记为 TBD_ADMIN，不由工程侧补造 PoL2 定义。
+
+数据契约草案见 [SCHEMA.md](../../benchmark/love_hate_behavior/SCHEMA.md)，机器可读字段草案见 [schema.v0.1.json](../../benchmark/love_hate_behavior/schema.v0.1.json)。
