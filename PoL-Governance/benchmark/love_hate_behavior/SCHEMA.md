@@ -2,7 +2,7 @@
 
 状态：draft-0.1，等待理论和标签冻结。文件结构先支持试标与运行追溯；枚举须随 rubric 版本冻结。只保存有权公开的数据。私有保留样本及可反推样本的信息不得进入公开分支。
 
-数据按 UTF-8 JSONL 存储，每行一个对象。正式数据路径、划分和许可在数据门通过后确定。
+数据按 UTF-8 JSONL 存储，每行一个对象。机器可读结构见 schema.v0.1.json；每行须带 record_type=\"scenario\"、\"response\" 或 \"annotation\"。该 schema 仍是草案。正式数据路径、划分和许可在数据门通过后确定。
 
 ## 1. 情境 scenarios.jsonl
 
