@@ -1,0 +1,35 @@
+name: Fly template experiments
+
+on:
+  pull_request:
+    paths:
+      - 'PoL-Governance/benchmark/fly_brain/**'
+      - '.github/workflows/fly-brain.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experiment-checks:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.12'
+      - name: Install experiment dependency
+        run: python -m pip install -r PoL-Governance/benchmark/fly_brain/requirements.txt
+      - name: Check state and execution mechanisms
+        run: |
+          python -m unittest discover -s PoL-Governance/benchmark/fly_brain -p test_memory.py -v
+          python -m unittest discover -s PoL-Governance/benchmark/fly_brain/interface -p test_interface.py -v
+      - name: Reproduce development smoke tests
+        run: |
+          python PoL-Governance/benchmark/fly_brain/memory_experiment.py --split dev --output "${{ runner.temp }}/fly-memory-dev"
+          python PoL-Governance/benchmark/fly_brain/interface/run_interface.py --split dev --output "${{ runner.temp }}/fly-interface-dev"
