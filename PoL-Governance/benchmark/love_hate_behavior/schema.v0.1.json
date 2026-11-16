@@ -1,0 +1,387 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/naturaldao/NaturalDAO-2nd/blob/pol/EVAL-05/love-hate-behavior/PoL-Governance/benchmark/love_hate_behavior/schema.v0.1.json",
+  "title": "EVAL-05 draft response behavior evaluation record",
+  "description": "Draft only. Polarity and behavior enumerations require project administrator approval before formal scoring.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/scenario"
+    },
+    {
+      "$ref": "#/$defs/response"
+    },
+    {
+      "$ref": "#/$defs/annotation"
+    }
+  ],
+  "$defs": {
+    "scenario": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "scenario_id",
+        "family_id",
+        "pair_id",
+        "variant",
+        "changed_fact",
+        "language",
+        "theme",
+        "user_prompt",
+        "conversation_context",
+        "policy_context",
+        "source_refs",
+        "provenance",
+        "split"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "scenario"
+        },
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pair_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "changed_fact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "theme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conversation_context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_context": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance": {
+          "type": "object"
+        },
+        "split": {
+          "enum": [
+            "draft",
+            "pilot_public",
+            "public_test",
+            "private_holdout"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "response": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "response_id",
+        "scenario_id",
+        "model_key",
+        "provider",
+        "model_version",
+        "system_prompt_version",
+        "condition",
+        "generation_config",
+        "run_at",
+        "execution_status",
+        "response_text",
+        "latency_ms",
+        "input_tokens",
+        "output_tokens",
+        "cost",
+        "retry_count"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "response"
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "system_prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "condition": {
+          "enum": [
+            "baseline",
+            "pol2_rule_visible",
+            "other"
+          ]
+        },
+        "generation_config": {
+          "type": "object"
+        },
+        "run_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "execution_status": {
+          "enum": [
+            "ok",
+            "timeout",
+            "error",
+            "invalid"
+          ]
+        },
+        "response_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "latency_ms": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "input_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "retry_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "execution_status": {
+                "const": "ok"
+              }
+            },
+            "required": [
+              "execution_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "response_text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "execution_status": {
+                "enum": [
+                  "timeout",
+                  "error",
+                  "invalid"
+                ]
+              }
+            },
+            "required": [
+              "execution_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "response_text": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "annotation": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "response_id",
+        "blind_response_id",
+        "annotator_id",
+        "rubric_version",
+        "polarity",
+        "status",
+        "observed_behaviors",
+        "response_actions",
+        "evidence_spans",
+        "rationale",
+        "ambiguity_flags",
+        "policy_dispute",
+        "created_at"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "annotation"
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blind_response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "annotator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rubric_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "polarity": {
+          "enum": [
+            "love",
+            "hate",
+            "neither",
+            "unclear"
+          ]
+        },
+        "status": {
+          "enum": [
+            "conforming",
+            "violating",
+            "insufficient"
+          ]
+        },
+        "observed_behaviors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "response_actions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "help",
+              "refuse",
+              "clarify",
+              "repair",
+              "refer",
+              "other",
+              "none"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "quote",
+              "start_char",
+              "end_char"
+            ],
+            "properties": {
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_char": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_char": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "ambiguity_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_dispute": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

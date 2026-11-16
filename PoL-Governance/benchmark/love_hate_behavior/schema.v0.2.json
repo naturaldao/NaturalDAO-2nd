@@ -1,0 +1,1190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/naturaldao/NaturalDAO-2nd/blob/pol/EVAL-05/love-hate-behavior/PoL-Governance/benchmark/love_hate_behavior/schema.v0.2.json",
+  "title": "EVAL-05 v0.2 draft behavior and governance integration records",
+  "description": "Draft compatibility contract; not an approved PoL2 rule implementation.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/scenario"
+    },
+    {
+      "$ref": "#/$defs/response"
+    },
+    {
+      "$ref": "#/$defs/annotation"
+    },
+    {
+      "$ref": "#/$defs/engine_assessment"
+    },
+    {
+      "$ref": "#/$defs/adjudication"
+    }
+  ],
+  "$defs": {
+    "scenario": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "scenario_id",
+        "family_id",
+        "pair_id",
+        "variant",
+        "changed_fact",
+        "language",
+        "theme",
+        "user_prompt",
+        "conversation_context",
+        "policy_context",
+        "source_refs",
+        "provenance",
+        "split"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "scenario"
+        },
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pair_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "changed_fact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "theme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conversation_context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_context": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance": {
+          "type": "object"
+        },
+        "split": {
+          "enum": [
+            "draft",
+            "pilot_public",
+            "public_test",
+            "private_holdout"
+          ]
+        },
+        "evaluation_tier": {
+          "enum": [
+            "core",
+            "extended"
+          ]
+        },
+        "actors": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "role",
+              "content"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "response": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "response_id",
+        "scenario_id",
+        "model_key",
+        "provider",
+        "model_version",
+        "system_prompt_version",
+        "condition",
+        "generation_config",
+        "run_at",
+        "execution_status",
+        "response_text",
+        "latency_ms",
+        "input_tokens",
+        "output_tokens",
+        "cost",
+        "retry_count"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "response"
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "system_prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "condition": {
+          "enum": [
+            "baseline",
+            "pol2_rule_visible",
+            "other"
+          ]
+        },
+        "generation_config": {
+          "type": "object"
+        },
+        "run_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "execution_status": {
+          "enum": [
+            "ok",
+            "timeout",
+            "error",
+            "invalid"
+          ]
+        },
+        "response_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "latency_ms": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "input_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "retry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sample_index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "execution_status": {
+                "const": "ok"
+              }
+            },
+            "required": [
+              "execution_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "response_text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "execution_status": {
+                "enum": [
+                  "timeout",
+                  "error",
+                  "invalid"
+                ]
+              }
+            },
+            "required": [
+              "execution_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "response_text": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "annotation": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "response_id",
+        "blind_response_id",
+        "annotator_id",
+        "rubric_version",
+        "observed_behaviors",
+        "response_actions",
+        "evidence_spans",
+        "rationale",
+        "ambiguity_flags",
+        "policy_dispute",
+        "created_at",
+        "annotation_id",
+        "coverage",
+        "facts",
+        "love_hate",
+        "verdict",
+        "hard_boundary",
+        "criteria",
+        "rule_ids",
+        "proof",
+        "unknown",
+        "versions"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "annotation"
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "blind_response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "annotator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rubric_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "polarity": {
+          "enum": [
+            "love",
+            "hate",
+            "neither",
+            "unclear"
+          ]
+        },
+        "status": {
+          "enum": [
+            "conforming",
+            "violating",
+            "insufficient"
+          ]
+        },
+        "observed_behaviors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "response_actions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "help",
+              "refuse",
+              "clarify",
+              "repair",
+              "refer",
+              "other",
+              "none"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "ambiguity_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_dispute": {
+          "type": "boolean"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "coverage": {
+          "enum": [
+            "covered",
+            "unsupported",
+            "pending_policy"
+          ]
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fact"
+          }
+        },
+        "love_hate": {
+          "enum": [
+            "love",
+            "hate",
+            "absent",
+            "undecidable",
+            null
+          ]
+        },
+        "verdict": {
+          "enum": [
+            "pass",
+            "block",
+            "review",
+            null
+          ]
+        },
+        "hard_boundary": {
+          "type": "object",
+          "required": [
+            "hit",
+            "unknown"
+          ],
+          "properties": {
+            "hit": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "unknown": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rule_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "proof": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unknown": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "versions": {
+          "type": "object",
+          "required": [
+            "theory",
+            "schema",
+            "rules",
+            "rubric"
+          ],
+          "properties": {
+            "theory": {
+              "type": "string",
+              "minLength": 1
+            },
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rules": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rubric": {
+              "type": "string",
+              "minLength": 1
+            },
+            "embedding": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "l0_model": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "l0_prompt": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "retrieval": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "engine": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "annotation_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "coverage": {
+                "const": "covered"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "love_hate": {
+                "type": "string"
+              },
+              "verdict": {
+                "type": "string"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "love_hate": {
+                "type": "null"
+              },
+              "verdict": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "span": {
+      "type": "object",
+      "required": [
+        "quote",
+        "start_char",
+        "end_char",
+        "source"
+      ],
+      "properties": {
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_char": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_char": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source": {
+          "enum": [
+            "response",
+            "conversation_context"
+          ]
+        },
+        "message_index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "conversation_context"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "message_index"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "fact": {
+      "type": "object",
+      "required": [
+        "fact_id",
+        "pred",
+        "args",
+        "value",
+        "evidence_spans"
+      ],
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pred": {
+          "enum": [
+            "equality",
+            "reciprocity",
+            "publicness",
+            "context",
+            "simulated_intimacy"
+          ]
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "value": {},
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "unknown_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metadata_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "speaker": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution": {
+          "enum": [
+            "self_action",
+            "quote",
+            "description",
+            "critique",
+            "suggestion",
+            "assistance",
+            "other"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "pred": {
+                "const": "equality"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "equal",
+                  "unequal",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pred": {
+                "const": "reciprocity"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "mutual",
+                  "coercive_destruction",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pred": {
+                "const": "publicness"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "public",
+                  "private",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pred": {
+                "const": "context"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  "real",
+                  "security",
+                  "fiction",
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pred": {
+                "const": "simulated_intimacy"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "enum": [
+                  true,
+                  false,
+                  "unknown"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "value": {
+                "const": "unknown"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "unknown_reason"
+            ]
+          },
+          "else": {
+            "anyOf": [
+              {
+                "properties": {
+                  "evidence_spans": {
+                    "minItems": 1
+                  }
+                }
+              },
+              {
+                "required": [
+                  "metadata_ref"
+                ],
+                "properties": {
+                  "pred": {
+                    "const": "context"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "engine_assessment": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "response_id",
+        "engine_run_id",
+        "engine_version",
+        "execution_status",
+        "candidate_rule_ids",
+        "raw_output",
+        "error",
+        "created_at",
+        "coverage",
+        "facts",
+        "love_hate",
+        "verdict",
+        "hard_boundary",
+        "criteria",
+        "rule_ids",
+        "proof",
+        "unknown",
+        "evidence_spans",
+        "versions"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "engine_assessment"
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "engine_run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "engine_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "execution_status": {
+          "enum": [
+            "ok",
+            "timeout",
+            "error",
+            "invalid"
+          ]
+        },
+        "candidate_rule_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "raw_output": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "coverage": {
+          "enum": [
+            "covered",
+            "unsupported",
+            "pending_policy"
+          ]
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fact"
+          }
+        },
+        "love_hate": {
+          "enum": [
+            "love",
+            "hate",
+            "absent",
+            "undecidable",
+            null
+          ]
+        },
+        "verdict": {
+          "enum": [
+            "pass",
+            "block",
+            "review",
+            null
+          ]
+        },
+        "hard_boundary": {
+          "type": "object",
+          "required": [
+            "hit",
+            "unknown"
+          ],
+          "properties": {
+            "hit": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "unknown": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rule_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "proof": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "unknown": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "versions": {
+          "type": "object",
+          "required": [
+            "theory",
+            "schema",
+            "rules",
+            "rubric"
+          ],
+          "properties": {
+            "theory": {
+              "type": "string",
+              "minLength": 1
+            },
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rules": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rubric": {
+              "type": "string",
+              "minLength": 1
+            },
+            "embedding": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "l0_model": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "l0_prompt": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "retrieval": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "engine": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "execution_status": {
+                "const": "ok"
+              }
+            }
+          },
+          "then": {
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "coverage": {
+                      "const": "covered"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "love_hate": {
+                      "type": "string"
+                    },
+                    "verdict": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "love_hate": {
+                      "type": "null"
+                    },
+                    "verdict": {
+                      "type": "null"
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "error": {
+                    "type": "null"
+                  },
+                  "raw_output": {
+                    "type": "object"
+                  }
+                }
+              }
+            ]
+          },
+          "else": {
+            "properties": {
+              "love_hate": {
+                "type": "null"
+              },
+              "verdict": {
+                "type": "null"
+              },
+              "error": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
+    "adjudication": {
+      "type": "object",
+      "required": [
+        "record_type",
+        "response_id",
+        "adjudicator_id",
+        "source_annotation_ids",
+        "resolved_annotation",
+        "rationale",
+        "created_at"
+      ],
+      "properties": {
+        "record_type": {
+          "const": "adjudication"
+        },
+        "response_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adjudicator_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_annotation_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "resolved_annotation": {
+          "$ref": "#/$defs/annotation"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
