@@ -11,6 +11,8 @@ content-matched generic rules have identical behavior.
 - [Frozen protocol and interpretation](PROTOCOL.md)
 - [Chinese research/result card](../../../Research/Brain/PoL2-Fly-Brain-Results.md)
 - [Interface experiment](interface/README.md)
+- [Memory evaluation summary](results/memory-eval-20261117/summary.json) and [per-seed data](results/memory-eval-20261117/per_seed.csv)
+- [Interface evaluation summary](interface/results/eval-20261117/summary.csv)
 
 ## Reproduce
 
@@ -34,6 +36,17 @@ is needed at runtime. Results include source hashes; each row in `per_seed.csv`
 is one model seed × topology × intervention × delay, aggregated over episodes.
 The public eval is reproducible, not a private or independently authored test.
 See the protocol for seeds, controls, caveats and development history.
+
+The protocol/executable freeze is commit `981bb4b`; the pre-evaluation public
+record is `77304dc`. Both experiments were run once after that record was pushed.
+The memory evaluation comprises 12 model seeds, three graph conditions and
+1,536 distinct cue episodes. The interface evaluation comprises 1,024 scenarios.
+
+Optional figure regeneration uses [plot dependencies](requirements-plot.txt):
+install them and run `plot_results.py` with the same explicit interpreter.
+The [PNG](../../../Research/Brain/figures/fly-brain-results.png) and
+[PDF](../../../Research/Brain/figures/fly-brain-results.pdf) show means and ±1
+between-seed SD for memory measures, plus interface action-violation counts.
 
 ## Provenance and licenses
 

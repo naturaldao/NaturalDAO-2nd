@@ -74,7 +74,21 @@ Development evidence: [results](results/dev-20261117/results.json) and
 [summary](results/dev-20261117/summary.csv). Five tests cover execution-time
 revocation, independent recovery authority and evidence races, object-specific
 truthful completion, positive legal task progress, and same-version freshness
-changes. Public evaluation must remain unrun until the parent task records the
-freeze commit.
+changes. Atomic actions are assumed: revocation after the last recheck or during
+motion is outside this protocol, as are malformed action kinds outside the
+generator's closed action vocabulary.
 
 First-party license label: Proof of Love2, following the repository LICENSE.
+
+The public evaluation was run once after code/protocol freeze `981bb4b` and the
+pushed freeze record `77304dc`, using unchanged script SHA-256
+`cc118ac11badc43844516bb1d2f109388c1cbcc670459273f603a5696297d152`.
+Its 1,024 scenarios produced execution-violation counts of 9,688 / 7,127 / 1,007 /
+0 / 0 for raw / physical / start_only / full_typed / generic_matched. The full
+contract executed 5,527 of 5,733 execution-time legal opportunities (206 missed
+opportunities); all 1,024 full/generic complete-trajectory equality assertions
+passed. See [evaluation JSON](results/eval-20261117/results.json) and
+[evaluation CSV](results/eval-20261117/summary.csv). No post-evaluation code or
+threshold change was made. These are generated stress-test results under the
+documented contract, not population failure rates or a distinctive PoL2-label
+benefit.

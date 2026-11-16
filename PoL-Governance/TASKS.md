@@ -30,6 +30,7 @@ python PoL-Governance/tools/board.py --remote origin
 | EVAL-02 | PoL2 × 类型决策模型的具身任务执行验证（Kev + VirtualHome 单场景闭环；16 案例三条件长度匹配筛查，扩展可执行基准） | [具身评测](benchmark/embodied_reasoning/README.md) · [先导报告](../Research/Embodied/03-策略与决策实验/PoL2具身推理过程初步验证.md) |
 | EVAL-03 | 完整 PoL2 理论内在化验证：建立全章节、可失败的挑战评测与训练对照 | [PoL2 评测](benchmark/pol2/README.md) · [挑战集生成先导](../Research/Embodied/02-实验设计与审计/PoL2完整理论内在化挑战集生成质量先导.md) |
 | EVAL-04 | 按知识类型构建独立评测任务：概念/关系、公理/命题、爱语、明确规则、研究者解释；比较闭卷与理论可见条件 | [分类型知识评测](benchmark/pol2/typed_knowledge/) · [先导报告](../Research/Embodied/02-实验设计与审计/PoL2分类型知识评测先导.md) |
+| EVAL-05 | 果蝇连接模板上的人工目标记忆干预，以及动态授权执行协议的公开合成压力测试 | [实验入口](benchmark/fly_brain/README.md) · [研究结果](../Research/Brain/PoL2-Fly-Brain-Results.md) |
 | APP-01 | 插件接入、试运行与端到端验证 | [接入与试运行](integrations/README.md) |
 | OPS-01 | 协作工具、任务看板与贡献导航维护 | [协作工具](tools/) · [贡献指南](../CONTRIBUTING.md) |
 | LIT-01 | Jev 类型化决策模型文献综述，对照 PoL2 治理条款 | [综述与复现](research/PoL2-Jev-Typed-Literature-Survey/README.md) |
