@@ -9,7 +9,7 @@
 - 起点 commit / 依赖分支与 commit：2ffcfe7d57d0387f944fda5e9f535309f321d2d5（origin/main）
 - 目标与交付路径：PoL-Governance/benchmark/fly_brain/；Research/Brain/
 - 本次改动范围：公开合成接口测试，以及双线索人工递归记忆的撤销/恢复实验。真实来源只指 FlyVis 平均连接模板；不称预训练模型或全脑复现。
-- 下一步：审阅任务 PR；先增加持续有效的 B 行动任务，再考虑官方模型或身体闭环。
+- 下一步：审阅 [PR #14](https://github.com/naturaldao/NaturalDAO-2nd/pull/14)；先增加持续有效的 B 行动任务，再考虑官方模型或身体闭环。
 - 阻塞 / 需要谁帮助：无。
 - 环境 / 输出路径 / 资源预算：显式 Python 3.12.10、NumPy 2.5.3，CPU 单进程，预计 RAM < 1 GB；输出为本任务 results/，不覆盖旧结果。
 - 数据版本与可用分区：FlyVis 0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa；自生成 train/calibration/dev/public evaluation，互不重叠的种子。无私有数据或私有保留集。
@@ -24,6 +24,6 @@
 
 - [协议与复算](../benchmark/fly_brain/README.md)、[中文结果卡](../../Research/Brain/PoL2-Fly-Brain-Results.md)、[公开接口结果](../benchmark/fly_brain/interface/results/eval-20261117/summary.csv)、[记忆逐种子结果](../benchmark/fly_brain/results/memory-eval-20261117/per_seed.csv)。
 - 公开记录 `77304dc` 推送后各运行一次eval。接口1024场景：raw/physical/start-only违规9688/7127/1007，full与同规则generic均0，合法执行5527/5733。人工记忆12种子×3图：36模型均满足记忆前提；选择性状态干预降低A线性可解码性并保留B，但普通图可重现，固定主读出远期失败。
-- 4项记忆机制测试、5项接口测试、最终source SHA与结果记录一致性检查通过；图已实际渲染检查。仓库总检查 `uv run --no-project --offline python tools/check.py` 已启动，结果待补。
+- 4项记忆机制测试、5项接口测试、最终source SHA与结果记录一致性检查通过；图已实际渲染检查。仓库总检查 `uv run --no-project --offline python tools/check.py` 通过（1055项调度测试，12项条件跳过；716本地链接、19仓库内跨目录链接）；另497入口链接通过。新增实验在提交 `b73d014` 的Windows/Linux GitHub CI均通过。PR #14未自动合并。
 - 未测试：官方预训练FlyVis、真实全脑、身体闭环、B行动任务、非线性最强探针、原子动作期间撤权。没有神经层伦理/授权内化结论，没有果蝇图特异收益结论。
 - AI辅助：OpenAI Codex进行实现、方法交叉审查与报告整理；未声称专家标注或独立人工裁定。
