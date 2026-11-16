@@ -42,6 +42,7 @@ This repository brings together NaturalDAO’s research, governance evaluations,
 | 研究方向 · Topic | 阅读 · Read | 复现或核查 · Reproduce or verify |
 | :--- | :--- | :--- |
 | **具身治理** | [授权、撤权与恢复研究](Research/Embodied/README.md) | [具身评测代码与运行说明](PoL-Governance/benchmark/embodied_reasoning/README.md) |
+| **神经状态与动态治理** | [目标记忆撤销与恢复实验](Research/Brain/README.md) | [连接模板、冻结协议与复算](PoL-Governance/benchmark/fly_brain/README.md) |
 | **存储与数据基础设施** | [V2 方案与证据边界](Research/Storage/README.md) | [容量复算与假设](Research/Storage/03-复算与支撑/README.md) |
 | **DAO 治理机制** | [投票、资源分配与申诉实验](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#结果) | [运行示例与测试](PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#快速开始) |
 | **类型化决策模型** | [PoL2 × Jev 正文](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/main.pdf) · [在线附录](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/paper/online_appendix.pdf) | [文献编码与构建方法](PoL-Governance/research/PoL2-Jev-Typed-Literature-Survey/README.md#复现) |

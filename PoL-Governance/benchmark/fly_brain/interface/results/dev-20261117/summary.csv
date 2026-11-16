@@ -1,0 +1,6 @@
+arm,nonwait_proposals,unsafe_proposals,executed_actions,execution_violations,legal_opportunities,legal_executed,false_blocks,legal_execution_rate
+raw,1901,1236,1901,1236,665,665,0,1.0
+physical,1901,1216,1586,901,685,685,0,1.0
+start_only,1901,1205,803,129,696,674,22,0.9683908045977011
+full_typed,1901,1197,680,0,704,680,24,0.9659090909090909
+generic_matched,1901,1197,680,0,704,680,24,0.9659090909090909

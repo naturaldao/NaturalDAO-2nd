@@ -7,6 +7,7 @@
 | 研究方向与问题 | 报告或阅读入口 | 材料状态 | 复现或核查入口 |
 |---|---|---|---|
 | 具身智能与治理 · 如何把授权、撤权与恢复落实到行动 | [具身研究索引](Embodied/README.md) | 框架草案与探索性仿真 | [具身评测代码与运行说明](../PoL-Governance/benchmark/embodied_reasoning/README.md) |
+| 神经状态与动态治理 · 撤销目标后怎样保留无关线索 | [果蝇连接模板研究](Brain/README.md) | 冻结协议后的公开合成评估，非全脑复现 | [代码、对照与结果](../PoL-Governance/benchmark/fly_brain/README.md) |
 | 存储与数据基础设施 · 如何支撑检索、训练谱系与恢复 | [存储研究索引](Storage/README.md) | V2 技术提案，待工程验证 | [容量复算与假设](Storage/03-复算与支撑/README.md) |
 | 软件工程与智能体记忆 · 如何设计治理服务并衡量记忆收益 | [工程设计与论文索引](Engineering/README.md) | 实现快照、调研笔记和外部论文 | [Steward 服务与运行说明](../POL2-Steward/README.md) |
 | DAO 治理机制 · 如何将治理条款落实到投票、资源分配与申诉 | [治理实验室的实验结果](../PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#结果) | 模拟实验与公开试例 | [运行示例与测试](../PoL-Governance/research/PoL2-DAO-Governance-Lab/README.md#快速开始) |
@@ -20,6 +21,7 @@
 Research/
 ├── README.md
 ├── Embodied/       # 具身智能与治理
+├── Brain/          # 连接模板、人工记忆与动态治理
 ├── Storage/        # 存储与数据基础设施
 ├── Engineering/    # 软件工程设计与智能体记忆论文
 └── figures/        # 实验共用图件与重绘脚本
