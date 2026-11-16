@@ -1,0 +1,44 @@
+{
+  "scope": "unmodified official PyTorch CUDA CLI, sugar GRNs at 200 Hz, one trial",
+  "upstream_commit": "a3db62f9436074e485c0278290c2164ed6150808",
+  "source_sha256": "699655db7a56045271ba467268be153d0a3318d4cc4cecc0a13f33e69ce79667",
+  "data_sha256": {
+    "2025_Completeness_783.csv": "52b0ac6094cd32c546f8d4c341e094376f48f4e791f8db9b166de5dff8199ea4",
+    "2025_Connectivity_783.parquet": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347"
+  },
+  "neurons": 138639,
+  "sparse_weight_nnz": 15091983,
+  "raw_parquet_independently_verified": true,
+  "device": "cuda",
+  "runs": [
+    {
+      "duration_seconds": 0.1,
+      "output": "smoke-0.1s.parquet",
+      "sha256": "e49511d4980eb27fb979076fd5a80dde94e22e7686b22f049b0e0de0a3c4d9d2",
+      "spikes": 1646,
+      "active_neurons": 343,
+      "MN9_left_spikes": 9,
+      "MN9_right_spikes": 7,
+      "observed_max_time_ms": 99.9,
+      "seed": null,
+      "seed_note": "unmodified upstream CLI does not set a seed"
+    },
+    {
+      "duration_seconds": 1.0,
+      "output": "function-1s.parquet",
+      "sha256": "b73fd297c4c689f4b5b15dbd0cd559e40545912ac2384a92b9d1835019664266",
+      "spikes": 17520,
+      "active_neurons": 393,
+      "MN9_left_spikes": 104,
+      "MN9_right_spikes": 65,
+      "observed_max_time_ms": 999.8000000000001,
+      "seed": null,
+      "seed_note": "unmodified upstream CLI does not set a seed"
+    }
+  ],
+  "limitations": [
+    "spikes are simulated, not measured animal behavior",
+    "no proboscis/body simulation or complete published validation suite",
+    "one unseeded trial per duration; not statistical replication"
+  ]
+}

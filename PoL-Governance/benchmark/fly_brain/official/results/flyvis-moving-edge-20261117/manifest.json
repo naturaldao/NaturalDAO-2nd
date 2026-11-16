@@ -1,0 +1,120 @@
+{
+  "scope": "Official pretrained FlyVis visual-system model; distinct from Eon whole-brain LIF simulation",
+  "source_commit": "0a69fa2fc8e1bfe1d837d722c252ab5f5d6fcbfa",
+  "python": "3.10.21",
+  "interpreter": "D:\\Codebase\\PoL2-FlyVis-Official\\.venv\\Scripts\\python.exe",
+  "torch": "2.9.1+cu128",
+  "numpy": "1.26.4",
+  "flyvis": "0.1.dev1+g0a69fa2fc",
+  "device": "cuda",
+  "archive_sha256": "71c78d4070556a536b13b23ee3139cd2788aa2a9d07d430a223b4edead281db1",
+  "archive_files": {
+    "_meta.yaml": "2aa8a9505324c82bbb4011ee2f7c375b5f8b1bddde1a5281e038baecf91fc5dd",
+    "best_chkpt": "d8a57a022aa18ca338599be713af9db29b89cde4b00098ffe42b78f0d583e46a",
+    "chkpts/chkpt_00000": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f"
+  },
+  "checkpoint": "chkpt_00000",
+  "checkpoint_sha256": "d0e42857e738d0315897c2d50fde9eb3fb1a3fb1f071d55dfc13d53d72bccc3f",
+  "weights_exactly_loaded": {
+    "nodes_bias": {
+      "shape": [
+        65
+      ],
+      "numel": 65,
+      "equal": true
+    },
+    "nodes_time_const": {
+      "shape": [
+        65
+      ],
+      "numel": 65,
+      "equal": true
+    },
+    "edges_sign": {
+      "shape": [
+        604
+      ],
+      "numel": 604,
+      "equal": true
+    },
+    "edges_syn_count": {
+      "shape": [
+        2355
+      ],
+      "numel": 2355,
+      "equal": true
+    },
+    "edges_syn_strength": {
+      "shape": [
+        604
+      ],
+      "numel": 604,
+      "equal": true
+    }
+  },
+  "connectome_extent": 15,
+  "n_nodes": 45669,
+  "n_edges": 1513231,
+  "script_sha256": "5a6761daa4b35c15ff15b9dc3c46baf59e01e0044baef49dd96389fc58cff2d0",
+  "response_cache_used": false,
+  "smoke": {
+    "input_shape": [
+      1,
+      20,
+      1,
+      721
+    ],
+    "full_output_shape": [
+      1,
+      20,
+      45669
+    ],
+    "finite": true,
+    "max_final_minus_initial": 1.9586825370788574,
+    "forward_calls": 2,
+    "integrated_frames": 220
+  },
+  "windows_compatibility": {
+    "description": "runtime HDF5 write/close shim for datamate 1.0.0; no model or weights changed",
+    "conversion": "same np.asarray as upstream; native HDF5 dtype handling, no string/object coercion added",
+    "roundtrip_checks": [
+      {
+        "dtype": "|S8",
+        "shape": [
+          2
+        ],
+        "equal": true
+      },
+      {
+        "dtype": "int64",
+        "shape": [
+          2,
+          2
+        ],
+        "equal": true
+      },
+      {
+        "dtype": "float32",
+        "shape": [
+          2
+        ],
+        "equal": true
+      },
+      {
+        "dtype": "bool",
+        "shape": [
+          2
+        ],
+        "equal": true
+      }
+    ]
+  },
+  "selection": "Fixed flow/0000/000 before simulation; no model selection from response results",
+  "upstream_license": "MIT; see LICENSE-FlyVis",
+  "phase": "moving-edge",
+  "final_forward_counter": {
+    "forward_calls": 50,
+    "integrated_frames": 16660
+  },
+  "elapsed_seconds": 48.08587799999805
+}

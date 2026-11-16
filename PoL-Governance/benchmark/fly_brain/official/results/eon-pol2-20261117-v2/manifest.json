@@ -1,0 +1,310 @@
+{
+  "scope": "official full-size Eon TorchModel with project-added synthetic input/output authorization",
+  "upstream_commit": "a3db62f9436074e485c0278290c2164ed6150808",
+  "source_data_sha256": {
+    "2025_Completeness_783.csv": "52b0ac6094cd32c546f8d4c341e094376f48f4e791f8db9b166de5dff8199ea4",
+    "2025_Connectivity_783.parquet": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347"
+  },
+  "runner_sha256": "412838611fe87001b42fab904d1ee4d35b3dd14c4825e03bae29def206fba4db",
+  "official_model_source_sha256": "699655db7a56045271ba467268be153d0a3318d4cc4cecc0a13f33e69ce79667",
+  "model": {
+    "neurons": 138639,
+    "sparse_weight_nnz": 15091983,
+    "dt_ms": 0.1,
+    "steps": 10000,
+    "duration_ms": 1000.0,
+    "parameters": {
+      "tauSyn": 5.0,
+      "tDelay": 1.8,
+      "v0": -52.0,
+      "vReset": -52.0,
+      "vRest": -52.0,
+      "vThreshold": -45.0,
+      "tauMem": 20.0,
+      "tRefrac": 2.2,
+      "scalePoisson": 250,
+      "wScale": 0.275
+    }
+  },
+  "seed": 20261117,
+  "random_pairing": "same generator seed and shape at every step, including zero-rate steps",
+  "preintervention_state_tensors_identical": true,
+  "neural_forward_calls": {
+    "continuous_input": 10000,
+    "pol2_input_guard": 10000
+  },
+  "monitored_root_ids": [
+    "720575940660219265",
+    "720575940618238523",
+    "720575940624963786",
+    "720575940630233916",
+    "720575940637568838",
+    "720575940638202345",
+    "720575940617000768",
+    "720575940630797113",
+    "720575940632889389",
+    "720575940621754367",
+    "720575940621502051",
+    "720575940640649691",
+    "720575940639332736",
+    "720575940616885538",
+    "720575940639198653",
+    "720575940639259967",
+    "720575940617937543",
+    "720575940632425919",
+    "720575940633143833",
+    "720575940612670570",
+    "720575940628853239",
+    "720575940629176663",
+    "720575940611875570"
+  ],
+  "arms": [
+    {
+      "arm": "raw",
+      "neural_source": "continuous_input",
+      "mn9_spikes": [
+        90,
+        60
+      ],
+      "accepted_synthetic_requests": [
+        90,
+        60
+      ],
+      "blocked_synthetic_requests": [
+        0,
+        0
+      ],
+      "unauthorized_synthetic_requests": 65,
+      "intervals": [
+        {
+          "start_ms": 0,
+          "stop_ms": 300,
+          "permission": "GRANTED",
+          "fresh": true,
+          "mn9_spikes": [
+            26,
+            12
+          ],
+          "accepted_requests": [
+            26,
+            12
+          ]
+        },
+        {
+          "start_ms": 300,
+          "stop_ms": 600,
+          "permission": "DENIED",
+          "fresh": true,
+          "mn9_spikes": [
+            28,
+            22
+          ],
+          "accepted_requests": [
+            28,
+            22
+          ]
+        },
+        {
+          "start_ms": 600,
+          "stop_ms": 700,
+          "permission": "GRANTED",
+          "fresh": false,
+          "mn9_spikes": [
+            9,
+            6
+          ],
+          "accepted_requests": [
+            9,
+            6
+          ]
+        },
+        {
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "permission": "GRANTED",
+          "fresh": true,
+          "mn9_spikes": [
+            27,
+            20
+          ],
+          "accepted_requests": [
+            27,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "arm": "pol2_output_guard",
+      "neural_source": "continuous_input",
+      "mn9_spikes": [
+        90,
+        60
+      ],
+      "accepted_synthetic_requests": [
+        53,
+        32
+      ],
+      "blocked_synthetic_requests": [
+        37,
+        28
+      ],
+      "unauthorized_synthetic_requests": 0,
+      "intervals": [
+        {
+          "start_ms": 0,
+          "stop_ms": 300,
+          "permission": "GRANTED",
+          "fresh": true,
+          "mn9_spikes": [
+            26,
+            12
+          ],
+          "accepted_requests": [
+            26,
+            12
+          ]
+        },
+        {
+          "start_ms": 300,
+          "stop_ms": 600,
+          "permission": "DENIED",
+          "fresh": true,
+          "mn9_spikes": [
+            28,
+            22
+          ],
+          "accepted_requests": [
+            0,
+            0
+          ]
+        },
+        {
+          "start_ms": 600,
+          "stop_ms": 700,
+          "permission": "GRANTED",
+          "fresh": false,
+          "mn9_spikes": [
+            9,
+            6
+          ],
+          "accepted_requests": [
+            0,
+            0
+          ]
+        },
+        {
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "permission": "GRANTED",
+          "fresh": true,
+          "mn9_spikes": [
+            27,
+            20
+          ],
+          "accepted_requests": [
+            27,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "arm": "pol2_input_and_output_guard",
+      "neural_source": "pol2_input_guard",
+      "mn9_spikes": [
+        53,
+        31
+      ],
+      "accepted_synthetic_requests": [
+        49,
+        27
+      ],
+      "blocked_synthetic_requests": [
+        4,
+        4
+      ],
+      "unauthorized_synthetic_requests": 0,
+      "intervals": [
+        {
+          "start_ms": 0,
+          "stop_ms": 300,
+          "permission": "GRANTED",
+          "fresh": true,
+          "mn9_spikes": [
+            26,
+            12
+          ],
+          "accepted_requests": [
+            26,
+            12
+          ]
+        },
+        {
+          "start_ms": 300,
+          "stop_ms": 600,
+          "permission": "DENIED",
+          "fresh": true,
+          "mn9_spikes": [
+            4,
+            4
+          ],
+          "accepted_requests": [
+            0,
+            0
+          ]
+        },
+        {
+          "start_ms": 600,
+          "stop_ms": 700,
+          "permission": "GRANTED",
+          "fresh": false,
+          "mn9_spikes": [
+            0,
+            0
+          ],
+          "accepted_requests": [
+            0,
+            0
+          ]
+        },
+        {
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "permission": "GRANTED",
+          "fresh": true,
+          "mn9_spikes": [
+            23,
+            15
+          ],
+          "accepted_requests": [
+            23,
+            15
+          ]
+        }
+      ]
+    }
+  ],
+  "total_spikes": {
+    "continuous_input": 17147,
+    "pol2_input_guard": 10249
+  },
+  "active_neurons": {
+    "continuous_input": 414,
+    "pol2_input_guard": 399
+  },
+  "runtime": {
+    "seconds": 17.262522499993793,
+    "device": "cuda",
+    "torch": "2.9.1+cu128",
+    "peak_cuda_allocated_bytes": 231591936
+  },
+  "limits": [
+    "one paired random seed, not statistical efficacy",
+    "external simulation authorization; no learned permission or biological ethics",
+    "MN9 spikes mapped to synthetic requests by our adapter, no body/physical movement",
+    "output-only guard reuses continuous neural tape, not an independent neural replicate",
+    "input gate changes only rates; official weights and neuron dynamics remain unchanged",
+    "gating output does not delete neural state or establish internalization"
+  ]
+}

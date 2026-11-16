@@ -1,0 +1,9 @@
+{
+  "phase": "first adapter forward",
+  "status": "failed_before_simulation",
+  "error": "RuntimeError: Cannot set version_counter for inference tensor",
+  "cause": "PyTorch 2.9 sparse CSR transpose inside inference_mode",
+  "correction": "Use torch.no_grad exactly as the unmodified official benchmark does",
+  "official_model_modified": false,
+  "replacement_run": "eon-pol2-20261117-v2"
+}
