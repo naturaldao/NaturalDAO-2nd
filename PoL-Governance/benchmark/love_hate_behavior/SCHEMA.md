@@ -1,77 +1,40 @@
-# EVAL-05 数据契约草案
+# EVAL-05 数据契约 v0.2（草案）
 
-状态：draft-0.1，等待理论和标签冻结。文件结构先支持试标与运行追溯；枚举须随 rubric 版本冻结。只保存有权公开的数据。私有保留样本及可反推样本的信息不得进入公开分支。
+2026-11-16。机器可读：[schema.v0.2.json](schema.v0.2.json)。旧 [schema.v0.1.json](schema.v0.1.json) 保留不改。JSONL 每行一个对象；现有 scenario/response 核心字段继续兼容，annotation 升级；新增 engine_assessment、adjudication。不得静默改写 v0.1 数据。未获授权的原文、私有保留集和模型身份盲化映射不提交公开分支。
 
-数据按 UTF-8 JSONL 存储，每行一个对象。机器可读结构见 schema.v0.1.json；每行须带 record_type=\"scenario\"、\"response\" 或 \"annotation\"。该 schema 仍是草案。正式数据路径、划分和许可在数据门通过后确定。
+## 1. scenario / response
 
-## 1. 情境 scenarios.jsonl
+继承 v0.1 的必填字段、枚举、运行失败规则；新增可选 evaluation_tier=core/extended（正式数据必填，由业务校验器检查）、scenario 的 actor/关系标识和候选 rule refs（不进入被测提示），response 的 sample_index（默认首个采样为 0）。保存实际 user_prompt、conversation_context、系统提示版本与运行配置；需要支持消息角色时额外保存 messages（role/content），不得丢失原始顺序。保存精确原始输出、供应商、模型版本、运行时间、延迟、token、成本与重试；失败 response_text=null，不进入行为评分但计入运行完整性。评审包不得含 model_key/provider/model_version、族名或参考答案。
 
-| 字段 | 类型 | 必需 | 说明 |
-|---|---|---:|---|
-| scenario_id | string | 是 | 稳定唯一 ID |
-| family_id | string | 是 | 场景族，用于族级切分和统计 |
-| pair_id | string/null | 是 | 成对对照 ID |
-| variant | string/null | 是 | 配对成员标识，如 a/b |
-| changed_fact | string/null | 是 | 唯一关键事实变化 |
-| language | string | 是 | 语言标记 |
-| theme | string | 是 | 管理员冻结的主题键 |
-| user_prompt | string | 是 | 实际提交给模型的用户消息 |
-| conversation_context | string[] | 是 | 按时间排列的必要上下文 |
-| policy_context | object/null | 是 | 可见规则条件的政策文本；基线为空 |
-| source_refs | string[] | 是 | PoL2 条款锚点，不含参考标签 |
-| provenance | object | 是 | 来源、改写人、版本、日期与许可状态 |
-| split | enum | 是 | draft / pilot_public / public_test / private_holdout |
+## 2. annotation（人工）
 
-场景和提示不得包含参考标签、预期答案、模型身份或泄露场景族的文件名。
+必填：record_type、response_id、blind_response_id、annotator_id、rubric_version、coverage、facts、love_hate、verdict、hard_boundary、criteria、rule_ids、proof、unknown、observed_behaviors、response_actions、evidence_spans、rationale、ambiguity_flags、policy_dispute、versions、created_at。
 
-## 2. 模型回应 responses.jsonl
+| 字段 | 约束 |
+|---|---|
+| coverage | covered / unsupported / pending_policy；后两类结果必须为空，单列报告 |
+| facts | 每个 fact_id 唯一；pred、args、value、evidence_spans；unknown_reason 可选但 unknown 时必须有 |
+| love_hate | love/hate/absent/undecidable，或未覆盖时 null |
+| verdict | pass/block/review，或未覆盖时 null；独立于 love_hate |
+| hard_boundary | hit 与 unknown 的规则 ID 数组 |
+| criteria / rule_ids / proof / unknown | 分别记录判据、规则、依据/证明步骤、未决事实或规则；人工 proof 仅记录规则依据 |
+| observed_behaviors / response_actions | 多标签诊断；不推导范式或治理动作 |
+| evidence_spans | quote、start_char、end_char、source；context 必须带 message_index；元数据引用另存 |
+| versions | theory/schema/rules/rubric（试标可用明确 draft 或 TBD 标识；正式评分不得 TBD）；embedding 可空 |
+| polarity/status | 可选历史字段，只作来源记录，不自动映射新裁决 |
 
-| 字段 | 类型 | 必需 | 说明 |
-|---|---|---:|---|
-| response_id | string | 是 | 唯一回应 ID |
-| scenario_id | string | 是 | 对应情境 |
-| model_key | string | 是 | 稳定内部代号；评审前移除映射 |
-| provider | string | 是 | 供应方或本地引擎 |
-| model_version | string | 是 | 精确版本、revision 或可获得的 API 标识 |
-| system_prompt_version | string | 是 | 提示词版本或 hash |
-| condition | string | 是 | baseline / pol2_rule_visible / other |
-| generation_config | object | 是 | temperature、top_p、max_tokens 等配置 |
-| run_at | string | 是 | ISO 8601 时间 |
-| execution_status | enum | 是 | ok / timeout / error / invalid |
-| response_text | string/null | 是 | 原始回应；失败时为空 |
-| latency_ms | number/null | 是 | 客户端端到端耗时 |
-| input_tokens | integer/null | 是 | 可取得时记录 |
-| output_tokens | integer/null | 是 | 可取得时记录 |
-| cost | number/null | 是 | 可可靠计算时记录并注明货币 |
-| retry_count | integer | 是 | 重试次数；失败不得静默丢弃 |
+事实取值：equality=equal/unequal/unknown；reciprocity=mutual/coercive_destruction/unknown；publicness=public/private/unknown；context=real/security/fiction/unknown；simulated_intimacy=true/false/unknown（布尔或字符串 unknown）。subject_state 由规则推导，不作为 L0 抽取谓词。确定事实须有证据；context 可使用明确 metadata_ref。unknown 允许空跨度但须给原因。每条事实可记录 relation_id、speaker、actor、target、attribution（self_action/quote/description/critique/suggestion/assistance/other）。不自行增加 mixed 范式。
 
-## 3. 人工标注 annotations.jsonl
+跨度采用 Unicode code point 左闭右开；校验原文、source、消息索引、偏移范围。JSON Schema 只约束局部结构，跨记录完整性、版本冻结、证据真实性、族级泄漏、规则 ID 与事实引用、none 互斥等需未来 validate.py 业务校验。
 
-| 字段 | 类型 | 必需 | 说明 |
-|---|---|---:|---|
-| response_id | string | 是 | 对应一条回应 |
-| blind_response_id | string | 是 | 去标识评审 ID |
-| annotator_id | string | 是 | 评审代号 |
-| rubric_version | string | 是 | 标注手册版本 |
-| polarity | enum | 是 | love / hate / neither / unclear；待理论门冻结 |
-| status | enum | 是 | conforming / violating / insufficient |
-| observed_behaviors | string[] | 是 | 实际观察到的行为，可为空 |
-| response_actions | string[] | 是 | help / refuse / clarify / repair / refer / other / none |
-| evidence_spans | object[] | 是 | 回应片段及起止字符位置 |
-| rationale | string | 是 | 简短判断依据及 PoL2 条款 |
-| ambiguity_flags | string[] | 是 | 争议或待审边界；无则为空 |
-| policy_dispute | boolean | 是 | 是否涉及理论或规则分歧 |
-| created_at | string | 是 | ISO 8601 时间 |
+## 3. engine_assessment（自动轨）
 
-双人原始标注各存一行，不互相覆盖。adjudications.jsonl 单独保存两份原始标签、裁决标签与理由、裁决者和 rubric 版本。模型身份映射表及私有保留材料不进入公开评审包。
+独立记录 response_id、engine_run_id、engine_version、execution_status、coverage、facts、candidate_rule_ids、love_hate、verdict、hard_boundary、criteria、rule_ids、proof、unknown、evidence_spans、versions、raw_output（对象或 null）、error（字符串或 null）、created_at。版本记录 L0 模型/提示、L1 embedding/retrieval、L2 规则、引擎/schema；自动轨成功但不覆盖时结果为空，失败时结果为空且记录错误。不可用/未运行不生成虚假预测。接口见 [GOVERNANCE-INTEGRATION.md](../../research/PoL2-Love-Hate-Behavior-Evaluation/GOVERNANCE-INTEGRATION.md)。
 
-## 4. 数据质量规则
+## 4. adjudication（独立裁决）
 
-- 成对情境共享 pair_id；changed_fact 指出单一变化；其余情节尽量保持一致。
-- 同一场景族及翻译、改写、反事实版本不得跨数据分区。
-- 评审输入不包含模型身份、场景族、参考标签或参考答案。
-- 每个行为标签必须有回应证据；无证据推断不得支撑标签。
-- polarity、status、行为标签和回应行动不得互相推导或合成单一分数。
-- 失败回应计入运行完整性统计，不静默删除。
-- 机器评审不得称作人工金标准。
-- 本草案不是最终 JSON Schema；待理论和 rubric 冻结后再实现校验器与评分器。
+response_id、adjudicator_id、source_annotation_ids（至少两份独立人工标注的唯一 annotation_id）、resolved_annotation（完整 annotation）、rationale、created_at。原始标注不得覆盖。每份 v0.2 annotation 必须有 annotation_id。
+
+## 5. 数据质量与迁移
+
+v0.1 polarity neither/unclear 与新 absent/undecidable 不可未经审阅视为等价；status conforming/violating/insufficient 不等于 pass/block/review（硬边界未知可拦截）。旧记录保留原始版本，经重新标注后写入 v0.2；没有证据不得补造事实或裁决。单独保存场景、回应、人工标注、裁决、自动预测。族级切分，公开集仅用于回归；用于迭代工具的数据不得再充当独立盲测。正式结果报告覆盖、未决、失败、未知各自分母。
