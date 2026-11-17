@@ -1,0 +1,167 @@
+{
+  "scope": "real community-anchor spatial projections with spikes from an official-model run; no mesh, soma reconstruction, synthetic layout, or observed animal behavior",
+  "model_neurons": 138639,
+  "coordinate_records": 238909,
+  "coordinate_unique_neurons": 139255,
+  "matched_model_neurons": 138639,
+  "missing_model_coordinates": 0,
+  "model_coordinate_coverage": 1.0,
+  "missing_model_root_ids": [],
+  "recorded_spikes": 17520,
+  "active_model_neurons": 393,
+  "matched_active_neurons": 393,
+  "missing_active_coordinates": 0,
+  "recorded_trial": 0,
+  "simulation_duration_ms": 1000.0,
+  "simulation_duration_source": "D:\\Codebase\\PoL2-FlyVis-Official\\upstream\\fly-brain\\data\\results\\pol2_sugar_function_20261117\\manifest.csv",
+  "observed_spike_time_range_ms": [
+    0.0,
+    999.8000000000001
+  ],
+  "coordinate_policy": "first record in source file for each exact root_id; community-marked anchor, not soma or geometric centroid",
+  "coordinate_source_units": "nanometers",
+  "display_units": "micrometers; each original coordinate divided by 1000; no imputed locations or spatial warping",
+  "raster_order": "active neurons sorted by their index in the official completeness CSV; this order is not an anatomical layout",
+  "spike_time_column": "time_ms",
+  "rates": "spike count divided by manifest run duration, for one recorded trial",
+  "spatial_extent_um": {
+    "x": [
+      88.032,
+      901.124
+    ],
+    "y": [
+      51.36,
+      442.888
+    ],
+    "z": [
+      0.64,
+      279.12
+    ]
+  },
+  "sources": {
+    "model": {
+      "url": "https://github.com/eonsystemspbc/fly-brain/tree/a3db62f9436074e485c0278290c2164ed6150808",
+      "commit": "a3db62f9436074e485c0278290c2164ed6150808"
+    },
+    "coordinates": {
+      "url": "https://storage.googleapis.com/flywire-data/codex/data/fafb/783/coordinates.csv.gz",
+      "license": "CC BY-NC 4.0; original FlyWire data terms retained, not relicensed as first-party project material",
+      "license_url": "https://flywire.ai/guidelines"
+    },
+    "mn9_mapping": {
+      "relative_notebook": "code/paper-phil-drosophila/example.ipynb",
+      "url": "https://github.com/eonsystemspbc/fly-brain/blob/a3db62f9436074e485c0278290c2164ed6150808/code/paper-phil-drosophila/example.ipynb"
+    }
+  },
+  "files": {
+    "completeness": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\upstream\\fly-brain\\data\\2025_Completeness_783.csv",
+      "bytes": 3465987,
+      "sha256": "52b0ac6094cd32c546f8d4c341e094376f48f4e791f8db9b166de5dff8199ea4"
+    },
+    "coordinates": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\downloads\\flywire-v783-coordinates.csv.gz",
+      "bytes": 5314546,
+      "sha256": "14337121f451f98c2576cee72c24409ada5aaf7948b7c7ca8de9040296840e05"
+    },
+    "spikes": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\upstream\\fly-brain\\data\\results\\pol2_sugar_function_20261117\\round_01\\pytorch_t1.0s_n1.parquet",
+      "bytes": 114209,
+      "sha256": "b73fd297c4c689f4b5b15dbd0cd559e40545912ac2384a92b9d1835019664266"
+    },
+    "mn9_notebook": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\upstream\\fly-brain\\code\\paper-phil-drosophila\\example.ipynb",
+      "bytes": 24752,
+      "sha256": "1eba56d1bf905bc241d6f9db62b992c928891dccd05f0be41c739dc09b88a230"
+    },
+    "renderer": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\PoL-Governance\\benchmark\\fly_brain\\official\\render_whole_brain.py",
+      "bytes": 16908,
+      "sha256": "28b4527ad325bed7261a4c4ea359620f6875724d24ab8616dae8d2b1c9dc8631"
+    },
+    "figure_style": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\PoL-Governance\\benchmark\\fly_brain\\official\\figure_style.py",
+      "sha256": "4b94c26fb9b635b5d0af920d6d465e68c500201fd969c5949c78a6588eabedfd",
+      "bytes": 3404
+    }
+  },
+  "mn9": {
+    "MN9 L": {
+      "root_id": "720575940660219265",
+      "spikes": 104,
+      "spikes_per_second": 104.0,
+      "coordinate_available": true,
+      "first_anchor_um": [
+        583.224,
+        325.724,
+        43.08
+      ]
+    },
+    "MN9 R": {
+      "root_id": "720575940618238523",
+      "spikes": 65,
+      "spikes_per_second": 65.0,
+      "coordinate_available": true,
+      "first_anchor_um": [
+        462.276,
+        310.948,
+        49.8
+      ]
+    }
+  },
+  "rendering": {
+    "physical_size_mm": [
+      183.0,
+      115.0
+    ],
+    "panel_count": 3,
+    "panels": {
+      "a": "real XY anchor projection",
+      "b": "real XZ anchor projection",
+      "c": "complete recorded raster, all active neurons, one mark per recorded spike"
+    },
+    "font": "Arial",
+    "font_file": "C:\\Windows\\Fonts\\arial.ttf",
+    "text_size_pt": {
+      "descriptors_and_axis_labels": 7,
+      "tick_labels_and_annotations": 6,
+      "lowercase_panel_letters": 8
+    },
+    "spatial_aspect": "equal physical scaling on each projection; original coordinate axes retained",
+    "background_anchor_marks": 138639,
+    "active_anchor_marks": 393,
+    "raster_event_marks": 17520,
+    "spatial_colormap": "cividis",
+    "spatial_rate_normalization": "logarithmic",
+    "spatial_rate_limits_Hz": [
+      1.0,
+      233.0
+    ],
+    "mn9_symbols": {
+      "MN9 L": "small open circle",
+      "MN9 R": "small open square"
+    },
+    "raster_mn9_highlight": "orange marks on their actual recorded rows and times",
+    "interpolation_or_smoothing": "none",
+    "png_dpi": 600,
+    "vector_fonts": "PDF TrueType type 42; SVG text retained",
+    "caption_policy": "statistics, source attribution and scientific limitations retained in sidecar and external caption, not decorative in-figure text"
+  },
+  "outputs": {
+    "png": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\Research\\Brain\\figures\\eon-whole-brain-20261117.png",
+      "sha256": "e80ab45134e144d3cfb8701a95b218ca9d6b46108beb99d82791bc2e1a9f0635",
+      "bytes": 1838614
+    },
+    "pdf": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\Research\\Brain\\figures\\eon-whole-brain-20261117.pdf",
+      "sha256": "38bfed3e75f535197809ee48a12db3a77554710b940ecc75bf64e81855906ee0",
+      "bytes": 1657754
+    },
+    "svg": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\Research\\Brain\\figures\\eon-whole-brain-20261117.svg",
+      "sha256": "3c5a9d6d991858d527d14366f97a198ae75eb294e6ae844760ece0ece2174270",
+      "bytes": 2818148
+    }
+  }
+}

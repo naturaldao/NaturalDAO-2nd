@@ -1,5 +1,9 @@
 # PoL2 × fly connectome templates
 
+**New:** [actual official model loading and full-brain runs](official/README.md)
+and [Chinese results](../../../Research/Brain/Official-Models-Results-20261117.md)
+are separate from the early proxy experiments described below.
+
 Two reproducible artificial experiments examine dynamic execution permissions
 and cancellation of a target cue in a recurrent state. The neural experiment
 uses a real upstream **type template**, with our own dynamics and task. It is

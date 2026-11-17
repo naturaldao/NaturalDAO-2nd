@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-17",
+  "status": "pass",
+  "existing_evidence_files_unchanged": 17,
+  "method": "PNG metadata and pixels, SVG text and dimensions, Poppler PDF dimensions, pdffonts embedded fonts; separate visual inspection of PNG and rendered PDF",
+  "figures": [
+    {
+      "stem": "flyvis-center-responses-20261117",
+      "physical_size_mm": [
+        183.0,
+        103.0
+      ],
+      "png_pixels": [
+        4322,
+        2433
+      ],
+      "png_dpi": [
+        599.999,
+        599.999
+      ],
+      "svg_editable_text_elements": 45,
+      "font_sizes_pt": [
+        6.0,
+        7.0,
+        8.0
+      ],
+      "panel_letters": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "pdf_fonts": [
+        "ArialMT embedded CID TrueType",
+        "Arial-BoldMT embedded CID TrueType"
+      ],
+      "files": {
+        "png": {
+          "path": "Research/Brain/figures/flyvis-center-responses-20261117.png",
+          "bytes": 373225,
+          "sha256": "4c09305c1fff935496c0b2522d51fa4824c5f1471d696b9be5cd3e5947c35977"
+        },
+        "pdf": {
+          "path": "Research/Brain/figures/flyvis-center-responses-20261117.pdf",
+          "bytes": 142053,
+          "sha256": "d89be2bc92ee5ae687fd10ad90d3e6cf8ef1c54c8760b93390e3110d7d0030e9"
+        },
+        "svg": {
+          "path": "Research/Brain/figures/flyvis-center-responses-20261117.svg",
+          "bytes": 407403,
+          "sha256": "568bc6f0f842e952826576e6efbc0005560cbfffece26ec3beb76ca57caa3019"
+        }
+      }
+    },
+    {
+      "stem": "flyvis-spatial-activity-20261117",
+      "physical_size_mm": [
+        183.0,
+        88.0
+      ],
+      "png_pixels": [
+        4322,
+        2078
+      ],
+      "png_dpi": [
+        599.999,
+        599.999
+      ],
+      "svg_editable_text_elements": 21,
+      "font_sizes_pt": [
+        6.0,
+        7.0,
+        8.0
+      ],
+      "panel_letters": [
+        "a",
+        "b"
+      ],
+      "pdf_fonts": [
+        "ArialMT embedded CID TrueType",
+        "Arial-BoldMT embedded CID TrueType"
+      ],
+      "files": {
+        "png": {
+          "path": "Research/Brain/figures/flyvis-spatial-activity-20261117.png",
+          "bytes": 813045,
+          "sha256": "a56a93edacc77994b4f6e1bdb082da34fdb094d9d99baf8d1ba1b343f42eafb4"
+        },
+        "pdf": {
+          "path": "Research/Brain/figures/flyvis-spatial-activity-20261117.pdf",
+          "bytes": 72171,
+          "sha256": "d0792db84b97bfcbbbbfd4e2b494aabdf5ac9d6c2d075567b51777756ee5f984"
+        },
+        "svg": {
+          "path": "Research/Brain/figures/flyvis-spatial-activity-20261117.svg",
+          "bytes": 372716,
+          "sha256": "da00b63476954cc78440fff7fb8782b9a5b6e5a1a37dc8295825607243c1e26f"
+        }
+      }
+    },
+    {
+      "stem": "eon-whole-brain-20261117",
+      "physical_size_mm": [
+        183.0,
+        115.0
+      ],
+      "png_pixels": [
+        4322,
+        2716
+      ],
+      "png_dpi": [
+        599.999,
+        599.999
+      ],
+      "svg_editable_text_elements": 50,
+      "font_sizes_pt": [
+        6.0,
+        7.0,
+        8.0
+      ],
+      "panel_letters": [
+        "a",
+        "b",
+        "c"
+      ],
+      "pdf_fonts": [
+        "ArialMT embedded CID TrueType",
+        "Arial-BoldMT embedded CID TrueType"
+      ],
+      "files": {
+        "png": {
+          "path": "Research/Brain/figures/eon-whole-brain-20261117.png",
+          "bytes": 1838614,
+          "sha256": "e80ab45134e144d3cfb8701a95b218ca9d6b46108beb99d82791bc2e1a9f0635"
+        },
+        "pdf": {
+          "path": "Research/Brain/figures/eon-whole-brain-20261117.pdf",
+          "bytes": 1657754,
+          "sha256": "38bfed3e75f535197809ee48a12db3a77554710b940ecc75bf64e81855906ee0"
+        },
+        "svg": {
+          "path": "Research/Brain/figures/eon-whole-brain-20261117.svg",
+          "bytes": 2818148,
+          "sha256": "3c5a9d6d991858d527d14366f97a198ae75eb294e6ae844760ece0ece2174270"
+        }
+      }
+    },
+    {
+      "stem": "eon-pol2-20261117",
+      "physical_size_mm": [
+        183.0,
+        153.0
+      ],
+      "png_pixels": [
+        4322,
+        3614
+      ],
+      "png_dpi": [
+        599.999,
+        599.999
+      ],
+      "svg_editable_text_elements": 47,
+      "font_sizes_pt": [
+        6.0,
+        7.0,
+        8.0
+      ],
+      "panel_letters": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "pdf_fonts": [
+        "ArialMT embedded CID TrueType",
+        "Arial-BoldMT embedded CID TrueType"
+      ],
+      "files": {
+        "png": {
+          "path": "Research/Brain/figures/eon-pol2-20261117.png",
+          "bytes": 300864,
+          "sha256": "36c17a54ed0de6a0b3dbc193d405be1a5600e5c97167b727e0708538acea41d1"
+        },
+        "pdf": {
+          "path": "Research/Brain/figures/eon-pol2-20261117.pdf",
+          "bytes": 47357,
+          "sha256": "891bbb5a346c0973bc88b33cf60296f0b57537af5c023ba602f9256e57399dea"
+        },
+        "svg": {
+          "path": "Research/Brain/figures/eon-pol2-20261117.svg",
+          "bytes": 102495,
+          "sha256": "2c0d14bd1b5d39fdd111275e1e00a295f5463babe7a05f24dda6e0b9f5cb206f"
+        }
+      }
+    }
+  ]
+}
