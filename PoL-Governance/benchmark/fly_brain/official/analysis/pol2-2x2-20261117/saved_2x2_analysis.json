@@ -1,0 +1,552 @@
+{
+  "source_hashes": {
+    "activity.npz": "8047d8a54e6ee2751da0db76db0d090110b3cdd79baf7c9b7d523337396116ff",
+    "manifest.json": "e05690143d776e373f8f7ccec9271f91015b1cad8be775c6f9a8584b75c31a4b"
+  },
+  "derived_script_sha256": "1a104b8705968da8314b26090efdb58ca740fd37e3d68970abc5e0e5df4911c2",
+  "seed": 20261117,
+  "independent_paired_seeds": 1,
+  "neural_trajectories": 2,
+  "source_run_neural_forward_calls": {
+    "continuous_input": 10000,
+    "pol2_input_guard": 10000
+  },
+  "new_neural_forward_calls": 0,
+  "no_model_call_made_by_this_analysis": true,
+  "all_existing_manifest_arm_counts_and_phases_match": true,
+  "all_neuron_totals_match_saved_manifest": true,
+  "before_300ms_saved_MN9_traces_equal": true,
+  "runtime_full_preintervention_state_equality_reported_by_manifest": true,
+  "arms": [
+    {
+      "arm": "continuous_raw",
+      "input_gate": false,
+      "output_gate": false,
+      "neural_source": "continuous_input",
+      "recorded_manifest_arm": "raw",
+      "evidence_status": "existing manifest arm, reconstructed from its saved neural request tape",
+      "neural_generated_requests": {
+        "left": 90,
+        "right": 60,
+        "total": 150
+      },
+      "delivered_requests": {
+        "left": 90,
+        "right": 60,
+        "total": 150
+      },
+      "permitted_delivered": {
+        "left": 53,
+        "right": 32,
+        "total": 85
+      },
+      "prohibited_delivered": {
+        "left": 37,
+        "right": 28,
+        "total": 65
+      },
+      "blocked_requests": {
+        "left": 0,
+        "right": 0,
+        "total": 0
+      },
+      "request_event_frames": 150,
+      "request_events": 150,
+      "simultaneous_L_R_spike_frames": 0,
+      "phases": [
+        {
+          "phase": "granted_fresh",
+          "start_ms": 0,
+          "stop_ms": 300,
+          "generated_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "delivered_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "permission_withdrawn",
+          "start_ms": 300,
+          "stop_ms": 600,
+          "generated_requests": {
+            "left": 28,
+            "right": 22,
+            "total": 50
+          },
+          "delivered_requests": {
+            "left": 28,
+            "right": 22,
+            "total": 50
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "permission_granted_evidence_stale",
+          "start_ms": 600,
+          "stop_ms": 700,
+          "generated_requests": {
+            "left": 9,
+            "right": 6,
+            "total": 15
+          },
+          "delivered_requests": {
+            "left": 9,
+            "right": 6,
+            "total": 15
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "reauthorized_fresh",
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "generated_requests": {
+            "left": 27,
+            "right": 20,
+            "total": 47
+          },
+          "delivered_requests": {
+            "left": 27,
+            "right": 20,
+            "total": 47
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        }
+      ]
+    },
+    {
+      "arm": "output_only",
+      "input_gate": false,
+      "output_gate": true,
+      "neural_source": "continuous_input",
+      "recorded_manifest_arm": "pol2_output_guard",
+      "evidence_status": "existing manifest arm, reconstructed from its saved neural request tape",
+      "neural_generated_requests": {
+        "left": 90,
+        "right": 60,
+        "total": 150
+      },
+      "delivered_requests": {
+        "left": 53,
+        "right": 32,
+        "total": 85
+      },
+      "permitted_delivered": {
+        "left": 53,
+        "right": 32,
+        "total": 85
+      },
+      "prohibited_delivered": {
+        "left": 0,
+        "right": 0,
+        "total": 0
+      },
+      "blocked_requests": {
+        "left": 37,
+        "right": 28,
+        "total": 65
+      },
+      "request_event_frames": 150,
+      "request_events": 150,
+      "simultaneous_L_R_spike_frames": 0,
+      "phases": [
+        {
+          "phase": "granted_fresh",
+          "start_ms": 0,
+          "stop_ms": 300,
+          "generated_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "delivered_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "permission_withdrawn",
+          "start_ms": 300,
+          "stop_ms": 600,
+          "generated_requests": {
+            "left": 28,
+            "right": 22,
+            "total": 50
+          },
+          "delivered_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "blocked_requests": {
+            "left": 28,
+            "right": 22,
+            "total": 50
+          }
+        },
+        {
+          "phase": "permission_granted_evidence_stale",
+          "start_ms": 600,
+          "stop_ms": 700,
+          "generated_requests": {
+            "left": 9,
+            "right": 6,
+            "total": 15
+          },
+          "delivered_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "blocked_requests": {
+            "left": 9,
+            "right": 6,
+            "total": 15
+          }
+        },
+        {
+          "phase": "reauthorized_fresh",
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "generated_requests": {
+            "left": 27,
+            "right": 20,
+            "total": 47
+          },
+          "delivered_requests": {
+            "left": 27,
+            "right": 20,
+            "total": 47
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        }
+      ]
+    },
+    {
+      "arm": "input_only_posthoc",
+      "input_gate": true,
+      "output_gate": false,
+      "neural_source": "pol2_input_guard",
+      "recorded_manifest_arm": null,
+      "evidence_status": "derived post-hoc ungated-interface counterfactual from saved input-gated trajectory",
+      "neural_generated_requests": {
+        "left": 53,
+        "right": 31,
+        "total": 84
+      },
+      "delivered_requests": {
+        "left": 53,
+        "right": 31,
+        "total": 84
+      },
+      "permitted_delivered": {
+        "left": 49,
+        "right": 27,
+        "total": 76
+      },
+      "prohibited_delivered": {
+        "left": 4,
+        "right": 4,
+        "total": 8
+      },
+      "blocked_requests": {
+        "left": 0,
+        "right": 0,
+        "total": 0
+      },
+      "request_event_frames": 84,
+      "request_events": 84,
+      "simultaneous_L_R_spike_frames": 0,
+      "phases": [
+        {
+          "phase": "granted_fresh",
+          "start_ms": 0,
+          "stop_ms": 300,
+          "generated_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "delivered_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "permission_withdrawn",
+          "start_ms": 300,
+          "stop_ms": 600,
+          "generated_requests": {
+            "left": 4,
+            "right": 4,
+            "total": 8
+          },
+          "delivered_requests": {
+            "left": 4,
+            "right": 4,
+            "total": 8
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "permission_granted_evidence_stale",
+          "start_ms": 600,
+          "stop_ms": 700,
+          "generated_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "delivered_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "reauthorized_fresh",
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "generated_requests": {
+            "left": 23,
+            "right": 15,
+            "total": 38
+          },
+          "delivered_requests": {
+            "left": 23,
+            "right": 15,
+            "total": 38
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        }
+      ]
+    },
+    {
+      "arm": "input_and_output",
+      "input_gate": true,
+      "output_gate": true,
+      "neural_source": "pol2_input_guard",
+      "recorded_manifest_arm": "pol2_input_and_output_guard",
+      "evidence_status": "existing manifest arm, reconstructed from its saved neural request tape",
+      "neural_generated_requests": {
+        "left": 53,
+        "right": 31,
+        "total": 84
+      },
+      "delivered_requests": {
+        "left": 49,
+        "right": 27,
+        "total": 76
+      },
+      "permitted_delivered": {
+        "left": 49,
+        "right": 27,
+        "total": 76
+      },
+      "prohibited_delivered": {
+        "left": 0,
+        "right": 0,
+        "total": 0
+      },
+      "blocked_requests": {
+        "left": 4,
+        "right": 4,
+        "total": 8
+      },
+      "request_event_frames": 84,
+      "request_events": 84,
+      "simultaneous_L_R_spike_frames": 0,
+      "phases": [
+        {
+          "phase": "granted_fresh",
+          "start_ms": 0,
+          "stop_ms": 300,
+          "generated_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "delivered_requests": {
+            "left": 26,
+            "right": 12,
+            "total": 38
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "permission_withdrawn",
+          "start_ms": 300,
+          "stop_ms": 600,
+          "generated_requests": {
+            "left": 4,
+            "right": 4,
+            "total": 8
+          },
+          "delivered_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "blocked_requests": {
+            "left": 4,
+            "right": 4,
+            "total": 8
+          }
+        },
+        {
+          "phase": "permission_granted_evidence_stale",
+          "start_ms": 600,
+          "stop_ms": 700,
+          "generated_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "delivered_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        },
+        {
+          "phase": "reauthorized_fresh",
+          "start_ms": 700,
+          "stop_ms": 1000,
+          "generated_requests": {
+            "left": 23,
+            "right": 15,
+            "total": 38
+          },
+          "delivered_requests": {
+            "left": 23,
+            "right": 15,
+            "total": 38
+          },
+          "blocked_requests": {
+            "left": 0,
+            "right": 0,
+            "total": 0
+          }
+        }
+      ]
+    }
+  ],
+  "input_gated_postwithdrawal_residual": {
+    "count": 8,
+    "event_times_and_sides": [
+      {
+        "time_ms": 302.8,
+        "side": "R"
+      },
+      {
+        "time_ms": 307.4,
+        "side": "R"
+      },
+      {
+        "time_ms": 308.4,
+        "side": "L"
+      },
+      {
+        "time_ms": 319.9,
+        "side": "L"
+      },
+      {
+        "time_ms": 329.1,
+        "side": "L"
+      },
+      {
+        "time_ms": 331.2,
+        "side": "R"
+      },
+      {
+        "time_ms": 337.0,
+        "side": "L"
+      },
+      {
+        "time_ms": 339.5,
+        "side": "R"
+      }
+    ],
+    "first_time_ms": 302.8,
+    "last_time_ms": 339.5,
+    "last_event_time_minus_origin_ms": 39.5,
+    "origin_ms": 300,
+    "duration_interpretation": "last observed event timestamp minus intervention onset, not a guaranteed state-clearance or biological reaction time"
+  },
+  "phase_boundaries_ms": [
+    0,
+    300,
+    600,
+    700,
+    1000
+  ],
+  "counterfactual_validity": "Output gating does not feed back to the neural simulation. For the fixed saved neural trajectory and one-spike/one-request adapter, removing the output gate delivers exactly the saved MN9 spike requests. The input-only arm was not separately recorded online and must be labelled post-hoc.",
+  "limits": [
+    "one paired seed; no confidence intervals, significance or population efficacy claims",
+    "four interface conditions reuse two neural trajectories; they are not four neural replicates",
+    "weights and dynamics unchanged; external gates do not imply learned permission or PoL2 internalization",
+    "zero prohibited delivery is a deterministic interface property, not evidence of PoL2-specific advantage over identical generic rules",
+    "MN9 spikes map to synthetic virtual requests, not physical actions or observed animal behavior",
+    "last residual spike time does not establish all hidden state was erased or permanently silent"
+  ]
+}

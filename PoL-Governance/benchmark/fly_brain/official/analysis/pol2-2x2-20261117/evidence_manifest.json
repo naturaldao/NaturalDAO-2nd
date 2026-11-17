@@ -1,0 +1,294 @@
+{
+  "document": "Research/Brain/PoL2-Brain-Research.md",
+  "date": "2026-11-17",
+  "document_type": "exploratory technical research note",
+  "submission_ready": false,
+  "independent_human_review": "pending",
+  "sources": [
+    {
+      "id": "E1",
+      "title": "PoL2 input/output dynamic safety valve",
+      "kind": "committed primary theory text",
+      "repository": "naturaldao/NaturalDAO",
+      "commit": "a7b2e311e19d2b02d7da33ed8d27946673b1f59d",
+      "path": "PoL/5. AI和人类文明的治理：从恨2证明到爱2证明.md",
+      "line_start": 129,
+      "line_end": 134,
+      "git_blob_sha256": "3ba936047a9f403dc553980bb38428f39cd5f16be016a54c88478a73c4157c46",
+      "url": "https://github.com/naturaldao/NaturalDAO/blob/a7b2e311e19d2b02d7da33ed8d27946673b1f59d/PoL/5.%20AI%E5%92%8C%E4%BA%BA%E7%B1%BB%E6%96%87%E6%98%8E%E7%9A%84%E6%B2%BB%E7%90%86%EF%BC%9A%E4%BB%8E%E6%81%A82%E8%AF%81%E6%98%8E%E5%88%B0%E7%88%B12%E8%AF%81%E6%98%8E.md#L129-L134",
+      "verification": "AI read committed Git content; independent human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E2",
+      "title": "Continual consent in the original physical-intimacy context",
+      "kind": "committed primary theory text",
+      "repository": "naturaldao/NaturalDAO",
+      "commit": "a7b2e311e19d2b02d7da33ed8d27946673b1f59d",
+      "path": "PoL/2. 爱语.md",
+      "line_start": 206,
+      "line_end": 226,
+      "git_blob_sha256": "32ab420e9b518319aaec82bb28b8657985a9d09e02ef7e9b6fef554de4011e72",
+      "url": "https://github.com/naturaldao/NaturalDAO/blob/a7b2e311e19d2b02d7da33ed8d27946673b1f59d/PoL/2.%20%E7%88%B1%E8%AF%AD.md#L206-L226",
+      "verification": "AI read committed Git content; independent human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E3",
+      "title": "Decision consensus and transparent boundaries",
+      "kind": "committed primary theory text",
+      "repository": "naturaldao/NaturalDAO",
+      "commit": "a7b2e311e19d2b02d7da33ed8d27946673b1f59d",
+      "path": "PoL/4. PoL2之伦理对齐协议.md",
+      "line_start": 73,
+      "line_end": 78,
+      "git_blob_sha256": "4540c321b604391fa2cd98f366c5e14426b932d111702bf3d66f9cca6c31bcb1",
+      "url": "https://github.com/naturaldao/NaturalDAO/blob/a7b2e311e19d2b02d7da33ed8d27946673b1f59d/PoL/4.%20PoL2%E4%B9%8B%E4%BC%A6%E7%90%86%E5%AF%B9%E9%BD%90%E5%8D%8F%E8%AE%AE.md#L73-L78",
+      "verification": "AI read committed Git content; independent human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E4",
+      "title": "Original paired full-brain run metadata",
+      "path": "PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117-v3/manifest.json",
+      "sha256": "e05690143d776e373f8f7ccec9271f91015b1cad8be775c6f9a8584b75c31a4b",
+      "verification": "AI and deterministic local calculations checked; human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E5",
+      "title": "Original saved MN9/GRN traces and all-neuron totals",
+      "path": "PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117-v3/activity.npz",
+      "sha256": "8047d8a54e6ee2751da0db76db0d090110b3cdd79baf7c9b7d523337396116ff",
+      "verification": "AI and deterministic local calculations checked; human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E6",
+      "title": "Frozen original external adapter",
+      "path": "PoL-Governance/benchmark/fly_brain/official/run_eon_pol2.py",
+      "sha256": "502c86101ba84eed7e8db0606220c61f8ed61c64141dc9807bb0443241964850",
+      "verification": "AI and deterministic local calculations checked; human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E7",
+      "title": "Post-hoc interface derivation",
+      "path": "PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/saved_2x2_analysis.json",
+      "sha256": "7b7b56078683df878bf9275ef48c6812d43e34b09da232e63e9ef463f19e2a71",
+      "verification": "AI and deterministic local calculations checked; human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    },
+    {
+      "id": "E8",
+      "title": "Reproducible post-hoc analysis code",
+      "path": "PoL-Governance/benchmark/fly_brain/official/analyze_pol2_saved.py",
+      "sha256": "1a104b8705968da8314b26090efdb58ca740fd37e3d68970abc5e0e5df4911c2",
+      "verification": "AI and deterministic local calculations checked; human review pending",
+      "checked_by": "OpenAI Codex (AI)",
+      "checked_on": "2026-11-17",
+      "human_verified": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "proposition": "PoL2 provides a normative motivation for dynamic input/output inspection; the Boolean implementation is ours",
+      "evidence": [
+        "E1",
+        "E6"
+      ]
+    },
+    {
+      "id": "C2",
+      "proposition": "The bodily-consent clause is used as an explicit engineering analogy, not as a fly mental-state claim",
+      "evidence": [
+        "E2"
+      ]
+    },
+    {
+      "id": "C3",
+      "proposition": "Scope is checked in code but constant in the recorded run, so cross-scope authorization is untested",
+      "evidence": [
+        "E3",
+        "E4",
+        "E6"
+      ]
+    },
+    {
+      "id": "C4",
+      "proposition": "Input cancellation leaves eight observed MN9 requests in the prohibited interval in this paired trial",
+      "numeric_fact": "N1",
+      "evidence": [
+        "E4",
+        "E5",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "id": "C5",
+      "proposition": "Both output-controlled conditions have zero prohibited delivery; the dual gate has fewer legal requests in this trial",
+      "numeric_fact": "N2",
+      "evidence": [
+        "E4",
+        "E5",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "id": "C6",
+      "proposition": "Reauthorization permits later requests, without establishing learning or memory recovery",
+      "numeric_fact": "N3",
+      "evidence": [
+        "E4",
+        "E5",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "id": "C7",
+      "proposition": "Four interface configurations reuse two neural trajectories and one paired seed; input-only is derived post hoc",
+      "evidence": [
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ]
+    }
+  ],
+  "methods": {
+    "id": "M1",
+    "seed": 20261117,
+    "paired_seeds": 1,
+    "neural_trajectories": 2,
+    "new_neural_forward_calls": 0,
+    "scope_varied": false,
+    "model_neurons": 138639,
+    "model_weights": 15091983,
+    "phase_boundaries_ms": [
+      0,
+      300,
+      600,
+      700,
+      1000
+    ],
+    "input_only_evidence": "post-hoc interface contrast; no output feedback to the neural model"
+  },
+  "numeric_facts": {
+    "N1": {
+      "count": 8,
+      "event_times_and_sides": [
+        {
+          "time_ms": 302.8,
+          "side": "R"
+        },
+        {
+          "time_ms": 307.4,
+          "side": "R"
+        },
+        {
+          "time_ms": 308.4,
+          "side": "L"
+        },
+        {
+          "time_ms": 319.9,
+          "side": "L"
+        },
+        {
+          "time_ms": 329.1,
+          "side": "L"
+        },
+        {
+          "time_ms": 331.2,
+          "side": "R"
+        },
+        {
+          "time_ms": 337.0,
+          "side": "L"
+        },
+        {
+          "time_ms": 339.5,
+          "side": "R"
+        }
+      ],
+      "first_time_ms": 302.8,
+      "last_time_ms": 339.5,
+      "last_event_time_minus_origin_ms": 39.5,
+      "origin_ms": 300,
+      "duration_interpretation": "last observed event timestamp minus intervention onset, not a guaranteed state-clearance or biological reaction time"
+    },
+    "N2": {
+      "continuous_raw": {
+        "generated": 150,
+        "legal_delivered": 85,
+        "prohibited_delivered": 65,
+        "blocked": 0
+      },
+      "output_only": {
+        "generated": 150,
+        "legal_delivered": 85,
+        "prohibited_delivered": 0,
+        "blocked": 65
+      },
+      "input_only_posthoc": {
+        "generated": 84,
+        "legal_delivered": 76,
+        "prohibited_delivered": 8,
+        "blocked": 0
+      },
+      "input_and_output": {
+        "generated": 84,
+        "legal_delivered": 76,
+        "prohibited_delivered": 0,
+        "blocked": 8
+      }
+    },
+    "N3": {
+      "continuous_raw": 47,
+      "output_only": 47,
+      "input_only_posthoc": 38,
+      "input_and_output": 38
+    }
+  },
+  "unresolved_or_unmeasured": [
+    "human source verification",
+    "independent paired repetitions",
+    "task performance and energy costs",
+    "late or noisy facts and wrong scope",
+    "learned PoL2 representations or complete theory internalization",
+    "benefit unique to the PoL2 label over identical executable rules"
+  ],
+  "workflow_reference": {
+    "authors": [
+      "Timothy Kassis",
+      "Vinayak Agarwal",
+      "Yuhuan He",
+      "Darshil Patel",
+      "Aubrey M. Brueckner"
+    ],
+    "year": 2026,
+    "title": "Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents",
+    "doi": "10.48550/arXiv.2609.00065",
+    "url": "https://arxiv.org/abs/2609.00065",
+    "record_accessed": "2026-11-17",
+    "purpose": "workflow attribution only; not experimental evidence"
+  }
+}

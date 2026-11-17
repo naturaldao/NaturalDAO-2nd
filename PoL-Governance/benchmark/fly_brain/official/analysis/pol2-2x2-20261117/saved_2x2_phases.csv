@@ -1,0 +1,17 @@
+arm,input_gate,output_gate,phase,start_ms,stop_ms,neural_L,neural_R,neural_total,delivered_L,delivered_R,delivered_total,blocked_total,posthoc_only
+continuous_raw,False,False,granted_fresh,0,300,26,12,38,26,12,38,0,False
+continuous_raw,False,False,permission_withdrawn,300,600,28,22,50,28,22,50,0,False
+continuous_raw,False,False,permission_granted_evidence_stale,600,700,9,6,15,9,6,15,0,False
+continuous_raw,False,False,reauthorized_fresh,700,1000,27,20,47,27,20,47,0,False
+output_only,False,True,granted_fresh,0,300,26,12,38,26,12,38,0,False
+output_only,False,True,permission_withdrawn,300,600,28,22,50,0,0,0,50,False
+output_only,False,True,permission_granted_evidence_stale,600,700,9,6,15,0,0,0,15,False
+output_only,False,True,reauthorized_fresh,700,1000,27,20,47,27,20,47,0,False
+input_only_posthoc,True,False,granted_fresh,0,300,26,12,38,26,12,38,0,True
+input_only_posthoc,True,False,permission_withdrawn,300,600,4,4,8,4,4,8,0,True
+input_only_posthoc,True,False,permission_granted_evidence_stale,600,700,0,0,0,0,0,0,0,True
+input_only_posthoc,True,False,reauthorized_fresh,700,1000,23,15,38,23,15,38,0,True
+input_and_output,True,True,granted_fresh,0,300,26,12,38,26,12,38,0,False
+input_and_output,True,True,permission_withdrawn,300,600,4,4,8,0,0,0,8,False
+input_and_output,True,True,permission_granted_evidence_stale,600,700,0,0,0,0,0,0,0,False
+input_and_output,True,True,reauthorized_fresh,700,1000,23,15,38,23,15,38,0,False

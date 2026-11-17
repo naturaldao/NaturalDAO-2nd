@@ -32,6 +32,7 @@ python PoL-Governance/tools/board.py --remote origin
 | EVAL-04 | 按知识类型构建独立评测任务：概念/关系、公理/命题、爱语、明确规则、研究者解释；比较闭卷与理论可见条件 | [分类型知识评测](benchmark/pol2/typed_knowledge/) · [先导报告](../Research/Embodied/02-实验设计与审计/PoL2分类型知识评测先导.md) |
 | EVAL-05 | 果蝇连接模板上的人工目标记忆干预，以及动态授权执行协议的公开合成压力测试 | [实验入口](benchmark/fly_brain/README.md) · [研究结果](../Research/Brain/PoL2-Fly-Brain-Results.md) |
 | EVAL-06 | 官方FlyVis训练权重、Eon完整全脑模型加载与原始功能复现，再接外部PoL2模拟执行接口 | [真实模型与复算](benchmark/fly_brain/official/README.md) · [结果](../Research/Brain/Official-Models-Results-20261117.md) |
+| VIS-01 | 果蝇神经形态与PoL2双向安全阀研究呈现：原文映射、部署对照及保存结果分析 | [任务页](tasks/VIS-01-whole-brain-network.md) |
 | EVAL-05 | 基于 PoL2 爱2／恨2判据评估主流大模型的情境回应行为与对齐失灵模式 | [项目方案](research/PoL2-Love-Hate-Behavior-Evaluation/README.md) · [回应标注草案](research/PoL2-Love-Hate-Behavior-Evaluation/ANNOTATION-RUBRIC-DRAFT.md) |
 | APP-01 | 插件接入、试运行与端到端验证 | [接入与试运行](integrations/README.md) |
 | OPS-01 | 协作工具、任务看板与贡献导航维护 | [协作工具](tools/) · [贡献指南](../CONTRIBUTING.md) |

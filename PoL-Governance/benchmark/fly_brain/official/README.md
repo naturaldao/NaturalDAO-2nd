@@ -117,6 +117,21 @@ The original [GPL license](LICENSE-Eon) remains applicable to that upstream mode
 
 ## PoL2 adapter on the full whole-brain model
 
+The [research question and theory-to-evidence mapping](../../../../Research/Brain/PoL2-Brain-Research.md)
+connect the source PoL2 input/output safety-valve principle to this external
+deployment study. `analyze_pol2_saved.py` derives a labelled input-only interface
+counterfactual from the saved input-gated trajectory, completing an exploratory
+2×2 comparison without making a model call. The original three online arms and
+all their saved evidence remain unchanged. Run `analyze_pol2_saved.py --check` to
+verify the published derived JSON and phase CSV with NumPy only.
+
+`plot_pol2_research.py` renders the architecture and quantitative evidence using
+only the 23 monitored anatomical roles. It does not reuse spatial activity from
+the separate unseeded morphology illustration. Both output-controlled conditions
+already have zero prohibited delivery; the dual gate has 76 legal deliveries
+versus 85 for output-only. These observations establish neither superior dual
+gating nor a benefit unique to the PoL2 label over identical rules.
+
 `run_eon_pol2.py --upstream <eon-clone> --output <new-directory>` imports the
 unmodified official TorchModel. The default seed is 20261117, dt=.1 ms, 10,000
 steps per neural branch. Verified raw parquet is independently reconstructed
@@ -150,6 +165,15 @@ The [review](results/eon-pol2-20261117-v3/review.md) is an independent AI-agent
 code/data check, not human expert certification.
 
 ## Whole-brain image, verification and storage
+
+The new [morphology view](../../../../Research/Brain/Morphology-View.md) displays
+actual FlyWire v783 neuronal arbors, with a registered JFRC2 neuropil atlas for
+context. It retains all source skeleton vertices/edges for the 393 neurons that
+spiked in the saved trial and 512 explicitly sampled context neurons. These
+905 morphologies are a display subset of the complete model; colours denote
+neuron groups rather than activity propagating along branches. The atlas is a
+registered reference, not a specimen-specific EM surface. Download and redraw
+commands, source terms and per-neuron hashes accompany the figure.
 
 The [whole-brain activity figure](../../../../Research/Brain/figures/eon-whole-brain-20261117.png)
 joins all 138,639 root IDs to the actual [FlyWire v783 coordinates](https://storage.googleapis.com/flywire-data/codex/data/fafb/783/coordinates.csv.gz).
