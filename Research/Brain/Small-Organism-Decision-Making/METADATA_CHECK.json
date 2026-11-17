@@ -2,10 +2,10 @@
   "checked_date": "2026-11-17",
   "timezone": "Asia/Hong_Kong",
   "sources_file": "sources.json",
-  "total": 47,
-  "matching_records": 47,
-  "crossref_successes": 46,
-  "primary_publisher_fallbacks": 1,
+  "total": 52,
+  "matching_records": 52,
+  "crossref_successes": 47,
+  "primary_publisher_fallbacks": 4,
   "scope": "AI-assisted DOI, title and publication-year metadata comparison; not verification of all scientific claims or all publisher landing pages.",
   "results": [
     {
@@ -803,6 +803,102 @@
       "doi_match": true,
       "title_match": true,
       "year_match": true
+    },
+    {
+      "id": "N06",
+      "doi": "10.1126/science.aed6459",
+      "expected_title": "Ultrarapid decision-making in an avian brain",
+      "expected_year": 2026,
+      "provider": "Crossref (earlier successful read in this revision)",
+      "checked_url": "https://api.crossref.org/works/10.1126/science.aed6459",
+      "registered_titles": [
+        "Ultrarapid decision-making in an avian brain"
+      ],
+      "publication_years": [
+        2026
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "C16",
+      "doi": "10.1371/journal.pcbi.1003694",
+      "expected_title": "Limits of Feedback Control in Bacterial Chemotaxis",
+      "expected_year": 2014,
+      "provider": "Original publisher article page, AI-assisted source review",
+      "checked_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003694",
+      "registered_titles": [
+        "Limits of Feedback Control in Bacterial Chemotaxis"
+      ],
+      "publication_years": [
+        2014
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "C16c",
+      "doi": "10.1371/journal.pcbi.1004069",
+      "expected_title": "Correction: Limits of Feedback Control in Bacterial Chemotaxis",
+      "expected_year": 2014,
+      "provider": "Original publisher article page, AI-assisted source review",
+      "checked_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004069",
+      "registered_titles": [
+        "Correction: Limits of Feedback Control in Bacterial Chemotaxis"
+      ],
+      "publication_years": [
+        2014
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "C17",
+      "doi": "10.3389/fcell.2023.1249165",
+      "expected_title": "Relation between learning process and morphology of transport tube network in plasmodium of Physarum polycephalum",
+      "expected_year": 2023,
+      "provider": "Original publisher article page, AI-assisted source review",
+      "checked_url": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2023.1249165/full",
+      "registered_titles": [
+        "Relation between learning process and morphology of transport tube network in plasmodium of Physarum polycephalum"
+      ],
+      "publication_years": [
+        2023
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "N07",
+      "doi": "10.6084/m9.figshare.33205326.v2",
+      "expected_title": "Data and code for \"Ultra-rapid decision-making in an avian brain\"",
+      "expected_year": 2026,
+      "provider": "Figshare official versioned record",
+      "checked_url": "https://api.figshare.com/v2/articles/33205326",
+      "registered_titles": [
+        "Data and code for \"Ultra-rapid decision-making in an avian brain\""
+      ],
+      "publication_years": [
+        2026
+      ],
+      "version": 2,
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "license": {
+        "value": 1,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      }
     }
-  ]
+  ],
+  "official_data_repository_records": 1
 }

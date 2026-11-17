@@ -7,7 +7,8 @@
 | 材料 | 状态与入口 |
 |---|---|
 | 小生物动作决策系统调查 | [中文报告与阅读入口](Small-Organism-Decision-Making/README.md)，AI辅助专题调研，2026-11-17；未完成独立人工逐条审校 |
-| 来源与证据 | [47条文献及读取范围](Small-Organism-Decision-Making/REFERENCES.md)、[关键命题证据表](Small-Organism-Decision-Making/EVIDENCE.md)、[检索方法与局限](Small-Organism-Decision-Making/METHODS.md) |
+| 来源与证据 | [52条来源及读取范围](Small-Organism-Decision-Making/REFERENCES.md)、[关键命题证据表](Small-Organism-Decision-Making/EVIDENCE.md)、[检索方法与局限](Small-Organism-Decision-Making/METHODS.md) |
+| 学术原图与新增比较 | [9幅原图及1幅开放数据复绘](Small-Organism-Decision-Making/FIGURES.md)；报告纳入乌鸦快速视觉决策研究，区分记录样本量与全脑规模 |
 
 ## 连接模板与动态授权仿真
 

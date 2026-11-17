@@ -1,6 +1,6 @@
 # 原始来源与机器辅助核读记录
 
-检索与核读日期：2026-11-17。本表列出主报告可使用的47项领域来源（其中C08c是C08的勘误）。各条保留实际读到的范围；没有将摘要访问或机器抽取称为独立人工核验。模型、行为结果与干预证据的边界见配套 `sources.json`。完整作者名单与出版者元数据可经DOI查阅，本表采用已核读笔记中的作者简称。
+检索与核读日期：2026-11-17。本表列出主报告可使用的52项领域来源（包括C08c、C16c两则勘误，以及N07作者开放数据与代码）。各条保留实际读到的范围；没有将摘要访问或机器抽取称为独立人工核验。模型、行为结果与干预证据的边界见配套 `sources.json`。完整作者名单与出版者元数据可经DOI查阅，本表采用已核读笔记中的作者简称。
 
 <a id="F01"></a>
 ### F01 · Dorkenwald et al. (2024)
@@ -333,3 +333,38 @@
 **Connectome-constrained networks predict neural activity across the fly visual system.** DOI：[10.1038/s41586-024-07939-3](https://doi.org/10.1038/s41586-024-07939-3)。
 
 机器辅助核读范围：原始摘要、正文与模型参数化方法相关段落经公开抽取核读。定位：DMN of the fly visual system; Connectome and task are both necessary; Methods: Neuronal dynamics。[实际读取来源](https://www.nature.com/articles/s41586-024-07939-3)。
+
+<a id="N06"></a>
+### N06 · Schmidbauer & Nieder (2026)
+
+**Ultrarapid decision-making in an avian brain.** DOI：[10.1126/science.aed6459](https://doi.org/10.1126/science.aed6459)。
+
+机器辅助核读范围：用户提供PDF六页通读（正文445–449页），图1–4所在页目视核查；公开原始摘要和元数据复核；未独立通读补充材料。定位：pp.445–449; Fig.1–4; p.449 license information。[公开来源入口](https://pubmed.ncbi.nlm.nih.gov/42912155/)。
+
+<a id="N07"></a>
+### N07 · Schmidbauer & Nieder (2026)
+
+**Data and code for "Ultra-rapid decision-making in an avian brain".** DOI：[10.6084/m9.figshare.33205326.v2](https://doi.org/10.6084/m9.figshare.33205326.v2)。
+
+机器辅助核读范围：Figshare v2元数据和许可、Fig.1B/C公开MAT汇总数据及作者MATLAB可视化代码读取，并按这些数组复绘；未重新拟合或重算试次级数据。定位：API: version, license, files; data_fig1_behavior.mat; visualization_fig1_behavior.m。[公开来源入口](https://api.figshare.com/v2/articles/33205326)。
+
+<a id="C16"></a>
+### C16 · Dufour et al. (2014)
+
+**Limits of Feedback Control in Bacterial Chemotaxis.** DOI：[10.1371/journal.pcbi.1003694](https://doi.org/10.1371/journal.pcbi.1003694)。
+
+机器辅助核读范围：原始摘要、Author Summary、引言、结果起始及图1核读；已核对勘误。定位：Abstract; Author Summary; Introduction; Results; Fig.1; Correction。[公开来源入口](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003694)。
+
+<a id="C16c"></a>
+### C16c · The PLOS Computational Biology Staff (2014)
+
+**Correction: Limits of Feedback Control in Bacterial Chemotaxis.** DOI：[10.1371/journal.pcbi.1004069](https://doi.org/10.1371/journal.pcbi.1004069)。
+
+机器辅助核读范围：原始出版者勘误全文核读。定位：Correction text and corrected equations/parameter labels。[公开来源入口](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004069)。
+
+<a id="C17"></a>
+### C17 · Yoneoka & Takamatsu (2023)
+
+**Relation between learning process and morphology of transport tube network in plasmodium of Physarum polycephalum.** DOI：[10.3389/fcell.2023.1249165](https://doi.org/10.3389/fcell.2023.1249165)。
+
+机器辅助核读范围：原始摘要、Results 3.1–3.4及Discussion核读，图5和图7与图说核对。定位：Abstract; Results 3.1–3.4; Discussion; Fig.5, Fig.7。[公开来源入口](https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2023.1249165/full)。
