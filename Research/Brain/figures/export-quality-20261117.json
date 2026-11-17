@@ -196,6 +196,57 @@
           "sha256": "2c0d14bd1b5d39fdd111275e1e00a295f5463babe7a05f24dda6e0b9f5cb206f"
         }
       }
+    },
+    {
+      "stem": "eon-brain-morphology-20261117",
+      "physical_size_mm": [
+        183.0,
+        110.0
+      ],
+      "png_pixels": [
+        4322,
+        2598
+      ],
+      "png_dpi": [
+        599.999,
+        599.999
+      ],
+      "svg_editable_text_elements": 8,
+      "font_sizes_pt": [
+        6.0,
+        7.0
+      ],
+      "panel_letters": [],
+      "pdf_fonts": [
+        "ArialMT embedded CID TrueType"
+      ],
+      "files": {
+        "png": {
+          "path": "Research/Brain/figures/eon-brain-morphology-20261117.png",
+          "bytes": 4719903,
+          "sha256": "9cd97f57e4a64d8e873a3ef9a2ac43c95e6d041add157bd794a0932a0652ddc0"
+        },
+        "pdf": {
+          "path": "Research/Brain/figures/eon-brain-morphology-20261117.pdf",
+          "bytes": 4299204,
+          "sha256": "bde99e5ec69611e3841d7cd95593ee0f3dd715d178b6f7095d2270d5793decb1"
+        },
+        "svg": {
+          "path": "Research/Brain/figures/eon-brain-morphology-20261117.svg",
+          "bytes": 6242684,
+          "sha256": "8f21446f29592065c710781f524f4910047dff8e1aba520adabb8e9f41250121"
+        }
+      }
     }
-  ]
+  ],
+  "morphology_validation": {
+    "905_exact_root_ids": true,
+    "all_393_active_neurons_included": true,
+    "512_context_neurons_explicitly_sampled": true,
+    "all_4862272_source_edges_retained": true,
+    "registered_atlas_explicitly_distinguished": true,
+    "missing_requested_morphologies": 0,
+    "original_experimental_evidence_files_unchanged": 17,
+    "evidence_text_comparison": "JSON CRLF and LF normalized to LF under the repository attributes; binary activity and model scripts are byte-exact"
+  }
 }

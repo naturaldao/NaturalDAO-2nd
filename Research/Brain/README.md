@@ -18,7 +18,8 @@
 |---|---|
 | 官方模型与完整全脑 | [真实加载、原始功能与PoL2适配结果](Official-Models-Results-20261117.md)，官方权重/连接加载及完整规模仿真 |
 | 官方模型复算 | [模型下载、参数核验与真实forward记录](../../PoL-Governance/benchmark/fly_brain/official/README.md) |
-| 官方模型图件 | [Nature 规范、四幅图的 PNG/PDF/SVG 与重绘方法](Figure-Guide.md) |
+| 官方模型图件 | [Nature 规范、PNG/PDF/SVG 与重绘方法](Figure-Guide.md) |
+| 脑神经形态 | [真实骨架、配准脑区图谱及神经群视图](Morphology-View.md) |
 | 实验与结果 | [结果卡](PoL2-Fly-Brain-Results.md)，合成机制实验，非全脑复现 |
 | 代码与复算 | [实验入口](../../PoL-Governance/benchmark/fly_brain/README.md) |
 | 冻结协议 | [分区、干预、对照与失败判据](../../PoL-Governance/benchmark/fly_brain/PROTOCOL.md) |

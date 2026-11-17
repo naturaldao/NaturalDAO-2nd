@@ -54,6 +54,16 @@ def exact_ids(values: pd.Series, name: str) -> pd.Series:
 
 
 def duration_ms(spikes_path: Path) -> tuple[float, str]:
+    published_manifest = spikes_path.parent / "manifest.json"
+    if published_manifest.exists():
+        published = json.loads(published_manifest.read_text(encoding="utf-8"))
+        matches = [run for run in published.get("runs", [])
+                   if run.get("output") == spikes_path.name]
+        if len(matches) == 1:
+            run = matches[0]
+            if run["sha256"] != sha256(spikes_path):
+                raise ValueError("Published spike file does not match its duration manifest")
+            return float(run["duration_seconds"]) * 1000, str(published_manifest.resolve())
     manifest = spikes_path.parent.parent / "manifest.csv"
     if manifest.exists():
         rows = pd.read_csv(manifest)

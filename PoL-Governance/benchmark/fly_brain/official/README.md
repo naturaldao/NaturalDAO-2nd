@@ -151,6 +151,15 @@ code/data check, not human expert certification.
 
 ## Whole-brain image, verification and storage
 
+The new [morphology view](../../../../Research/Brain/Morphology-View.md) displays
+actual FlyWire v783 neuronal arbors, with a registered JFRC2 neuropil atlas for
+context. It retains all source skeleton vertices/edges for the 393 neurons that
+spiked in the saved trial and 512 explicitly sampled context neurons. These
+905 morphologies are a display subset of the complete model; colours denote
+neuron groups rather than activity propagating along branches. The atlas is a
+registered reference, not a specimen-specific EM surface. Download and redraw
+commands, source terms and per-neuron hashes accompany the figure.
+
 The [whole-brain activity figure](../../../../Research/Brain/figures/eon-whole-brain-20261117.png)
 joins all 138,639 root IDs to the actual [FlyWire v783 coordinates](https://storage.googleapis.com/flywire-data/codex/data/fafb/783/coordinates.csv.gz).
 Coordinates are the first community-marked anchor per neuron, not somata or

@@ -27,9 +27,11 @@
 
 原官方 CUDA 实现中，0.1 秒运行记录 **1,646 次放电、343 个活跃神经元**；1 秒糖刺激运行记录 **17,520 次放电、393 个活跃神经元**，MN9 左／右分别为 **104／65 次**。这些是模拟神经放电，没有身体或喙运动。[0.1 秒记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-original-20261117/smoke-0.1s.parquet) · [1 秒记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-original-20261117/function-1s.parquet)
 
-![全脑空间锚点与原官方模型放电](figures/eon-whole-brain-20261117.png)
+![真实神经元骨架与配准全脑背景](figures/eon-brain-morphology-20261117.png)
 
-**图 3｜完整全脑的空间位置与模拟放电。**a、b 为真实 X–Y、X–Z 空间投影；灰点为全部 138,639 个模型神经元，色标以对数尺度表示 1 秒内放电神经元的平均放电率，MN9 左右用独立符号及引线标出。c 显示全部 393 个活跃神经元的 17,520 次放电，行按官方模型索引排序，不表示解剖层次。空间来自 FlyWire v783 社区标记的首个锚点，按精确 root ID 匹配，覆盖率 100%；它不是胞体重建或神经元表面网格。活动来自一个未设随机种子的官方模拟试次；MN9 左／右为 104／65 次放电。[坐标来源与绘图记录](figures/eon-whole-brain-20261117.json)；FlyWire 数据保持 [CC BY-NC 4.0](https://flywire.ai/guidelines) 条款。
+**图 3｜真实神经形态与实验中的神经群。**显示全部 393 个放电神经元和 512 个空间分层背景样本的真实 FlyWire v783 骨架；蓝色为其余放电神经元，绿色为 21 个糖感受神经元，橙色为左右 MN9。原始分支全部保留，不以锚点连线代替神经突。灰色外形为配准到 FlyWire 空间的 JFRC2 参考脑区图谱，非该标本的 EM 表面。905 个展示骨架是完整 138,639 神经元模型的一个形态子集；颜色不是分支上的传播信号。[形态来源、选择规则及矢量文件](Morphology-View.md)。
+
+[原空间投影与完整放电量化图](figures/eon-whole-brain-20261117.png)继续提供全部 138,639 个精确 ID 的锚点匹配及全部 393 个活跃神经元、17,520 次放电的 raster；[其原始来源记录](figures/eon-whole-brain-20261117.json)保留。活动来自一个未设随机种子的官方试次，MN9 左／右为 104／65 次放电。
 
 ## PoL2 适配改变输入与模拟执行接口
 
@@ -43,6 +45,6 @@
 
 这是一个种子的外部门控验证：零未授权接受由接口规则实现；输入停止不等于神经状态立即清除，也没有训练或内化 PoL2。输出单独门控共享持续输入的神经轨迹，不是额外独立神经重复。
 
-全部四幅图按 [Nature 官方绘图指南](https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels)重排，提供 600 dpi PNG、可编辑文字的 PDF 和 SVG。[绘图规范、矢量文件与重绘方法](Figure-Guide.md)。本次只重绘已有结果，没有重跑模型或修改实验数据。
+图件按 [Nature 官方绘图指南](https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels)排版，提供 600 dpi PNG、可编辑文字的 PDF 和 SVG。[绘图规范、矢量文件与重绘方法](Figure-Guide.md)。形态视图增补真实骨架用于显示，模型和原实验数据没有改变。
 
 首次 Windows [HDF5 文件关闭失败](../../PoL-Governance/benchmark/fly_brain/official/results/flyvis-smoke-20261117/failure.json)、适配器由 `inference_mode` 改用官方 `no_grad` 的[失败记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117/failure.json)均保留；v2 输出原为放电序列后处理，v3 改为逐步在线模拟门控，主结果只引用 v3。复现与原始来源见[运行说明](../../PoL-Governance/benchmark/fly_brain/official/README.md)。FlyVis 保持 MIT、Eon 保持 GPL-2.0-or-later，FlyWire 坐标保持 CC BY-NC 4.0；第一方 Proof of Love2 声明不替代第三方许可。实现与报告使用 AI 辅助，未声称独立人工专家审核。
