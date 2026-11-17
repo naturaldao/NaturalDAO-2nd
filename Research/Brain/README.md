@@ -16,6 +16,7 @@
 
 | 材料 | 状态与入口 |
 |---|---|
+| PoL2与全脑研究主线 | [双向安全阀：原文依据、部署位点与失效边界](PoL2-Brain-Research.md)，含真实结果与事后输入单门对照，非PoL2内化证明 |
 | 官方模型与完整全脑 | [真实加载、原始功能与PoL2适配结果](Official-Models-Results-20261117.md)，官方权重/连接加载及完整规模仿真 |
 | 官方模型复算 | [模型下载、参数核验与真实forward记录](../../PoL-Governance/benchmark/fly_brain/official/README.md) |
 | 官方模型图件 | [Nature 规范、PNG/PDF/SVG 与重绘方法](Figure-Guide.md) |

@@ -1,10 +1,12 @@
 # 果蝇模型图表规范与导出
 
-2026 年 11 月 17 日。涵盖四幅原实验图和新增的真实神经形态主图；这是对公开绘图要求的采用，不代表 Nature 审核或录用。
+2026 年 11 月 17 日。涵盖原实验图、真实神经形态图与PoL2研究主图；这是对公开绘图要求的采用，不代表 Nature 审核或录用。
 
-最新脑网络呈现：[真实神经形态视图与来源](Morphology-View.md)。采用神经元分支及配准图谱显示脑形，原先的放电与空间量化图保留用于核对。
+研究主线：[PoL2双向安全阀的部署位点与失效边界](PoL2-Brain-Research.md)。图中把规范动机、输入/输出门的部署和已有全脑结果对应起来；仅输入门条件明确标为事后推导。
 
-![真实神经元骨架全脑视图](figures/eon-brain-morphology-20261117.png)
+![PoL2外部契约与全脑实验结果](figures/pol2-brain-research-20261117.png)
+
+解剖配图见[真实神经形态视图与来源](Morphology-View.md)；原先的放电与空间量化图保留用于核对。
 
 ## 采用的官方要求
 
@@ -18,6 +20,7 @@
 
 | 图 | PNG 预览 | PDF | SVG |
 |---|---|---|---|
+| PoL2研究主图 | [PNG](figures/pol2-brain-research-20261117.png) | [PDF](figures/pol2-brain-research-20261117.pdf) | [SVG](figures/pol2-brain-research-20261117.svg) |
 | 神经形态主图 | [PNG](figures/eon-brain-morphology-20261117.png) | [PDF](figures/eon-brain-morphology-20261117.pdf) | [SVG](figures/eon-brain-morphology-20261117.svg) |
 | 中央 T4/T5 响应 | [PNG](figures/flyvis-center-responses-20261117.png) | [PDF](figures/flyvis-center-responses-20261117.pdf) | [SVG](figures/flyvis-center-responses-20261117.svg) |
 | T4c 空间活动 | [PNG](figures/flyvis-spatial-activity-20261117.png) | [PDF](figures/flyvis-spatial-activity-20261117.pdf) | [SVG](figures/flyvis-spatial-activity-20261117.svg) |

@@ -35,3 +35,5 @@ jobs:
           python PoL-Governance/benchmark/fly_brain/interface/run_interface.py --split dev --output "${{ runner.temp }}/fly-interface-dev"
       - name: Verify published official-model evidence without a GPU
         run: python PoL-Governance/benchmark/fly_brain/official/verify_saved_results.py
+      - name: Verify the labelled post-hoc interface analysis
+        run: python PoL-Governance/benchmark/fly_brain/official/analyze_pol2_saved.py --check

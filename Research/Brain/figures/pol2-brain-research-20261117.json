@@ -1,0 +1,102 @@
+{
+  "outputs": {
+    "png": {
+      "filename": "pol2-brain-research-20261117.png",
+      "bytes": 779959,
+      "sha256": "9cd9c1c62a262aeb964eb8d42eb3201a29d876fabbbb28cf7591e55cc98d191f"
+    },
+    "pdf": {
+      "filename": "pol2-brain-research-20261117.pdf",
+      "bytes": 251439,
+      "sha256": "bc6f4c41086b121e40638a7584b5bd7070fb51521c9cb930b3ae22721df3ed0e"
+    },
+    "svg": {
+      "filename": "pol2-brain-research-20261117.svg",
+      "bytes": 423501,
+      "sha256": "880f7884b77253cd0df991d486bb1142bad26fb7d7b927ca7db39e06f5b418cc"
+    }
+  },
+  "size_mm": [
+    183,
+    149
+  ],
+  "source_files_unchanged": true,
+  "seed": 20261117,
+  "neural_trajectories": 2,
+  "conditions": [
+    {
+      "input_gate": 0,
+      "output_gate": 0,
+      "generated": 150,
+      "legal": 85,
+      "prohibited": 65,
+      "blocked": 0,
+      "derived_post_hoc": false
+    },
+    {
+      "input_gate": 0,
+      "output_gate": 1,
+      "generated": 150,
+      "legal": 85,
+      "prohibited": 0,
+      "blocked": 65,
+      "derived_post_hoc": false
+    },
+    {
+      "input_gate": 1,
+      "output_gate": 0,
+      "generated": 84,
+      "legal": 76,
+      "prohibited": 8,
+      "blocked": 0,
+      "derived_post_hoc": true
+    },
+    {
+      "input_gate": 1,
+      "output_gate": 1,
+      "generated": 84,
+      "legal": 76,
+      "prohibited": 0,
+      "blocked": 8,
+      "derived_post_hoc": false
+    }
+  ],
+  "anatomy_root_ids": [
+    "720575940660219265",
+    "720575940618238523",
+    "720575940624963786",
+    "720575940630233916",
+    "720575940637568838",
+    "720575940638202345",
+    "720575940617000768",
+    "720575940630797113",
+    "720575940632889389",
+    "720575940621754367",
+    "720575940621502051",
+    "720575940640649691",
+    "720575940639332736",
+    "720575940616885538",
+    "720575940639198653",
+    "720575940639259967",
+    "720575940617937543",
+    "720575940632425919",
+    "720575940633143833",
+    "720575940612670570",
+    "720575940628853239",
+    "720575940629176663",
+    "720575940611875570"
+  ],
+  "anatomy_source_edges": 53102,
+  "anatomy_encoding": "23 monitored roles only; no spatial activity encoded",
+  "request_curves_origin": "reconstructed from saved MN9 traces and frozen eligibility; totals checked against the online v3 manifest",
+  "curve_export": "constant-count runs compressed to changes and endpoints; exact reconstruction asserted at all 10000 saved times; no smoothing",
+  "atlas_sha256": "75637dc4aee119211ab20788da0cb6c5a0495cc4bdaf9ae09cd17a7a44cf34b1",
+  "script_sha256": "11c40ee6c4bec782786780301403ef758bfdd12f5c54e8206d9b626e331a05e8",
+  "source_hashes": {
+    "activity.npz": "8047d8a54e6ee2751da0db76db0d090110b3cdd79baf7c9b7d523337396116ff",
+    "manifest.json": "e05690143d776e373f8f7ccec9271f91015b1cad8be775c6f9a8584b75c31a4b"
+  },
+  "scope_warning": "Scope is constant in this run; the scope predicate is implemented but cross-scope violations were not tested",
+  "interpretation": "External interface deployment of PoL2-informed conditions; no learned PoL2, no neural state erasure, no PoL2-specific advantage over identical rules",
+  "narrative_note": "Input+output gating has 76 legal delivered requests versus 85 with output-only; zero prohibited delivery alone does not establish superiority"
+}

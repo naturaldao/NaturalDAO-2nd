@@ -117,6 +117,21 @@ The original [GPL license](LICENSE-Eon) remains applicable to that upstream mode
 
 ## PoL2 adapter on the full whole-brain model
 
+The [research question and theory-to-evidence mapping](../../../../Research/Brain/PoL2-Brain-Research.md)
+connect the source PoL2 input/output safety-valve principle to this external
+deployment study. `analyze_pol2_saved.py` derives a labelled input-only interface
+counterfactual from the saved input-gated trajectory, completing an exploratory
+2×2 comparison without making a model call. The original three online arms and
+all their saved evidence remain unchanged. Run `analyze_pol2_saved.py --check` to
+verify the published derived JSON and phase CSV with NumPy only.
+
+`plot_pol2_research.py` renders the architecture and quantitative evidence using
+only the 23 monitored anatomical roles. It does not reuse spatial activity from
+the separate unseeded morphology illustration. Both output-controlled conditions
+already have zero prohibited delivery; the dual gate has 76 legal deliveries
+versus 85 for output-only. These observations establish neither superior dual
+gating nor a benefit unique to the PoL2 label over identical rules.
+
 `run_eon_pol2.py --upstream <eon-clone> --output <new-directory>` imports the
 unmodified official TorchModel. The default seed is 20261117, dt=.1 ms, 10,000
 steps per neural branch. Verified raw parquet is independently reconstructed
