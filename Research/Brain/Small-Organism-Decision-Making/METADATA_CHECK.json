@@ -1,0 +1,904 @@
+{
+  "checked_date": "2026-11-17",
+  "timezone": "Asia/Hong_Kong",
+  "sources_file": "sources.json",
+  "total": 52,
+  "matching_records": 52,
+  "crossref_successes": 47,
+  "primary_publisher_fallbacks": 4,
+  "scope": "AI-assisted DOI, title and publication-year metadata comparison; not verification of all scientific claims or all publisher landing pages.",
+  "results": [
+    {
+      "id": "F01",
+      "doi": "10.1038/s41586-024-07558-y",
+      "expected_title": "Neuronal wiring diagram of an adult brain",
+      "expected_year": 2024,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-024-07558-y",
+      "registered_titles": [
+        "Neuronal wiring diagram of an adult brain"
+      ],
+      "publication_years": [
+        2024
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F02",
+      "doi": "10.1126/science.add9330",
+      "expected_title": "The connectome of an insect brain",
+      "expected_year": 2023,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1126%2Fscience.add9330",
+      "registered_titles": [
+        "The connectome of an insect brain"
+      ],
+      "publication_years": [
+        2023
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F03",
+      "doi": "10.1038/nature14446",
+      "expected_title": "Neural dynamics for landmark orientation and angular path integration",
+      "expected_year": 2015,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fnature14446",
+      "registered_titles": [
+        "Neural dynamics for landmark orientation and angular path integration"
+      ],
+      "publication_years": [
+        2015
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F04",
+      "doi": "10.1126/science.aal4835",
+      "expected_title": "Ring attractor dynamics in the Drosophila central brain",
+      "expected_year": 2017,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1126%2Fscience.aal4835",
+      "registered_titles": [
+        "Ring attractor dynamics in the\n                    Drosophila\n                    central brain"
+      ],
+      "publication_years": [
+        2017
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F05",
+      "doi": "10.1038/s41586-023-07006-3",
+      "expected_title": "Converting an allocentric goal into an egocentric steering signal",
+      "expected_year": 2024,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-023-07006-3",
+      "registered_titles": [
+        "Converting an allocentric goal into an egocentric steering signal"
+      ],
+      "publication_years": [
+        2024
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F06",
+      "doi": "10.7554/eLife.04580",
+      "expected_title": "Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila",
+      "expected_year": 2014,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.7554%2FeLife.04580",
+      "registered_titles": [
+        "Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila"
+      ],
+      "publication_years": [
+        2014
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F07",
+      "doi": "10.1016/j.neuron.2015.11.003",
+      "expected_title": "Heterosynaptic Plasticity Underlies Aversive Olfactory Learning in Drosophila",
+      "expected_year": 2015,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.neuron.2015.11.003",
+      "registered_titles": [
+        "Heterosynaptic Plasticity Underlies Aversive Olfactory Learning in Drosophila"
+      ],
+      "publication_years": [
+        2015
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "F08",
+      "doi": "10.1126/science.1252114",
+      "expected_title": "FoxP Influences the Speed and Accuracy of a Perceptual Decision in Drosophila",
+      "expected_year": 2014,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1126%2Fscience.1252114",
+      "registered_titles": [
+        "FoxP influences the speed and accuracy of a perceptual decision in\n                    Drosophila"
+      ],
+      "publication_years": [
+        2014
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "W01",
+      "doi": "10.1038/s41586-019-1352-7",
+      "expected_title": "Whole-animal connectomes of both Caenorhabditis elegans sexes",
+      "expected_year": 2019,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-019-1352-7",
+      "registered_titles": [
+        "Whole-animal connectomes of both Caenorhabditis elegans sexes"
+      ],
+      "publication_years": [
+        2019
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "W02",
+      "doi": "10.1016/j.cell.2015.09.034",
+      "expected_title": "Global Brain Dynamics Embed the Motor Command Sequence of Caenorhabditis elegans",
+      "expected_year": 2015,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cell.2015.09.034",
+      "registered_titles": [
+        "Global Brain Dynamics Embed the Motor Command Sequence of Caenorhabditis elegans"
+      ],
+      "publication_years": [
+        2015
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "W03",
+      "doi": "10.1016/j.cell.2015.02.018",
+      "expected_title": "Feedback from Network States Generates Variability in a Probabilistic Olfactory Circuit",
+      "expected_year": 2015,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cell.2015.02.018",
+      "registered_titles": [
+        "Feedback from Network States Generates Variability in a Probabilistic Olfactory Circuit"
+      ],
+      "publication_years": [
+        2015
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "W04",
+      "doi": "10.1016/j.cell.2023.07.035",
+      "expected_title": "Brain-wide representations of behavior spanning multiple timescales and states in C. elegans",
+      "expected_year": 2023,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cell.2023.07.035",
+      "registered_titles": [
+        "Brain-wide representations of behavior spanning multiple timescales and states in C. elegans"
+      ],
+      "publication_years": [
+        2023
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "E01",
+      "doi": "10.1016/j.cell.2018.03.075",
+      "expected_title": "Dendritic Integration of Sensory Evidence in Perceptual Decision-Making",
+      "expected_year": 2018,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cell.2018.03.075",
+      "registered_titles": [
+        "Dendritic Integration of Sensory Evidence in Perceptual Decision-Making"
+      ],
+      "publication_years": [
+        2018
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "E02",
+      "doi": "10.1038/s41467-023-38487-5",
+      "expected_title": "Transient photocurrents in a subthreshold evidence accumulator accelerate perceptual decisions",
+      "expected_year": 2023,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41467-023-38487-5",
+      "registered_titles": [
+        "Transient photocurrents in a subthreshold evidence accumulator accelerate perceptual decisions"
+      ],
+      "publication_years": [
+        2023
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "E03",
+      "doi": "10.1371/journal.pone.0211652",
+      "expected_title": "Conserved regulation of neurodevelopmental processes and behavior by FoxP in Drosophila",
+      "expected_year": 2019,
+      "provider": "PLOS publisher primary article page",
+      "checked_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0211652",
+      "registered_title": "Conserved regulation of neurodevelopmental processes and behavior by FoxP in Drosophila",
+      "publication_date": "2019-02-12",
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Crossref returned HTTP 429; no retry. Verified against the primary PLOS publisher page instead."
+    },
+    {
+      "id": "A01",
+      "doi": "10.1098/rspb.2021.0199",
+      "expected_title": "Allometric analysis of brain cell number in Hymenoptera suggests ant brains diverge from general trends",
+      "expected_year": 2021,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1098%2Frspb.2021.0199",
+      "registered_titles": [
+        "Allometric analysis of brain cell number in Hymenoptera suggests ant brains diverge from general trends"
+      ],
+      "publication_years": [
+        2021
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A02",
+      "doi": "10.1126/science.1126912",
+      "expected_title": "The Ant Odometer: Stepping on Stilts and Stumps",
+      "expected_year": 2006,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1126%2Fscience.1126912",
+      "registered_titles": [
+        "The Ant Odometer: Stepping on Stilts and Stumps"
+      ],
+      "publication_years": [
+        2006
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A03",
+      "doi": "10.1073/pnas.0604430103",
+      "expected_title": "The significance of direct sunlight and polarized skylight in the ant’s celestial system of navigation",
+      "expected_year": 2006,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.0604430103",
+      "registered_titles": [
+        "The significance of direct sunlight and polarized skylight in the ant’s celestial system of navigation"
+      ],
+      "publication_years": [
+        2006
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A04",
+      "doi": "10.1098/rspb.2015.1484",
+      "expected_title": "Optimal cue integration in ants",
+      "expected_year": 2015,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1098%2Frspb.2015.1484",
+      "registered_titles": [
+        "Optimal cue integration in ants"
+      ],
+      "publication_years": [
+        2015
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A05",
+      "doi": "10.1016/j.cub.2020.07.013",
+      "expected_title": "Mushroom Bodies Are Required for Learned Visual Navigation, but Not for Innate Visual Behavior, in Ants",
+      "expected_year": 2020,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cub.2020.07.013",
+      "registered_titles": [
+        "Mushroom Bodies Are Required for Learned Visual Navigation, but Not for Innate Visual Behavior, in Ants"
+      ],
+      "publication_years": [
+        2020
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A06",
+      "doi": "10.1016/j.cub.2020.06.030",
+      "expected_title": "Vertical Lobes of the Mushroom Bodies Are Essential for View-Based Navigation in Australian Myrmecia Ants",
+      "expected_year": 2020,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cub.2020.06.030",
+      "registered_titles": [
+        "Vertical Lobes of the Mushroom Bodies Are Essential for View-Based Navigation in Australian Myrmecia Ants"
+      ],
+      "publication_years": [
+        2020
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A07",
+      "doi": "10.1371/journal.pcbi.1004683",
+      "expected_title": "Using an Insect Mushroom Body Circuit to Encode Route Memory in Complex Natural Environments",
+      "expected_year": 2016,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1371%2Fjournal.pcbi.1004683",
+      "registered_titles": [
+        "Using an Insect Mushroom Body Circuit to Encode Route Memory in Complex Natural Environments"
+      ],
+      "publication_years": [
+        2016
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A08",
+      "doi": "10.1038/s41467-025-67545-3",
+      "expected_title": "Updating an allocentric goal from lateralised egocentric visual memories",
+      "expected_year": 2026,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41467-025-67545-3",
+      "registered_titles": [
+        "Updating an allocentric goal from lateralised egocentric visual memories"
+      ],
+      "publication_years": [
+        2026
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A09",
+      "doi": "10.1007/s00265-002-0487-x",
+      "expected_title": "Quorum sensing, recruitment, and collective decision-making during colony emigration by the ant Leptothorax albipennis",
+      "expected_year": 2002,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1007%2Fs00265-002-0487-x",
+      "registered_titles": [
+        "Quorum sensing, recruitment, and collective decision-making during colony emigration by the ant Leptothorax albipennis"
+      ],
+      "publication_years": [
+        2002
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A10",
+      "doi": "10.1093/beheco/ari020",
+      "expected_title": "Quorum sensing by encounter rates in the ant Temnothorax albipennis",
+      "expected_year": 2005,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1093%2Fbeheco%2Fari020",
+      "registered_titles": [
+        "Quorum sensing by encounter rates in the ant Temnothorax albipennis"
+      ],
+      "publication_years": [
+        2005
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "A11",
+      "doi": "10.1073/pnas.2123076119",
+      "expected_title": "The emergence of a collective sensory response threshold in ant colonies",
+      "expected_year": 2022,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.2123076119",
+      "registered_titles": [
+        "The emergence of a collective sensory response threshold in ant colonies"
+      ],
+      "publication_years": [
+        2022
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C01",
+      "doi": "10.1038/239500a0",
+      "expected_title": "Chemotaxis in Escherichia coli analysed by Three-dimensional Tracking",
+      "expected_year": 1972,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2F239500a0",
+      "registered_titles": [
+        "Chemotaxis in Escherichia coli analysed by Three-dimensional Tracking"
+      ],
+      "publication_years": [
+        1972
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C02",
+      "doi": "10.1073/pnas.83.23.8987",
+      "expected_title": "Temporal comparisons in bacterial chemotaxis",
+      "expected_year": 1986,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.83.23.8987",
+      "registered_titles": [
+        "Temporal comparisons in bacterial chemotaxis."
+      ],
+      "publication_years": [
+        1986
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C03",
+      "doi": "10.1038/43199",
+      "expected_title": "Robustness in simple biochemical networks",
+      "expected_year": 1997,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2F43199",
+      "registered_titles": [
+        "Robustness in simple biochemical networks"
+      ],
+      "publication_years": [
+        1997
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C04",
+      "doi": "10.1073/pnas.97.9.4649",
+      "expected_title": "Robust perfect adaptation in bacterial chemotaxis through integral feedback control",
+      "expected_year": 2000,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.97.9.4649",
+      "registered_titles": [
+        "Robust perfect adaptation in bacterial chemotaxis through integral feedback control"
+      ],
+      "publication_years": [
+        2000
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C05",
+      "doi": "10.1126/science.164.3882.963",
+      "expected_title": "Ionic mechanisms controlling behavioral responses of paramecium to mechanical stimulation",
+      "expected_year": 1969,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1126%2Fscience.164.3882.963",
+      "registered_titles": [
+        "Ionic Mechanisms Controlling Behavioral Responses of\n            Paramecium\n            to Mechanical Stimulation"
+      ],
+      "publication_years": [
+        1969
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C06",
+      "doi": "10.1085/jgp.61.5.572",
+      "expected_title": "Electrophysiological Control of Reversed Ciliary Beating in Paramecium",
+      "expected_year": 1973,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1085%2Fjgp.61.5.572",
+      "registered_titles": [
+        "Electrophysiological Control of Reversed Ciliary Beating in Paramecium "
+      ],
+      "publication_years": [
+        1973
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C07",
+      "doi": "10.1242/jeb.141234",
+      "expected_title": "Voltage-gated calcium channels of Paramecium cilia",
+      "expected_year": 2016,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1242%2Fjeb.141234",
+      "registered_titles": [
+        "Voltage-gated calcium channels ofParameciumcilia"
+      ],
+      "publication_years": [
+        2016
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C08",
+      "doi": "10.1016/j.cub.2019.10.059",
+      "expected_title": "A Complex Hierarchy of Avoidance Behaviors in a Single-Cell Eukaryote",
+      "expected_year": 2019,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cub.2019.10.059",
+      "registered_titles": [
+        "A Complex Hierarchy of Avoidance Behaviors in a Single-Cell Eukaryote"
+      ],
+      "publication_years": [
+        2019
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C08c",
+      "doi": "10.1016/j.cub.2020.05.036",
+      "expected_title": "A Complex Hierarchy of Avoidance Behaviors in a Single-Cell Eukaryote",
+      "expected_year": 2020,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cub.2020.05.036",
+      "registered_titles": [
+        "A Complex Hierarchy of Avoidance Behaviors in a Single-Cell Eukaryote"
+      ],
+      "publication_years": [
+        2020
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C09",
+      "doi": "10.1038/35035159",
+      "expected_title": "Maze-solving by an amoeboid organism",
+      "expected_year": 2000,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2F35035159",
+      "registered_titles": [
+        "Maze-solving by an amoeboid organism"
+      ],
+      "publication_years": [
+        2000
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C10",
+      "doi": "10.1126/science.1177894",
+      "expected_title": "Rules for biologically inspired adaptive network design",
+      "expected_year": 2010,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1126%2Fscience.1177894",
+      "registered_titles": [
+        "Rules for Biologically Inspired Adaptive Network Design"
+      ],
+      "publication_years": [
+        2010
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C11",
+      "doi": "10.1073/pnas.1618114114",
+      "expected_title": "Mechanism of signal propagation in Physarum polycephalum",
+      "expected_year": 2017,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.1618114114",
+      "registered_titles": [
+        "Mechanism of signal propagation in\n                    Physarum polycephalum"
+      ],
+      "publication_years": [
+        2017
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C12",
+      "doi": "10.1073/pnas.2007815118",
+      "expected_title": "Encoding memory in tube diameter hierarchy of living flow network",
+      "expected_year": 2021,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.2007815118",
+      "registered_titles": [
+        "Encoding memory in tube diameter hierarchy of living flow network"
+      ],
+      "publication_years": [
+        2021
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C13",
+      "doi": "10.1073/pnas.1215037109",
+      "expected_title": "Slime mold uses an externalized spatial “memory” to navigate in complex environments",
+      "expected_year": 2012,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.1215037109",
+      "registered_titles": [
+        "Slime mold uses an externalized spatial “memory” to navigate in complex environments"
+      ],
+      "publication_years": [
+        2012
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C14",
+      "doi": "10.1098/rspb.2016.0446",
+      "expected_title": "Habituation in non-neural organisms: evidence from slime moulds",
+      "expected_year": 2016,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1098%2Frspb.2016.0446",
+      "registered_titles": [
+        "Habituation in non-neural organisms: evidence from slime moulds"
+      ],
+      "publication_years": [
+        2016
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "C15",
+      "doi": "10.1073/pnas.1011271107",
+      "expected_title": "Cells navigate with a local-excitation, global-inhibition-biased excitable network",
+      "expected_year": 2010,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1073%2Fpnas.1011271107",
+      "registered_titles": [
+        "Cells navigate with a local-excitation, global-inhibition-biased excitable network"
+      ],
+      "publication_years": [
+        2010
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "N01",
+      "doi": "10.1038/s41586-026-10735-w",
+      "expected_title": "Distributed control circuits across a brain-and-cord connectome",
+      "expected_year": 2026,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-026-10735-w",
+      "registered_titles": [
+        "Distributed control circuits across a brain-and-cord connectome"
+      ],
+      "publication_years": [
+        2026
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "N02",
+      "doi": "10.1016/j.cell.2026.08.015",
+      "expected_title": "Sexual dimorphism in the complete Drosophila male central nervous system connectome",
+      "expected_year": 2026,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1016%2Fj.cell.2026.08.015",
+      "registered_titles": [
+        "Sexual dimorphism in the complete Drosophila male central nervous system connectome"
+      ],
+      "publication_years": [
+        2026
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "N03",
+      "doi": "10.1038/s41586-026-11195-y",
+      "expected_title": "Connectome simulations identify a central pattern generator for fly walking",
+      "expected_year": 2026,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-026-11195-y",
+      "registered_titles": [
+        "Connectome simulations identify a central pattern generator for fly walking"
+      ],
+      "publication_years": [
+        2026
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "N04",
+      "doi": "10.1038/s41586-024-07763-9",
+      "expected_title": "A Drosophila computational brain model reveals sensorimotor processing",
+      "expected_year": 2024,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-024-07763-9",
+      "registered_titles": [
+        "A Drosophila computational brain model reveals sensorimotor processing"
+      ],
+      "publication_years": [
+        2024
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "N05",
+      "doi": "10.1038/s41586-024-07939-3",
+      "expected_title": "Connectome-constrained networks predict neural activity across the fly visual system",
+      "expected_year": 2024,
+      "provider": "Crossref",
+      "checked_url": "https://api.crossref.org/works/10.1038%2Fs41586-024-07939-3",
+      "registered_titles": [
+        "Connectome-constrained networks predict neural activity across the fly visual system"
+      ],
+      "publication_years": [
+        2024
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true
+    },
+    {
+      "id": "N06",
+      "doi": "10.1126/science.aed6459",
+      "expected_title": "Ultrarapid decision-making in an avian brain",
+      "expected_year": 2026,
+      "provider": "Crossref (earlier successful read in this revision)",
+      "checked_url": "https://api.crossref.org/works/10.1126/science.aed6459",
+      "registered_titles": [
+        "Ultrarapid decision-making in an avian brain"
+      ],
+      "publication_years": [
+        2026
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "C16",
+      "doi": "10.1371/journal.pcbi.1003694",
+      "expected_title": "Limits of Feedback Control in Bacterial Chemotaxis",
+      "expected_year": 2014,
+      "provider": "Original publisher article page, AI-assisted source review",
+      "checked_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003694",
+      "registered_titles": [
+        "Limits of Feedback Control in Bacterial Chemotaxis"
+      ],
+      "publication_years": [
+        2014
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "C16c",
+      "doi": "10.1371/journal.pcbi.1004069",
+      "expected_title": "Correction: Limits of Feedback Control in Bacterial Chemotaxis",
+      "expected_year": 2014,
+      "provider": "Original publisher article page, AI-assisted source review",
+      "checked_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004069",
+      "registered_titles": [
+        "Correction: Limits of Feedback Control in Bacterial Chemotaxis"
+      ],
+      "publication_years": [
+        2014
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "C17",
+      "doi": "10.3389/fcell.2023.1249165",
+      "expected_title": "Relation between learning process and morphology of transport tube network in plasmodium of Physarum polycephalum",
+      "expected_year": 2023,
+      "provider": "Original publisher article page, AI-assisted source review",
+      "checked_url": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2023.1249165/full",
+      "registered_titles": [
+        "Relation between learning process and morphology of transport tube network in plasmodium of Physarum polycephalum"
+      ],
+      "publication_years": [
+        2023
+      ],
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "note": "Incremental metadata used already-read primary records after Crossref returned 429 for C16; no claim of a new successful Crossref request for these publisher-verified records."
+    },
+    {
+      "id": "N07",
+      "doi": "10.6084/m9.figshare.33205326.v2",
+      "expected_title": "Data and code for \"Ultra-rapid decision-making in an avian brain\"",
+      "expected_year": 2026,
+      "provider": "Figshare official versioned record",
+      "checked_url": "https://api.figshare.com/v2/articles/33205326",
+      "registered_titles": [
+        "Data and code for \"Ultra-rapid decision-making in an avian brain\""
+      ],
+      "publication_years": [
+        2026
+      ],
+      "version": 2,
+      "doi_match": true,
+      "title_match": true,
+      "year_match": true,
+      "license": {
+        "value": 1,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  ],
+  "official_data_repository_records": 1
+}
