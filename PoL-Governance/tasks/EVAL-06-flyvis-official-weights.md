@@ -2,7 +2,7 @@
 
 | 领取人 / Agent | 状态 / 最近进展（Agent 更新） |
 |---|---|
-| Shenton YAN / OpenAI Codex | 待集成；官方视觉权重与完整全脑真实运行，原始功能、PoL2外部适配及空间活动图已交付。 |
+| Shenton YAN / OpenAI Codex | 待集成；官方模型与完整全脑真实运行；四幅图已按 Nature 规范重绘，PNG/PDF/SVG 与导出核验已交付。 |
 
 - 更新时间：2026-11-17 Asia/Hong_Kong
 - 分支：pol/EVAL-06/flyvis-official-weights
@@ -18,6 +18,8 @@
 
 2026-11-17｜OpenAI Codex｜用户明确要求加载官方权重，并允许下载较大的完整果蝇全脑数据。官方视觉权重已下载且匹配官方下载器校验值。大文件放独立D盘目录，实验后用户可单独清理，代码/校验/结果保留。｜本任务分支｜先推领取记录，再运行官方模型。
 
+2026-11-17｜OpenAI Codex｜按用户要求，核对 Nature 官方绘图规范，重绘两幅 Eon 图并补充两幅 FlyVis 图。统一最终尺寸、Arial 字体、分面字母、线宽与可辨认配色，提供 PNG/PDF/SVG；图注补充样本、来源和模型活动含义。本轮仅从保存结果重绘，不重跑模型；模型脚本、原始活动、指标和运行 manifest 保持原样。｜仍在本任务分支与 PR #15 更新。
+
 ## 交付或交接
 
 - [结果报告](../../Research/Brain/Official-Models-Results-20261117.md)、[下载与复算](../benchmark/fly_brain/official/README.md)、[官方视觉加载manifest](../benchmark/fly_brain/official/results/flyvis-moving-edge-20261117/manifest.json)、[全脑在线适配manifest](../benchmark/fly_brain/official/results/eon-pol2-20261117-v3/manifest.json)。
@@ -26,4 +28,5 @@
 - 真FlyWire v783坐标按ID匹配138639/138639，图为首个人工锚点非胞体或形态mesh。保留原CC BY-NC许可、原模型GPL及MIT。
 - 验证：GPU forward/backward/optimizer烟测通过；公开结果检查脚本通过；v2/v3全部保存的神经轨迹和全神经元计数一致；独立AI agent代码/数据审查通过。仓库总检查通过（758本地链接、23跨目录链接）；图已实际打开查看。初次HDF5/稀疏inference_mode失败与修正全部保留。
 - 大输入、虚拟环境与模型缓存留D盘独立目录，未删除；不会上传到Git。仅发布可复算代码、来源/哈希、紧凑输出和图。
+- 绘图修订：四幅官方模型图均为183mm宽、Arial正文6–7pt/分面8pt、600dpi；PDF字体已嵌入，SVG文字可编辑；全部PNG与PDF重渲染预览已实际看图。17个原有数据/运行证据文件哈希未变。最新仓库总检查通过（767本地链接、30跨目录链接），[导出核验](../../Research/Brain/figures/export-quality-20261117.json)通过。
 - AI辅助：OpenAI Codex实现、运行和交叉检查，未声称独立人工专家审核。

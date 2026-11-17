@@ -15,9 +15,12 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.colors import LinearSegmentedColormap, LogNorm
+from matplotlib import font_manager
+from matplotlib.colors import LogNorm
 import numpy as np
 import pandas as pd
+
+from figure_style import MM, INK, BLUE, ORANGE, LIGHT, apply_style, panel_label, save_figure
 
 
 EON_COMMIT = "a3db62f9436074e485c0278290c2164ed6150808"
@@ -31,7 +34,6 @@ MN9_SOURCE = "code/paper-phil-drosophila/example.ipynb"
 MN9_SOURCE_URL = (
     f"https://github.com/eonsystemspbc/fly-brain/blob/{EON_COMMIT}/{MN9_SOURCE}"
 )
-INK, MUTED, ACTIVE, MARKER = "#172D40", "#566778", "#267FAD", "#B72D67"
 
 
 def sha256(path: Path) -> str:
@@ -176,135 +178,128 @@ def load_data(eon_root: Path, coordinates: Path, spikes_path: Path):
     return brain, spikes, metadata
 
 
-def style_axis(ax):
-    for spine in ("top", "right"):
-        ax.spines[spine].set_visible(False)
-    for spine in ("bottom", "left"):
-        ax.spines[spine].set_color("#BAC7D0")
-    ax.tick_params(colors=MUTED, labelsize=9, length=3)
-    ax.xaxis.label.set_color(MUTED)
-    ax.yaxis.label.set_color(MUTED)
-
-
 def render(brain: pd.DataFrame, spikes: pd.DataFrame, metadata: dict, output: Path):
-    plt.rcParams.update({
-        "font.family": "DejaVu Sans", "font.size": 10, "axes.titlesize": 12,
-        "axes.labelsize": 10, "pdf.fonttype": 42, "ps.fonttype": 42,
-        "savefig.facecolor": "white", "axes.facecolor": "white",
-    })
-    fig = plt.figure(figsize=(15.6, 9.8), facecolor="white")
+    """Three final-size panels; statistics and provenance belong in the caption."""
+    apply_style()
+    width_mm, height_mm = 183.0, 115.0
+    fig = plt.figure(figsize=(width_mm * MM, height_mm * MM))
     run_s = metadata["simulation_duration_ms"] / 1000.0
-    fig.text(.075, .952, "Whole-brain model: real locations, simulated spikes", fontsize=23,
-             weight="bold", color=INK, va="top")
-    fig.text(.075, .903,
-             f"Official Eon / Shiu LIF model  |  FlyWire v783  |  Sugar GRNs at 200 Hz  |  {run_s:g} s, one trial",
-             fontsize=11, color=MUTED)
-    stats = [
-        (f"{metadata['model_neurons']:,}", "modeled neurons"),
-        (f"{metadata['matched_model_neurons']:,} / {metadata['model_neurons']:,}", "real spatial anchors matched"),
-        (f"{metadata['active_model_neurons']:,}", "neurons with recorded spikes"),
-        (f"{metadata['recorded_spikes']:,}", "recorded spikes"),
-    ]
-    for xpos, (value, label) in zip((.075, .285, .58, .805), stats):
-        fig.text(xpos, .854, value, fontsize=21, color=INK, weight="bold")
-        fig.text(xpos, .829, label, fontsize=9.5, color=MUTED)
 
-    grid = fig.add_gridspec(2, 2, left=.075, right=.94, top=.785, bottom=.195,
-                           height_ratios=(1.0, .90), hspace=.54, wspace=.20)
+    def axes_mm(left, bottom, width, height):
+        return fig.add_axes([left / width_mm, bottom / height_mm,
+                             width / width_mm, height / height_mm])
+
     spatial = brain.loc[brain["x_um"].notna()].copy()
     active = spatial.loc[spatial["spike_count"] > 0]
-    cmap = LinearSegmentedColormap.from_list("spike_rates", ["#276C9B", "#E89339", "#B52E4F"])
-    vmax = max(float(active["spikes_per_second"].max()), 2.0)
-    norm = LogNorm(vmin=1.0 / run_s, vmax=vmax)
-    plots = []
-    for column, ordinate, title in ((0, "y", "A   Measured anchors: X-Y projection"),
-                                    (1, "z", "B   Measured anchors: X-Z projection")):
-        ax = fig.add_subplot(grid[0, column])
-        ax.scatter(spatial["x_um"], spatial[f"{ordinate}_um"], s=.48, c="#9BAFBD",
-                   alpha=.13, edgecolors="none", rasterized=True)
+    if active.empty:
+        raise ValueError("The activity figure requires at least one recorded spike")
+    lower_rate = 1.0 / run_s
+    upper_rate = max(float(active["spikes_per_second"].max()), 2.0 * lower_rate)
+    norm = LogNorm(vmin=lower_rate, vmax=upper_rate)
+    spatial_specs = (
+        ("a", "y", (12, 67, 73, 39), "XY projection", (40, 450), [100, 200, 300, 400],
+         {"MN9 L": (650, 420), "MN9 R": (285, 250)}),
+        ("b", "z", (12, 29, 73, 30), "XZ projection", (0, 290), [0, 100, 200],
+         {"MN9 L": (690, 20), "MN9 R": (285, 20)}),
+    )
+    for letter, ordinate, box, descriptor, limits, ticks, label_positions in spatial_specs:
+        ax = axes_mm(*box)
+        # Plot every matched neuron, with no smoothing, synthetic locations,
+        # or subsampling. Rasterization affects export only, not the data.
+        ax.scatter(spatial["x_um"], spatial[f"{ordinate}_um"], s=.18, c=LIGHT,
+                   alpha=.48, edgecolors="none", rasterized=True, zorder=1)
         dots = ax.scatter(active["x_um"], active[f"{ordinate}_um"],
-                          c=active["spikes_per_second"], norm=norm, cmap=cmap,
-                          s=5 + 16 * np.sqrt(active["spikes_per_second"] / vmax),
-                          alpha=.95, linewidths=.13, edgecolors="white", rasterized=True)
+                          c=active["spikes_per_second"], norm=norm, cmap="cividis",
+                          s=4.1, alpha=1.0, linewidths=.25, edgecolors=INK,
+                          rasterized=True, zorder=3)
         for label, rid in MN9.items():
             selected = spatial.loc[spatial["root_id"] == rid]
             if selected.empty:
                 continue
             row = selected.iloc[0]
             point = (row["x_um"], row[f"{ordinate}_um"])
-            ax.scatter(*point, marker="*", s=130, color=MARKER, edgecolors="white",
-                       linewidths=.6, zorder=6)
-            offset = (-70, 13) if label.endswith("L") else (15, -20)
-            ax.annotate(label, point, xytext=offset, textcoords="offset points", color=MARKER,
-                        fontsize=9, weight="bold", zorder=7,
-                        bbox=dict(boxstyle="round,pad=.18", fc="white", ec="none", alpha=.9),
-                        arrowprops=dict(arrowstyle="-", color=MARKER, lw=.7))
+            ax.scatter(*point, marker="o" if label.endswith("L") else "s", s=8,
+                       facecolors="white", edgecolors=INK, linewidths=.55, zorder=6)
+            ax.annotate(label, point, xytext=label_positions[label], textcoords="data",
+                        color=INK, fontsize=6, ha="center", va="center", zorder=7,
+                        arrowprops=dict(arrowstyle="-", color=INK, lw=.4,
+                                        shrinkA=1.5, shrinkB=2))
         ax.set(xlabel="X (µm)", ylabel=f"{ordinate.upper()} (µm)")
-        ax.set_title(title, loc="left", pad=14, color=INK, weight="bold")
+        ax.set(xlim=(50, 950), ylim=limits)
+        ax.set_xticks([100, 300, 500, 700, 900])
+        ax.set_yticks(ticks)
         ax.set_aspect("equal", adjustable="box")
-        ax.margins(x=.035, y=.07)
-        style_axis(ax)
-        plots.append(ax)
-    color_ax = fig.add_axes([.956, .525, .010, .184])
-    colorbar = fig.colorbar(dots, cax=color_ax)
-    ticks = [value for value in (1, 10, 100, 200) if 1 / run_s <= value <= vmax]
-    colorbar.set_ticks(ticks)
-    colorbar.set_ticklabels([str(value) for value in ticks])
-    colorbar.ax.tick_params(labelsize=8, colors=MUTED, length=2)
-    colorbar.set_label("Recorded spikes / s", color=MUTED, labelpad=8)
-    colorbar.outline.set_visible(False)
+        ax.set_anchor("NW")
+        ax.text(0, 1.055, descriptor, transform=ax.transAxes, fontsize=7,
+                ha="left", va="bottom", color=INK)
+        panel_label(ax, letter, x=-.15, y=1.055)
 
-    ax = fig.add_subplot(grid[1, :])
+    color_ax = axes_mm(24, 21, 50, 2.3)
+    colorbar = fig.colorbar(dots, cax=color_ax, orientation="horizontal")
+    color_ticks = [value for value in (1, 10, 100, 200) if lower_rate <= value <= upper_rate]
+    colorbar.set_ticks(color_ticks)
+    colorbar.set_ticklabels([str(value) for value in color_ticks])
+    colorbar.ax.minorticks_off()
+    colorbar.ax.tick_params(labelsize=6, length=2, width=.5, colors=INK)
+    colorbar.set_label("Firing rate (Hz)", fontsize=7, labelpad=2, color=INK)
+    colorbar.outline.set_linewidth(.4)
+
+    ax = axes_mm(104, 13, 74, 93)
     active_order = brain.loc[brain["spike_count"] > 0].sort_values("model_index")["root_id"].tolist()
     ranks = {rid: index + 1 for index, rid in enumerate(active_order)}
-    ax.scatter(spikes["time_ms"], spikes["root_id"].map(ranks), s=2.0, color=ACTIVE,
-               alpha=.52, linewidths=0, rasterized=True)
-    mn9_labels = []
+    # One plotted mark per recorded event; all 393 active neurons remain.
+    ax.scatter(spikes["time_ms"], spikes["root_id"].map(ranks), s=.42, color=BLUE,
+               alpha=.65, linewidths=0, rasterized=True, zorder=1)
     for label, rid in MN9.items():
         selected = spikes.loc[spikes["root_id"] == rid]
         if rid in ranks:
-            ax.axhline(ranks[rid], color=MARKER, lw=.7, alpha=.22, zorder=0)
             ax.scatter(selected["time_ms"], np.full(len(selected), ranks[rid]), marker="|",
-                       s=28, color=MARKER, linewidths=.75, zorder=3)
-        mn9_labels.append(f"{label}: {len(selected)} spikes")
-    ax.set_title("C   Recorded spike raster: every active neuron, full simulated interval",
-                 loc="left", color=INK, weight="bold", pad=14)
-    ax.text(1, 1.045, "  |  ".join(mn9_labels), ha="right", va="bottom",
-            transform=ax.transAxes, fontsize=9, color=MARKER, weight="bold")
-    ax.set(xlim=(0, metadata["simulation_duration_ms"]), xlabel="Simulation time (ms)",
-           ylabel="Active neuron rank\n(model index order)", ylim=(len(active_order) + .5, .5))
+                       s=4, color=ORANGE, linewidths=.4, rasterized=True, zorder=3)
+    ax.text(0, 1.018, "Spike raster", ha="left", va="bottom",
+            transform=ax.transAxes, fontsize=7, color=INK)
+    panel_label(ax, "c", x=-.15, y=1.018)
+    ax.plot([], [], color=ORANGE, lw=.8, label="MN9")
+    ax.legend(loc="lower right", bbox_to_anchor=(1, 1.018), borderaxespad=0,
+              handlelength=1.2, fontsize=6)
+    ax.set(xlim=(0, metadata["simulation_duration_ms"]), xlabel="Time (ms)",
+           ylabel="Active neuron rank", ylim=(len(active_order) + .5, .5))
+    ax.set_xticks(np.linspace(0, metadata["simulation_duration_ms"], 6))
     ticks = [1] + list(range(100, len(active_order), 100)) + [len(active_order)]
     ax.set_yticks(sorted(set(ticks)))
-    ax.grid(axis="x", color="#DCE5EB", linewidth=.6)
-    ax.set_axisbelow(True)
-    style_axis(ax)
-    fig.text(.075, .145,
-             "Grey: all modeled neurons with coordinates. Color: recorded activity. Stars: MN9 L / R. "
-             "Positions are first community-marked anchors, not somata.",
-             fontsize=9, color=MUTED)
-    fig.text(.075, .121,
-             "Real coordinates retained (nm → µm); no synthetic layout, mesh, or anatomical interpolation. "
-             f"Missing coordinates: {metadata['missing_model_coordinates']:,} modeled / {metadata['missing_active_coordinates']:,} active.",
-             fontsize=9, color=MUTED)
-    fig.text(.075, .082,
-             "Sources: FlyWire / Codex FAFB v783 coordinates (CC BY-NC 4.0; original terms retained); "
-             f"Eon fly-brain {EON_COMMIT[:12]} and its MN9 example notebook.",
-             fontsize=8.3, color=MUTED)
-    fig.text(.075, .059,
-             "Activity is from the official-model simulation, not measured animal behavior. "
-             "Full source links, file SHA-256 values, and exact-ID coverage accompany this figure.",
-             fontsize=8.3, color=MUTED)
-    output.parent.mkdir(parents=True, exist_ok=True)
+    metadata["rendering"] = {
+        "physical_size_mm": [width_mm, height_mm],
+        "panel_count": 3,
+        "panels": {"a": "real XY anchor projection", "b": "real XZ anchor projection",
+                   "c": "complete recorded raster, all active neurons, one mark per recorded spike"},
+        "font": "Arial",
+        "font_file": font_manager.findfont("Arial", fallback_to_default=False),
+        "text_size_pt": {"descriptors_and_axis_labels": 7, "tick_labels_and_annotations": 6,
+                         "lowercase_panel_letters": 8},
+        "spatial_aspect": "equal physical scaling on each projection; original coordinate axes retained",
+        "background_anchor_marks": int(len(spatial)),
+        "active_anchor_marks": int(len(active)),
+        "raster_event_marks": int(len(spikes)),
+        "spatial_colormap": "cividis",
+        "spatial_rate_normalization": "logarithmic",
+        "spatial_rate_limits_Hz": [lower_rate, upper_rate],
+        "mn9_symbols": {"MN9 L": "small open circle", "MN9 R": "small open square"},
+        "raster_mn9_highlight": "orange marks on their actual recorded rows and times",
+        "interpolation_or_smoothing": "none",
+        "png_dpi": 600,
+        "vector_fonts": "PDF TrueType type 42; SVG text retained",
+        "caption_policy": "statistics, source attribution and scientific limitations retained in sidecar and external caption, not decorative in-figure text",
+    }
+    style_path = Path(__file__).with_name("figure_style.py")
+    metadata["files"]["figure_style"] = {
+        "path": str(style_path.resolve()), "sha256": sha256(style_path), "bytes": style_path.stat().st_size
+    }
     stem = output.with_suffix("")
-    png = stem.with_suffix(".png")
-    pdf = stem.with_suffix(".pdf")
-    fig.savefig(png, dpi=190)
-    fig.savefig(pdf, metadata={"Title": "Real FlyWire v783 anchors and official-model simulated spikes",
-                               "Author": "PoL2 research; original FlyWire data attribution retained"})
+    paths = save_figure(fig, stem, "Real FlyWire v783 anchors and official-model simulated spikes")
     plt.close(fig)
     metadata["outputs"] = {
-        name: {"path": str(path.resolve()), "sha256": sha256(path), "bytes": path.stat().st_size}
-        for name, path in {"png": png, "pdf": pdf}.items()
+        path.suffix.lstrip("."): {"path": str(path.resolve()), "sha256": sha256(path),
+                                  "bytes": path.stat().st_size}
+        for path in paths
     }
     sidecar = stem.with_suffix(".json")
     sidecar.write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -316,7 +311,7 @@ def main():
     parser.add_argument("--eon-root", required=True, type=Path)
     parser.add_argument("--coordinates", required=True, type=Path)
     parser.add_argument("--spikes", required=True, type=Path)
-    parser.add_argument("--output", required=True, type=Path, help="Output PNG path; PDF and JSON use the same stem")
+    parser.add_argument("--output", required=True, type=Path, help="Output PNG path; PDF, SVG and JSON use the same stem")
     args = parser.parse_args()
     brain, spikes, metadata = load_data(args.eon_root, args.coordinates, args.spikes)
     sidecar = render(brain, spikes, metadata, args.output)

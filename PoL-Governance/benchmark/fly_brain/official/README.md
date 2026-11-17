@@ -159,9 +159,12 @@ morphology meshes. Source/coverage/checksums accompany the figure. FlyWire's
 they are not replaced by the first-party Proof of Love2 label.
 
 Run `verify_saved_results.py` to check published evidence without Torch or a GPU
-(NumPy only). `plot_eon_pol2.py` renders the saved adapter traces; the original
-official visualization runner also saves its figures. No model cache is needed
-to inspect these outputs.
+(NumPy only). `plot_eon_pol2.py` renders the saved adapter traces and
+`plot_flyvis_saved.py` redraws the saved moving-edge responses. Shared
+`figure_style.py` uses Nature's public artwork requirements: final-size Arial,
+lowercase panel labels, accessible colours and editable PDF/SVG text. See the
+[figure guide and all exports](../../../../Research/Brain/Figure-Guide.md).
+The rendering scripts do not rerun the models or change saved experimental data.
 
 Large originals remain under `$work/downloads`, `$work/data` and the upstream
 clones/caches. No originals have been deleted. After experiments, these inputs
@@ -190,6 +193,7 @@ polarity and all 65 central cell types' 24 peak responses.
 T4d's weak ON direction selectivity is retained as a limitation of this fixed
 model/assay, not discarded. This table does not treat agreement on one contrast
 as a full replication of all biological tuning. The
-[central traces](results/flyvis-moving-edge-20261117/t4_t5_center_responses.png)
-and [fixed-time spatial maps](results/flyvis-moving-edge-20261117/t4c_spatial_activity.png)
-were visually checked; the small NPZ files contain the plotted numerical data.
+[redrawn central traces](../../../../Research/Brain/figures/flyvis-center-responses-20261117.png)
+and [fixed-time spatial maps](../../../../Research/Brain/figures/flyvis-spatial-activity-20261117.png)
+use the same small NPZ files. Original run-time PNGs remain in the result
+directory; their producing simulation script and the evidence hashes are unchanged.

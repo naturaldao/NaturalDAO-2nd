@@ -15,13 +15,21 @@
 
 预先指定的 T4c ON 对比成立：90°峰值 **1.032089**，270°为 **0.024330**。但完整调谐计算的偏好方向为 **56.236°**，不能称准确恢复 90°；T4d ON 方向选择指数仅 **0.098756**，弱选择性结果完整保留。本轮复现加载、计算与该功能范式，没有重训或验证全部生物学功能。[全部指标](../../PoL-Governance/benchmark/fly_brain/official/results/flyvis-moving-edge-20261117/metrics.json)
 
+![官方 FlyVis 中央 T4/T5 神经元对四个方向移动边缘的响应](figures/flyvis-center-responses-20261117.png)
+
+**图 1｜官方预训练视觉模型的移动边缘响应。**各面板依次显示中央 T4a–d 的 ON 响应和 T5a–d 的 OFF 响应，图例标出 0°、90°、180°、270°四个刺激方向。曲线直接读取已保存的模型响应；时间以刺激开始为零点，响应为模型内部量，不是实测膜电位。只展示一个固定检查点的单次模拟，没有独立重复或误差条；24 个方向与极性组合的完整结果仍保留在原始记录中。
+
+![官方 FlyVis T4c 神经元在固定刺激时刻的空间活动](figures/flyvis-spatial-activity-20261117.png)
+
+**图 2｜T4c 空间模型的固定时刻响应。**两个面板分别对应 ON 90°与 ON 270°，使用同一色标及预先指定的刺激中点帧（刺激开始后 0.210 秒）。每个面板显示 721 个六角晶格单元，坐标为模型晶格坐标，没有物理长度单位；它不是全脑解剖坐标，也没有从响应中挑选最高峰帧。
+
 ## Eon 全脑模型产生真实模拟放电
 
 原官方 CUDA 实现中，0.1 秒运行记录 **1,646 次放电、343 个活跃神经元**；1 秒糖刺激运行记录 **17,520 次放电、393 个活跃神经元**，MN9 左／右分别为 **104／65 次**。这些是模拟神经放电，没有身体或喙运动。[0.1 秒记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-original-20261117/smoke-0.1s.parquet) · [1 秒记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-original-20261117/function-1s.parquet)
 
 ![全脑空间锚点与原官方模型放电](figures/eon-whole-brain-20261117.png)
 
-图中空间来自 FlyWire v783 社区标记锚点，按 root ID 匹配全部 138,639 个模型神经元，覆盖率 100%；它不是胞体重建或神经元表面网格。[坐标来源与绘图记录](figures/eon-whole-brain-20261117.json)
+**图 3｜完整全脑的空间位置与模拟放电。**a、b 为真实 X–Y、X–Z 空间投影；灰点为全部 138,639 个模型神经元，色标以对数尺度表示 1 秒内放电神经元的平均放电率，MN9 左右用独立符号及引线标出。c 显示全部 393 个活跃神经元的 17,520 次放电，行按官方模型索引排序，不表示解剖层次。空间来自 FlyWire v783 社区标记的首个锚点，按精确 root ID 匹配，覆盖率 100%；它不是胞体重建或神经元表面网格。活动来自一个未设随机种子的官方模拟试次；MN9 左／右为 104／65 次放电。[坐标来源与绘图记录](figures/eon-whole-brain-20261117.json)；FlyWire 数据保持 [CC BY-NC 4.0](https://flywire.ai/guidelines) 条款。
 
 ## PoL2 适配改变输入与模拟执行接口
 
@@ -31,6 +39,10 @@
 
 ![全脑放电与外部授权时序](figures/eon-pol2-20261117.png)
 
+**图 4｜外部授权、神经活动与虚拟执行接口。**a 显示连续糖输入及受授权控制的糖输入；300–600 ms 撤回权限，600–700 ms 权限恢复但证据过期，700 ms 后恢复有效授权。b 显示两条全脑模拟轨迹中 MN9 左右的实际放电；c 显示三种接口条件下送达虚拟执行器的请求；d 汇总合法及未授权送达数量。持续输入与只控制输出的条件共享同一神经轨迹，输入和输出都受控制的条件使用另一条轨迹。计数来自一次配对种子实验，无误差条；门规则阻止未授权送达，不会清除已存在的神经状态。输出为同步虚拟执行请求，没有身体仿真。
+
 这是一个种子的外部门控验证：零未授权接受由接口规则实现；输入停止不等于神经状态立即清除，也没有训练或内化 PoL2。输出单独门控共享持续输入的神经轨迹，不是额外独立神经重复。
+
+全部四幅图按 [Nature 官方绘图指南](https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels)重排，提供 600 dpi PNG、可编辑文字的 PDF 和 SVG。[绘图规范、矢量文件与重绘方法](Figure-Guide.md)。本次只重绘已有结果，没有重跑模型或修改实验数据。
 
 首次 Windows [HDF5 文件关闭失败](../../PoL-Governance/benchmark/fly_brain/official/results/flyvis-smoke-20261117/failure.json)、适配器由 `inference_mode` 改用官方 `no_grad` 的[失败记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117/failure.json)均保留；v2 输出原为放电序列后处理，v3 改为逐步在线模拟门控，主结果只引用 v3。复现与原始来源见[运行说明](../../PoL-Governance/benchmark/fly_brain/official/README.md)。FlyVis 保持 MIT、Eon 保持 GPL-2.0-or-later，FlyWire 坐标保持 CC BY-NC 4.0；第一方 Proof of Love2 声明不替代第三方许可。实现与报告使用 AI 辅助，未声称独立人工专家审核。

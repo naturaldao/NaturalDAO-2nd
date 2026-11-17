@@ -76,8 +76,13 @@
     },
     "renderer": {
       "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\PoL-Governance\\benchmark\\fly_brain\\official\\render_whole_brain.py",
-      "bytes": 17312,
-      "sha256": "252cd15f06ffce03f97fb11b6560b52e0b596e3a12fb0ab32ff72fb73db8ca54"
+      "bytes": 16908,
+      "sha256": "28b4527ad325bed7261a4c4ea359620f6875724d24ab8616dae8d2b1c9dc8631"
+    },
+    "figure_style": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\PoL-Governance\\benchmark\\fly_brain\\official\\figure_style.py",
+      "sha256": "4b94c26fb9b635b5d0af920d6d465e68c500201fd969c5949c78a6588eabedfd",
+      "bytes": 3404
     }
   },
   "mn9": {
@@ -104,16 +109,59 @@
       ]
     }
   },
+  "rendering": {
+    "physical_size_mm": [
+      183.0,
+      115.0
+    ],
+    "panel_count": 3,
+    "panels": {
+      "a": "real XY anchor projection",
+      "b": "real XZ anchor projection",
+      "c": "complete recorded raster, all active neurons, one mark per recorded spike"
+    },
+    "font": "Arial",
+    "font_file": "C:\\Windows\\Fonts\\arial.ttf",
+    "text_size_pt": {
+      "descriptors_and_axis_labels": 7,
+      "tick_labels_and_annotations": 6,
+      "lowercase_panel_letters": 8
+    },
+    "spatial_aspect": "equal physical scaling on each projection; original coordinate axes retained",
+    "background_anchor_marks": 138639,
+    "active_anchor_marks": 393,
+    "raster_event_marks": 17520,
+    "spatial_colormap": "cividis",
+    "spatial_rate_normalization": "logarithmic",
+    "spatial_rate_limits_Hz": [
+      1.0,
+      233.0
+    ],
+    "mn9_symbols": {
+      "MN9 L": "small open circle",
+      "MN9 R": "small open square"
+    },
+    "raster_mn9_highlight": "orange marks on their actual recorded rows and times",
+    "interpolation_or_smoothing": "none",
+    "png_dpi": 600,
+    "vector_fonts": "PDF TrueType type 42; SVG text retained",
+    "caption_policy": "statistics, source attribution and scientific limitations retained in sidecar and external caption, not decorative in-figure text"
+  },
   "outputs": {
     "png": {
       "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\Research\\Brain\\figures\\eon-whole-brain-20261117.png",
-      "sha256": "154378b1c84f78b953678b71d2ce8e99e62f64733e6290196499bf11fa8a042e",
-      "bytes": 1462943
+      "sha256": "e80ab45134e144d3cfb8701a95b218ca9d6b46108beb99d82791bc2e1a9f0635",
+      "bytes": 1838614
     },
     "pdf": {
       "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\Research\\Brain\\figures\\eon-whole-brain-20261117.pdf",
-      "sha256": "5c90075f5784b8035a1206416f2c38f8561f3f06f2443696285573e5ed99baa3",
-      "bytes": 298623
+      "sha256": "38bfed3e75f535197809ee48a12db3a77554710b940ecc75bf64e81855906ee0",
+      "bytes": 1657754
+    },
+    "svg": {
+      "path": "D:\\Codebase\\PoL2-FlyVis-Official\\publication\\Research\\Brain\\figures\\eon-whole-brain-20261117.svg",
+      "sha256": "3c5a9d6d991858d527d14366f97a198ae75eb294e6ae844760ece0ece2174270",
+      "bytes": 2818148
     }
   }
 }
