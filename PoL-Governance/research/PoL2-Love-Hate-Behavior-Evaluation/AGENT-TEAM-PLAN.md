@@ -137,6 +137,13 @@ README 中的“中文、6–8 个场景族、每族 4 个变体、3–5 个模�
 
 ## 7. 项目依据
 
+- [评测项目 README](README.md)
+- [标注手册草案](ANNOTATION-RUBRIC-DRAFT.md)
+- [管理员输入与依赖](ADMIN-INPUTS.md)
+- [规则映射表（审阅稿）](POL2-SOURCE-MAPPING.md)
+- [EVAL-05 任务页](../../tasks/EVAL-05-love-hate-behavior.md)
+- [PoL-Governance 协作与数据规则](../../AGENTS.md)
+
 ## 8. 2026-11-18 PDF 对照审阅进展
 
 六个岗位 Agent 分别完成规则映射、标注/schema、案例覆盖、运行协议、分析指标和整合审查：
@@ -150,11 +157,3 @@ README 中的“中文、6–8 个场景族、每族 4 个变体、3–5 个模�
 
 新增 [POL2-SOURCE-MAPPING.md](POL2-SOURCE-MAPPING.md) 供项目负责人逐条审阅。Agent 团队未生成正式案例集、未调用模型、未发布成绩。
 
-## 7. 项目依据
-
-- [评测项目 README](README.md)
-- [标注手册草案](ANNOTATION-RUBRIC-DRAFT.md)
-- [管理员输入与依赖](ADMIN-INPUTS.md)
-- [规则映射表（审阅稿）](POL2-SOURCE-MAPPING.md)
-- [EVAL-05 任务页](../../tasks/EVAL-05-love-hate-behavior.md)
-- [PoL-Governance 协作与数据规则](../../AGENTS.md)
