@@ -22,7 +22,7 @@
 
 ## 交付或交接
 
-- [结果报告](../../Research/Brain/Official-Models-Results-20261117.md)、[下载与复算](../benchmark/fly_brain/official/README.md)、[官方视觉加载manifest](../benchmark/fly_brain/official/results/flyvis-moving-edge-20261117/manifest.json)、[全脑在线适配manifest](../benchmark/fly_brain/official/results/eon-pol2-20261117-v3/manifest.json)。
+- [结果报告](../../Research/Brain/Experiments/02-Visual-and-Whole-Brain-Models.md)、[下载与复算](../benchmark/fly_brain/official/README.md)、[官方视觉加载manifest](../benchmark/fly_brain/official/results/flyvis-moving-edge-20261117/manifest.json)、[全脑在线适配manifest](../benchmark/fly_brain/official/results/eon-pol2-20261117-v3/manifest.json)。
 - FlyVis官方5组checkpoint逐张量相等，extent15完整45669节点/1513231边；50次实际forward、16660积分帧，24移动边缘刺激，T4c ON90峰值1.032089>ON270 .024330，弱方向选择与角度偏差保留。
 - Eon全脑138639神经元/15091983权重，原始parquet独立SciPy构造CSR与官方缓存逐项精确一致。原CLI 1秒17520spikes，MN9左右104/65；PoL2配对2条神经轨迹共20000forward，输入停后8残留MN9 spikes，在线虚拟输出门0未授权请求。无身体控制、无内化结论。
 - 真FlyWire v783坐标按ID匹配138639/138639，图为首个人工锚点非胞体或形态mesh。保留原CC BY-NC许可、原模型GPL及MIT。

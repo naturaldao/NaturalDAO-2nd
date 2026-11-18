@@ -22,7 +22,7 @@
 
 ## 交付或交接
 
-- [协议与复算](../benchmark/fly_brain/README.md)、[中文结果卡](../../Research/Brain/PoL2-Fly-Brain-Results.md)、[公开接口结果](../benchmark/fly_brain/interface/results/eval-20261117/summary.csv)、[记忆逐种子结果](../benchmark/fly_brain/results/memory-eval-20261117/per_seed.csv)。
+- [协议与复算](../benchmark/fly_brain/README.md)、[中文结果卡](../../Research/Brain/Experiments/01-Revocation-and-State.md)、[公开接口结果](../benchmark/fly_brain/interface/results/eval-20261117/summary.csv)、[记忆逐种子结果](../benchmark/fly_brain/results/memory-eval-20261117/per_seed.csv)。
 - 公开记录 `77304dc` 推送后各运行一次eval。接口1024场景：raw/physical/start-only违规9688/7127/1007，full与同规则generic均0，合法执行5527/5733。人工记忆12种子×3图：36模型均满足记忆前提；选择性状态干预降低A线性可解码性并保留B，但普通图可重现，固定主读出远期失败。
 - 4项记忆机制测试、5项接口测试、最终source SHA与结果记录一致性检查通过；图已实际渲染检查。仓库总检查 `uv run --no-project --offline python tools/check.py` 通过（1055项调度测试，12项条件跳过；716本地链接、19仓库内跨目录链接）；另497入口链接通过。新增实验在提交 `b73d014` 的Windows/Linux GitHub CI均通过。PR #14未自动合并。
 - 未测试：官方预训练FlyVis、真实全脑、身体闭环、B行动任务、非线性最强探针、原子动作期间撤权。没有神经层伦理/授权内化结论，没有果蝇图特异收益结论。

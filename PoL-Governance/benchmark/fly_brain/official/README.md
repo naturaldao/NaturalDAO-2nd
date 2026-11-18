@@ -117,7 +117,7 @@ The original [GPL license](LICENSE-Eon) remains applicable to that upstream mode
 
 ## PoL2 adapter on the full whole-brain model
 
-The [research question and theory-to-evidence mapping](../../../../Research/Brain/PoL2-Brain-Research.md)
+The [research question and theory-to-evidence mapping](../../../../Research/Brain/Experiments/03-Authorization-at-Input-and-Output.md)
 connect the source PoL2 input/output safety-valve principle to this external
 deployment study. `analyze_pol2_saved.py` derives a labelled input-only interface
 counterfactual from the saved input-gated trajectory, completing an exploratory
@@ -166,7 +166,7 @@ code/data check, not human expert certification.
 
 ## Whole-brain image, verification and storage
 
-The new [morphology view](../../../../Research/Brain/Morphology-View.md) displays
+The new [morphology view](../../../../Research/Brain/Supplement/Morphology.md) displays
 actual FlyWire v783 neuronal arbors, with a registered JFRC2 neuropil atlas for
 context. It retains all source skeleton vertices/edges for the 393 neurons that
 spiked in the saved trial and 512 explicitly sampled context neurons. These
@@ -187,7 +187,7 @@ Run `verify_saved_results.py` to check published evidence without Torch or a GPU
 `plot_flyvis_saved.py` redraws the saved moving-edge responses. Shared
 `figure_style.py` uses Nature's public artwork requirements: final-size Arial,
 lowercase panel labels, accessible colours and editable PDF/SVG text. See the
-[figure guide and all exports](../../../../Research/Brain/Figure-Guide.md).
+[figure guide and all exports](../../../../Research/Brain/Supplement/Figure-Guide.md).
 The rendering scripts do not rerun the models or change saved experimental data.
 
 Large originals remain under `$work/downloads`, `$work/data` and the upstream
