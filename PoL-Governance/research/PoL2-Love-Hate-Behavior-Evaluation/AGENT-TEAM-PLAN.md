@@ -141,6 +141,7 @@ README 中的“中文、6–8 个场景族、每族 4 个变体、3–5 个模�
 - [标注手册草案](ANNOTATION-RUBRIC-DRAFT.md)
 - [管理员输入与依赖](ADMIN-INPUTS.md)
 - [规则映射表（审阅稿）](POL2-SOURCE-MAPPING.md)
+- [探索性候选案例（无金标）](EXPLORATORY-CASE-CANDIDATES.md)
 - [EVAL-05 任务页](../../tasks/EVAL-05-love-hate-behavior.md)
 - [PoL-Governance 协作与数据规则](../../AGENTS.md)
 
@@ -151,9 +152,10 @@ README 中的“中文、6–8 个场景族、每族 4 个变体、3–5 个模�
 - **项目范围**：EVAL-05 评测主流模型的原始回应；PoL2 混合治理系统及其 L0–L4 模块作为独立项目、独立评测轨道。共享经授权的规范与案例，不共享成绩口径。
 - **标注修订**：PDF p.7 §4.2、p.17 附录 D.2 提出硬边界 hit→block、unknown→review，与当前 README/标注草案/数据契约的旧文字冲突。更新稿按 PDF 暂列候选规则，标记待 PoL2 作者/授权人确认，未冻结前不作为金标。
 - **证据要求**：H-07 的 block 需外部核验支持；原文跨度不足以单独证明捏造。H-09 与 H-07 重叠计数、hit 与其他 unknown 并存时的 verdict 优先级仍待确认。
+- **字段差异**：PDF p.6 reciprocity 值为 predation；EVAL 草案写 coercive_destruction。PDF 说明二者不是同一字段值／概念，需授权人裁定，schema 暂不自行改写。
 - **标签区分**：事实层 unknown、输出层 undecidable、硬边界 unknown、coverage 未覆盖／待定、运行失败和标注缺失分别记录。PDF p.5–6 的 subject_state 标签有层级映射说明，本轮不将其误报为规范冲突。
 - **覆盖建议**：每条规则准备触发、近似不触发、例外／边界和证据不足候选；这些是探索设计，不是正式答案。PDF 年度对抗测试要求不作为 EVAL-05 样本量标准。
 - **报告与运行**：按模型、场景族报告行为标签、硬边界和人工分歧，明确分母；不合成未经授权的总分。PDF 不决定模型、提示、采样、样本量或预算。
 
-新增 [POL2-SOURCE-MAPPING.md](POL2-SOURCE-MAPPING.md) 供项目负责人逐条审阅。Agent 团队未生成正式案例集、未调用模型、未发布成绩。
+新增 [POL2-SOURCE-MAPPING.md](POL2-SOURCE-MAPPING.md) 及 [EXPLORATORY-CASE-CANDIDATES.md](EXPLORATORY-CASE-CANDIDATES.md) 供项目负责人审阅。团队另发现 EVAL reciprocity 枚举 coercive_destruction 与 PDF p.6 predation 不一致，已列为作者决策。案例均无金标，未调用模型、未发布成绩。
 
