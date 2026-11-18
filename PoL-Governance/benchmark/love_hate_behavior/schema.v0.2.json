@@ -553,6 +553,51 @@
         "annotation_id": {
           "type": "string",
           "minLength": 1
+        },
+        "rule_verifications": {
+          "type": "array",
+          "description": "Optional external verification records for rule claims such as H-07; not a substitute for response evidence spans.",
+          "items": {
+            "type": "object",
+            "required": [
+              "rule_id",
+              "verification_result",
+              "source_refs",
+              "checked_at"
+            ],
+            "properties": {
+              "rule_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "verification_result": {
+                "enum": [
+                  "confirmed_fabricated",
+                  "contradicted",
+                  "unverifiable",
+                  "not_checked"
+                ]
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "checked_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "notes": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
         }
       },
       "additionalProperties": true,
