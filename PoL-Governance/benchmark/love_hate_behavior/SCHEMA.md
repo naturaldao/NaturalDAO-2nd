@@ -1,4 +1,4 @@
- # EVAL-05 数据契约 v0.2（草案）
+# EVAL-05 数据契约 v0.2（草案）
 
 2026-11-18 PDF 对照更新；机器可读 schema.v0.2.json 同步支持可选 rule_verifications。机器可读：[schema.v0.2.json](schema.v0.2.json)。旧 [schema.v0.1.json](schema.v0.1.json) 保留不改。JSONL 每行一个对象；现有 scenario/response 核心字段继续兼容，annotation 升级；新增 engine_assessment、adjudication。不得静默改写 v0.1 数据。未获授权的原文、私有保留集和模型身份盲化映射不提交公开分支。
 
