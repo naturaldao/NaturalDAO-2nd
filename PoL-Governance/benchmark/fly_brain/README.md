@@ -1,7 +1,7 @@
 # PoL2 × fly connectome templates
 
 **New:** [actual official model loading and full-brain runs](official/README.md)
-and [Chinese results](../../../Research/Brain/Official-Models-Results-20261117.md)
+and [Chinese results](../../../Research/Brain/Experiments/02-Visual-and-Whole-Brain-Models.md)
 are separate from the early proxy experiments described below.
 
 Two reproducible artificial experiments examine dynamic execution permissions
@@ -13,7 +13,7 @@ finite-contract test. PoL2 supplies the narrow contract's normative provenance;
 content-matched generic rules have identical behavior.
 
 - [Frozen protocol and interpretation](PROTOCOL.md)
-- [Chinese research/result card](../../../Research/Brain/PoL2-Fly-Brain-Results.md)
+- [Chinese research/result card](../../../Research/Brain/Experiments/01-Revocation-and-State.md)
 - [Interface experiment](interface/README.md)
 - [Memory evaluation summary](results/memory-eval-20261117/summary.json) and [per-seed data](results/memory-eval-20261117/per_seed.csv)
 - [Interface evaluation summary](interface/results/eval-20261117/summary.csv)

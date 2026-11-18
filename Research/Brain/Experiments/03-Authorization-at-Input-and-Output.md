@@ -4,7 +4,7 @@
 
 **研究问题：当授权撤回而神经活动仍在持续时，控制输入是否足够？执行端复核怎样影响未授权请求与合法响应？**本轮将 PoL2 的双向动态安全阀作为规范动机，在官方全脑模型外部比较门的部署位点。当前证据支持一个有限机制结论：本次试验中，停止糖输入后仍有下游请求，执行端复核能约束送达；同时控制输入并未比只控制输出表现出更好的请求结果。
 
-![PoL2外部契约、真实神经角色和输入输出门的量化对照](figures/pol2-brain-research-20261117.png)
+![PoL2外部契约、真实神经角色和输入输出门的量化对照](../figures/pol2-brain-research-20261117.png)
 
 **图｜PoL2 规范动机、部署机制与保存结果。**a：外部契约向输入门和执行端复核提供当前条件；中间的 21 个糖感受神经元与 2 个 MN9 使用真实骨架，灰色为注册脑区参考图谱，颜色仅表示解剖角色。全脑计算仍包含 138,639 个神经元。b：两条配对神经轨迹的 MN9 累计放电，以及按保存轨迹和冻结门规则重建的虚拟请求曲线；重建汇总与原在线运行记录逐项相等。300–600 ms 撤权，600–700 ms 证据过期，700 ms 后恢复有效授权。c：四个接口条件的未授权与合法送达数量。† 仅输入门条件是事后接口对照，原运行未单独记录该条件；全部四个条件只使用两条神经轨迹、一个配对种子，没有误差条。
 
@@ -21,7 +21,7 @@
 
 ## 真实结果与权衡
 
-N1–N3 来自[原 v3 运行记录](../../PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117-v3/manifest.json)、[保存活动](../../PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117-v3/activity.npz)及[新增派生核验](../../PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/saved_2x2_analysis.json)。表中数量均为本次模拟的虚拟请求计数。
+N1–N3 来自[原 v3 运行记录](../../../PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117-v3/manifest.json)、[保存活动](../../../PoL-Governance/benchmark/fly_brain/official/results/eon-pol2-20261117-v3/activity.npz)及[新增派生核验](../../../PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/saved_2x2_analysis.json)。表中数量均为本次模拟的虚拟请求计数。
 
 | 输入门 | 输出门 | MN9 生成请求 | 合法送达 | 未授权送达 | 被拦截 |
 |---|---|---:|---:|---:|---:|
@@ -46,13 +46,13 @@ N1–N3 来自[原 v3 运行记录](../../PoL-Governance/benchmark/fly_brain/off
 
 ## 证据、复算与审阅状态
 
-- [派生分析脚本](../../PoL-Governance/benchmark/fly_brain/official/analyze_pol2_saved.py)直接读取保存数据，不导入或调用神经模型；[逐阶段 CSV](../../PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/saved_2x2_phases.csv)保留每侧计数。
-- [证据索引](../../PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/evidence_manifest.json)记录 E1–E3、M1、N1–N3 的来源、版本与核对状态；人工审核仍待完成。
-- [绘图代码](../../PoL-Governance/benchmark/fly_brain/official/plot_pol2_research.py)、[图件来源记录](figures/pol2-brain-research-20261117.json)、[PDF](figures/pol2-brain-research-20261117.pdf)、[SVG](figures/pol2-brain-research-20261117.svg)。原数据中只有 23 个监测神经元的完整时序；其他神经元仅保存整秒累计数，不能据此重建全脑撤权期活动图。
+- [派生分析脚本](../../../PoL-Governance/benchmark/fly_brain/official/analyze_pol2_saved.py)直接读取保存数据，不导入或调用神经模型；[逐阶段 CSV](../../../PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/saved_2x2_phases.csv)保留每侧计数。
+- [证据索引](../../../PoL-Governance/benchmark/fly_brain/official/analysis/pol2-2x2-20261117/evidence_manifest.json)记录 E1–E3、M1、N1–N3 的来源、版本与核对状态；人工审核仍待完成。
+- [绘图代码](../../../PoL-Governance/benchmark/fly_brain/official/plot_pol2_research.py)、[图件来源记录](../figures/pol2-brain-research-20261117.json)、[PDF](../figures/pol2-brain-research-20261117.pdf)、[SVG](../figures/pol2-brain-research-20261117.svg)。原数据中只有 23 个监测神经元的完整时序；其他神经元仅保存整秒累计数，不能据此重建全脑撤权期活动图。
 
 ```powershell
 & 'D:/Codebase/PoL2-FlyVis-Official/.venv/Scripts/python.exe' 'PoL-Governance/benchmark/fly_brain/official/analyze_pol2_saved.py' --check
 & 'D:/Codebase/PoL2-FlyVis-Official/.venv/Scripts/python.exe' 'PoL-Governance/benchmark/fly_brain/official/plot_pol2_research.py'
 ```
 
-实现、核算、图件与文字使用 OpenAI Codex 辅助，未声明独立人工专家认证。证据整理采用 scientific-writing 工作流；软件文献：Kassis, T., Agarwal, V., He, Y., Patel, D., & Brueckner, A. M. (2026). [Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents](https://doi.org/10.48550/arXiv.2609.00065)。该文仅说明工作流来源，不作为本实验结果的证据。
+本研究使用 AI 辅助实现、计算核对和写作，尚待独立人工审校。证据整理方法参考 Kassis, T., Agarwal, V., He, Y., Patel, D., & Brueckner, A. M. (2026). [Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents](https://doi.org/10.48550/arXiv.2609.00065)。
