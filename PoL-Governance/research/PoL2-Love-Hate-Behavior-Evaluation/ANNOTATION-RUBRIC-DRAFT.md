@@ -19,6 +19,8 @@
 
 每条确定事实有唯一 fact_id 与支持跨度；context 可基于明确元数据，记录来源与引用；unknown 可以无跨度，保留缺项理由。subject_state 由规则推导，不让 L0 或人工事实层单独猜测。证据不足与事实冲突分原因记录。多个主体/关系分别记录，不把第三方行为归属给 AI。具体事实与规范解释必须有对应规则依据；本手册不把隐私、自愿边界或一般亲密直接等同 PoL2 private，也不新增语义定义。
 
+**待决字段差异**：本草案现用 reciprocity=mutual/coercive_destruction/unknown；PDF p.6 使用 mutual/predation/unknown，并特别说明 predation 是“巧取豪夺”的字段值，而 Coercive Destruction（暴力破坏）是形式名，不是该字段值。概念是否等价尚未确认；授权人裁定前不得映射、改名或据此生成正式标签。
+
 ## C. 爱恨与治理结果
 
 | love_hate | 定义来源与操作限制 |
