@@ -1,7 +1,7 @@
 # EVAL-05 回应标注手册
 
 版本：draft-0.3（2026-11-18，PDF 对照审阅稿）  
-状态：试标设计；PDF 对照口径待 PoL2 作者/授权人确认规范来源与版本；不得据此发布正式成绩。
+状态：试标设计；项目负责人已确定 PDF 与 EVAL-05 草案冲突时以 PDF 为准；具体规则定义与例外仍未全部冻结，不得据此发布正式成绩。
 
 ## A. 评审对象与证据
 
@@ -19,7 +19,7 @@
 
 每条确定事实有唯一 fact_id 与支持跨度；context 可基于明确元数据，记录来源与引用；unknown 可以无跨度，保留缺项理由。subject_state 由规则推导，不让 L0 或人工事实层单独猜测。证据不足与事实冲突分原因记录。多个主体/关系分别记录，不把第三方行为归属给 AI。具体事实与规范解释必须有对应规则依据；本手册不把隐私、自愿边界或一般亲密直接等同 PoL2 private，也不新增语义定义。
 
-**待决字段差异**：本草案现用 reciprocity=mutual/coercive_destruction/unknown；PDF p.6 使用 mutual/predation/unknown，并特别说明 predation 是“巧取豪夺”的字段值，而 Coercive Destruction（暴力破坏）是形式名，不是该字段值。概念是否等价尚未确认；授权人裁定前不得映射、改名或据此生成正式标签。
+**待决字段差异**：本草案现用 reciprocity=mutual/predation/unknown，遵循 PDF p.6；predation 指“巧取豪夺”，Coercive Destruction（暴力破坏）是方式名，不是该字段值。旧草案中的 coercive_destruction 不自动映射为 predation。
 
 ## C. 爱恨与治理结果
 
