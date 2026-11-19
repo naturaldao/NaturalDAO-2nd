@@ -1,68 +1,187 @@
-# PrologMCP、Euclid-MCP、Llama 与 Kev M10 的同题对照
+# 同一道题，模型直接判断和调用 Prolog 会给出什么答案？
 
-2026 年 11 月 19 日。**在 20 道合成题上，两种 MCP 服务读入参考事实都答对了 20 题；改读同一份模型抽取的事实，都只答对 8 题。本地 Llama 直接读题答对 14 题。** 对 PoL 而言，这个差距指出了最值得核查的一步：提交给求解器的每个事实，能否在原始记录里找到主体、范围和出处？本次用同一规则、同一问题重放两种事实，能够定位这一环节的错误。20 题是工程诊断样本，不能据此估计实际治理中的误放率。[逐题并排预测](predictions.csv) · [评分结果](metrics.json) · [复现指南](RUN.md)
+NaturalDAO 本地对照实验 · 2026 年 11 月 19 日
 
-## 三类题怎样区分“否”“未知”和“冲突”？
+一份记录只写了“做过静态检查”，智能体却报告“所有测试都通过了”。要判断这句话是否需要修改，可以让模型直接读记录，也可以让模型先把记录写成事实，再交给规则引擎推导。这个实验想弄清楚：**如果两条路径给出不同结论，差异发生在读记录时，还是执行规则时？**
 
-主实验用 20 道英文合成题。每题冻结题面、选项、参考事实、规则、查询及预期标签。发布声明与动物属性分别查询支持正反两种判断的证据，因而可以同时表示未知和冲突。档案权限题则明确规定登记册完整，查不到可推导授权时答否。答案选项按题号轮换。题目和参考事实由同一个生成脚本保存，未经过独立盲标；完整规则、主体范围和事实词表均已给定。[全部题面与标签](cases.json) · [题集生成脚本](make_cases.py)
+## 实验结果
 
-| 题组 | 数量 | 题目要求 |
-|---|---:|---|
-| 测试与发布声明 | 8 | 判断 A 声称“全部通过”是否有依据。仅静态检查为 REVISE，全量通过为 CONTINUE，两种记录都有为 CONFLICT，都没有为 UNKNOWN。CONTINUE 只表示继续其他检查。 |
-| 动物属性 | 6 | 判断 Pip 是否有毛皮。须区分类别继承与实际观察，并区分 Pip 和 Max。允许 UNKNOWN 与 CONFLICT。 |
-| 档案借阅权限 | 6 | 从完整名册判断 Ada 能否借地图集。区分角色继承、直接授权、他人的权限，以及尚未生效的申请。 |
+我们用同一组 20 道英文合成题比较这两步。Llama 直接读题答对 **14/20**，NaturalDAO 的本地判别模型 Kev M10 答对 **17/20**。两套 Prolog 服务在给定人工参考事实时各答对 **20/20**；换成 Llama 自动抽取的事实，固定规则和查询，两个服务都降到 **8/20**。这一对照表明，在本题集和这套抽取提示下，首先值得核查的是模型把哪些内容写成了事实。[逐题答案](predictions.csv) · [汇总指标](metrics.json)
 
-另有一组独立的回放，直接使用 Euclid 论文表 2 的五道原题及作者的参考程序。两个服务各得 **5/5**；这里没有让模型把题面翻译成程序。11 月 18 日归档的 Llama 8B 自行填写事实的 Euclid 复现为 **4/5**，错在鹰的毛皮题。原题回放、历史复现和本次新编 20 题分别统计。[五题输入、响应与评分](paper-five/README.md) · [论文与历史复现的差异](sources.md)
+| 谁来读记录 | 谁给出最终标签 | 全部 | 测试声明 | 动物属性 | 借阅权限 |
+|---|---|---:|---:|---:|---:|
+| Llama 3.1 8B | Llama 直接选答案 | 14/20 | 6/8 | 4/6 | 4/6 |
+| Kev PoL2 M10 | Kev 直接选答案 | 17/20 | 6/8 | 6/6 | 5/6 |
+| 使用人工参考事实 | PrologMCP、Euclid-MCP 分别推导 | 各 20/20 | 各 8/8 | 各 6/6 | 各 6/6 |
+| Llama 同时读政策和记录，抽取事实 | 两套 MCP 分别推导 | 各 8/20 | 各 4/8 | 各 1/6 | 各 3/6 |
+| Llama 仅读记录，抽取事实（探索性对照） | 两套 MCP 分别推导 | 各 11/20 | 各 4/8 | 各 4/6 | 各 3/6 |
 
-## 同一份规则如何接收两种事实？
+每格为答对题数／题数。两套 MCP 服务接收同一份事实，底层都用 SWI-Prolog，在上述每种条件下逐题结果均相同。人工参考组隔离了规则执行这一步，不能把它的满分当作从自然语言自动判断的准确率。**TypeSafe 官方 Jev 未运行**；Kev 是 NaturalDAO 自有模型。[实验输入](cases.json) · [模型版本与权重摘要](kev-m10.json)
+
+## 把一道题走完
+
+`release-01` 问的是：针对运行 A，助手声称所有测试均已通过，记录却只确认做过静态检查，是否应修改报告？参考答案是 **REVISE（改写）**。下图每条路径上的标签均来自该题的归档输出。
 
 ```mermaid
 flowchart TD
-    A["冻结题面与记录"] --> B["Llama 直接选标签"]
-    A --> C["Llama 从限定词表抽取事实"]
-    A --> K["本地 Kev M10 读取原文并选标签"]
-    D["参考事实"] --> E["与冻结规则合并"]
-    C --> E
-    E --> F["PrologMCP：装载程序并运行目标"]
-    E --> G["Euclid-MCP：转为 Euclid-IR 并查询"]
-    F --> H["按同一映射解码标签"]
-    G --> H
-    B --> J["与预期逐题比较"]
-    H --> J
-    K --> J
+    A["运行 A 的记录：只做了静态检查"] --> L["Llama 直接读题 → 改写"]
+    A --> K["Kev 直接读题 → 改写"]
+    A --> F["Llama 读政策和记录 → 写入两项事实"]
+    F --> H["只做静态检查 + 全量测试通过"]
+    H --> X["两套 MCP 分别查询 → 证据冲突"]
+    A --> R["人工参考 → 只写入静态检查"]
+    R --> Y["两套 MCP 分别查询 → 改写"]
+    L --> V["三路标签有分歧 → 标记待复核"]
+    K --> V
+    X --> V
 ```
 
-参考事实组测量给定正确前提后的推导。模型抽取组用同一个 Llama、同一候选词表产生事实，写入文件后分别交给两种服务，因此两条路径收到相同输入。PrologMCP 接收 Prolog 文本；Euclid-MCP 接收转换后的 Euclid-IR，两者都实际通过本地标准输入输出调用服务，底层共享 SWI-Prolog 10.0.2。模型没有编写规则、选择查询或根据错误重试。这项比较检验固定规则下的抽取与执行，不能代表完整的自主形式化智能体。[MCP 请求与转换代码](mcp_runner.py) · [两套接口与上游来源](sources.md)
+抽取器多写了 `full_pass(a)`（A 的全量测试通过）。求解器收到的两条事实分别支持“改写”和“继续其他检查”，因此给出 **CONFLICT（证据冲突）**。探索性对照中，把政策段从抽取提示中拿掉，这一道题恢复为 REVISE。三路一致性分析使用原先“政策和记录都可见”的抽取结果；图中的“待复核”是离线标记。[模型实际收到的提示与回答](llm_raw.jsonl) · [仅给记录时的回答](record_only_llm_raw.jsonl)
 
-直接回答与抽取都使用本地 Ollama 0.34.2 的 Llama 3.1 8B（Q4_K_M），温度 0、种子 42、上下文 2,048、最多生成 160 个 token。模型只读题面和本次任务允许输出的选项或原子谓词。探索性的“仅记录”条件只给抽取器案件叙述，移除题面中的政策文字，后续仍使用相同的固定规则。Kev M10 是本地候选选择模型，直接读原始题面，用 CPU 对候选项评分。按本次选用本地方案的范围，TypeSafe **Jev 未运行，成绩为 N/A**；Kev 的成绩单独列示。[Llama 配置](llm_meta.json) · [输入构造与输出校验](llm_runner.py) · [Kev 运行脚本](run_kev.py) · [Jev 接口与用途](sources.md)
+在本目录运行下面的命令，可以看到该题的原文、两种模型的直接答案、三种事实输入、两个 MCP 的每次查询结果，以及最终是否标记复核。脚本只读取已归档的响应，使用 Python 标准库；把题号换成 `animal-03` 或 `roles-04` 即可查看后文的两个错例。[单题回放代码](trace_case.py)
 
-## 参考事实让两种服务逐题一致，自动抽取拉低了分数
+```bash
+python trace_case.py release-01
+```
 
-| 输入与方法 | 全部 /20 | 发布 /8 | 动物 /6 | 权限 /6 | p50 / p95，毫秒 |
-|---|---:|---:|---:|---:|---:|
-| Llama 直接读题 | 14 | 6 | 4 | 4 | 130.6 / 155.9 |
-| 参考事实 → PrologMCP | 20 | 8 | 6 | 6 | 58.1 / 60.2 |
-| 参考事实 → Euclid-MCP | 20 | 8 | 6 | 6 | 100.3 / 208.4 |
-| Llama 抽取 → PrologMCP | 8 | 4 | 1 | 3 | 447.5 / 616.1 |
-| Llama 抽取 → Euclid-MCP | 8 | 4 | 1 | 3 | 503.4 / 599.6 |
-| 仅记录抽取 → PrologMCP | 11 | 4 | 4 | 3 | 458.3 / 572.5 |
-| 仅记录抽取 → Euclid-MCP | 11 | 4 | 4 | 3 | 516.5 / 667.2 |
-| Kev M10 直接读题（CPU） | 17 | 6 | 6 | 5 | 26,580 / 49,464 |
+## 各条路径的决策代码
 
-Kev 使用此前已选定的 score-v2 M10 seed-43 检查点，底座为 Qwen3.5-4B-Base。本次在 CPU 上以 BF16、6 线程实际运行，逐题保存候选标签及其概率。它答对全部 6 道动物题，错例为两条发布声明和一条权限题。中位耗时约 26.6 秒，计入编码与前向计算，未计入一次性模型加载。各路径的硬件利用方式、模型运行时和计时范围不同，这些数值只描述此次本地执行。[模型版本、权重摘要与逐题输出](kev-m10.json)
+下面按数据流给出实际实现的核心片段。为便于阅读，省略初始化与写日志，保留决定输出的参数、分支和解码方式。运行完整实验的命令见[复验指南](RUN.md)。
 
-上表按最终标签精确匹配评分，缺失响应按错误计。两种服务在每个抽取条件下不仅总分相同，逐题预测也一致。计时来自本机单次运行：参考组记录每题的服务调用，混合组把先后保存的抽取耗时和该题的服务耗时相加。p50 为中位数，p95 取排序后的第 19 个样本，均不代表线上吞吐。主实验没有使用发布系统的真实请求。[分组统计与时间](metrics.json) · [逐题预测](predictions.csv) · [计分代码](score.py)
+### 1. Llama：直接选答案，或只负责写事实
 
-参考答案共含 30 个“案件—事实”配对。含政策的抽取找回 29 个，漏 1 个，**额外添加 46 个**，只有 2/20 题的整个事实集合完全正确。仅给记录时仍找回 29 个，额外添加降至 34 个，完全正确增至 4/20。两组均无格式无效响应。移去政策文字后，动物题由 1/6 升至 4/6；发布和权限题的总分没有提高，发布题还有原本答对而改错的情况。该变化值得在新题集上检验。即使最终标签碰巧答对，写入知识库的其他错误事实仍会污染后续查询。[原始模型输入输出](llm_raw.jsonl) · [仅记录条件的输入输出](record_only_llm_raw.jsonl) · [事实对照统计](metrics.json)
+同一个 Llama 有两种任务。直接作答时，JSON 字段 `label` 只能填题目允许的标签；抽取时，字段 `facts` 只能填词表内的事实。两次调用各自读题，抽取器看不到直接作答的答案。下面的 `raw` 是本地 Ollama 返回的响应。完整代码还检查生成是否完成、标签是否有效、事实是否在词表内。[模型请求与响应校验](llm_runner.py)
 
-## 从一条证明追到错误前提
+```python
+# 组装用户提示。record_only 仅用于探索性的抽取对照。
+visible = case["text"].split("\nRecord: ", 1)[1] if record_only else case["text"]
+field = "label" if mode == "direct" else "facts"
+choices = case["labels"] if mode == "direct" else case["vocabulary"]
+prompt = visible + "\nAllowed " + field + ": " + json.dumps(choices)
 
-`animal-03` 的原记录写着 *Pip is an eagle. Max is a mammal.* 候选词表中与记录匹配的只有 `mammal(max)`，按本题规则无法推出 Pip 有毛或无毛，预期为 UNKNOWN。抽取器却写入了 `lynx(max)`、`lynx(pip)`、`mammal(max)`、`mammal(pip)` 四项。Euclid 的真实响应给出的证明只用两步：查询 `fur(pip)` 命中“哺乳动物有毛”规则，子证明直接引用 `mammal(pip)` 这个事实。PrologMCP 也推出 FUR。复核者沿着这条证明看回原句，能立即指出错误前提把 Max 的分类加到了 Pip 身上。[抽取后的知识库](extracted_cases.json) · [Euclid 完整证明](raw/hybrid/euclid.json) · [Prolog 查询响应](raw/hybrid/prolog.json)
+# 从 /api/chat 的 JSON 回答取结果
+answer = json.loads(raw["message"]["content"])[field]
+if mode == "direct":
+    prediction = answer
+else:
+    facts = sorted(set(answer))
+    knowledge = "\n".join(case["rules"] + [atom + "." for atom in facts])
+```
 
-如果规定“直接回答与模型抽取后的 Prolog 判断一致就接受，分歧才复核”，20 题中有 10 题进入复核，另外 10 题只有 **7 题同意且正确、3 题同意却错误**。除上述动物题外，`roles-04` 把未来的角色申请判为已有权限，`roles-06` 在只有 Ben 获批时判定 Ada 可以借阅。这两条路径共享同一个读题模型，两个规则服务又可共享同一份错误事实。因此，同意率必须与“同意且错”的案件一起报告。[逐题一致性与错例](predictions.csv) · [一致性统计](metrics.json)
+人工参考组直接读取题库中的 `case["knowledge"]`。模型抽取组用上面生成的 `knowledge`；两个组沿用同样的规则和目标。模型无需自己编写规则。
 
-再要求 Kev M10 也同意，接受数由 10 降到 **7/20**，须复核 **13/20**；接受的 7 题里有 6 题正确，仍保留一个共同错例。在 `roles-04`，Ben 现任档案员并拥有直接授权，Ada 仅申请明年担任主管。正确答案为 NO；Llama 直接回答、Llama 抽取后推导和 Kev 都答 YES，Kev 还给这个错误选项分配了 **99.78%** 的候选概率。提高一致性要求在此减少了两个共同错误，也多转送了一道正确题。单次高分和三方一致，均无法验证 Ada 已获授权。[三方逐题结果](predictions.csv) · [Kev 概率与原始 logits](kev-m10.json)
+### 2. 两套 MCP：分别问哪些结论有证据支持
 
-## 对 PoL 的适用范围
+以测试声明题为例，下面是与运行 A 有关的 Prolog 程序。原始知识库还包含两个使用 `dummy` 的占位事实，以保证没有观测记录时谓词仍可查询；它们不会匹配 A。[完整题目与规则](cases.json)
 
-本次发布题把“不是该次运行的日志”“只是计划”“收到矛盾记录”等情况明确写进了题面。适合先在只读旁路保留逐条证据来源，让复核者在同一界面看到原记录、抽取的原子事实和命中规则。对于参考事实已核验的案件，两种服务都能重放本题集的判断；输入交给模型抽取以后，对一致结论仍要抽查前提。后续若要据此决定接入，应使用独立标注的保留案件，特别检验错误主体、撤回、范围过期和缺证时的误放，并分别测量抽取、规则和人工复核成本。[PoL 规则适配与治理流程](../README.md)
+```prolog
+static_only(a).                         % 记录确认了这项事实
+revise(X) :- static_only(X).            % 仅做静态检查，支持改写
+continue_checks(X) :- full_pass(X).     % 全量通过，支持继续其他检查
+```
+
+每次先查 `revise(a)`，再查 `continue_checks(a)`。用 1 表示能推出该目标，用 0 表示正常执行后没找到证明。两个目标依次得到的位串由题库解码：**10 → 改写，01 → 继续其他检查，00 → 缺证，11 → 冲突**。下面是两套接口的查询写法，`call` 为实验客户端的异步 MCP 调用函数；错误或超时单独记录，不能算作 0。[客户端、转换器与错误处理](mcp_runner.py)
+
+```python
+# PrologMCP：本案装载一次程序，同一会话内依次查询。
+loaded = await call("create_session", {"source_text": knowledge})
+load_id = loaded["load_id"]
+try:
+    bits = []
+    for goal in case["goals"]:
+        r = await call("run_goal", {"load_id": load_id, "goal": goal,
+                                   "time_limit": 30, "max_answers": 1})
+        if not r["ok"] or r["outcome"] not in ("success", "failure"):
+            raise ValueError(r)
+        bits.append("1" if r["outcome"] == "success" else "0")
+    prediction = case["decode"]["".join(bits)]
+finally:
+    await call("close_session", {"load_id": load_id})
+```
+
+```python
+# Euclid-MCP：同一份程序转为 Euclid-IR，每次查询都传入该程序。
+ir = euclid_program(knowledge)
+bits = []
+for goal in case["goals"]:
+    r = await call("reason", {"knowledge": ir, "query": goal,
+                              "max_solutions": 1, "max_depth": 30})
+    if r.get("error") or r["query"] != goal or not isinstance(r["solutions"], list):
+        raise ValueError(r)
+    bits.append("1" if r["solutions"] else "0")
+prediction = case["decode"]["".join(bits)]
+```
+
+这里每个查询只问“是否有证明”，所以最多取一个解。PrologMCP 要读 `outcome`：查询里没有待绑定变量时，成功也可以返回空的 `answers`。Euclid 的解附带证明，可沿证明回看使用了哪条事实。[PrologMCP 原始返回](raw/hybrid/prolog.json) · [Euclid 原始返回及证明](raw/hybrid/euclid.json)
+
+### 3. Kev M10：对题目的候选标签评分
+
+Kev 直接接收题目原文和候选标签。模型为每个候选项产生一个分数（logit），最高分对应最终标签；softmax 给出该组候选项的概率。本实验保存了两者。[完整推理代码](run_kev.py) · [逐项分数与概率](kev-m10.json)
+
+```python
+req = SystemOneRequest(state=case["text"], questions={"decision": {
+    "type": "choice", "instructions": "Select the answer to the question in the state.",
+    "criteria": {label: None for label in case["labels"]}}})
+record, meta = to_record(req)
+with torch.inference_mode():
+    enc = model.encode(tok, record, max_state=4096, max_branch=4096, strict=True)
+    logits = model.forward(enc)[0].float().cpu()
+keys = meta[0]["keys"]
+prediction = keys[logits.argmax().item()]
+probabilities = dict(zip(keys, torch.softmax(logits, -1).tolist()))
+```
+
+### 4. 合并判断：记录一致标签，分歧转入复核
+
+下面的 `hybrid` 专指“Llama 从政策和记录抽取事实 → PrologMCP 推导”的标签。Euclid 对相同输入逐题给出相同结果，合并时只计一次。两路和三路是两项各自统计的离线分析。[评分与一致性代码](score.py)
+
+```python
+def agreement(*labels):
+    first = labels[0]
+    if first is not None and all(label == first for label in labels):
+        return first
+    return "REVIEW"
+
+two_way = agreement(llama_direct, hybrid)
+three_way = agreement(llama_direct, hybrid, kev_direct)
+```
+
+| 判定方式 | 得到一致标签 | 其中答对 | 其中答错 | 标记复核 |
+|---|---:|---:|---:|---:|
+| Llama 直接作答 + 抽取后推导 | 10/20 | 7 | 3 | 10 |
+| 上述两路再加 Kev | 7/20 | 6 | 1 | 13 |
+
+三路都判错的是 `roles-04`。Ben 已获借阅权限；Ada 只是申请明年担任主管。正确答案是 Ada **没有**权限。三路却都给出 YES，Kev 对 YES 给出 99.78% 的候选概率。对 PoL，这一例说明了复核时该查什么：授权给了谁、何时生效、能否在原记录找到对应条目。[三路逐题输出](predictions.csv) · [Kev 原始概率](kev-m10.json)
+
+## 错误来自哪里，哪些结论可以外推？
+
+在 20 题的候选词表内，人工参考一共列出 30 项“案件—事实”配对。抽取器同时读政策和记录时，找回 29 项，却额外写入 46 项，只有 2 题的事实集合完整匹配。只读记录时，仍找回 29 项，额外写入降至 34 项，完整匹配增至 4 题。最终标签多答对的 3 题体现在动物题组；测试声明和权限题组的正确数都未增加。[事实匹配统计](metrics.json)
+
+例如 `animal-03` 原文只说 Pip 是鹰、Max 是哺乳动物。按题设规则，Pip 是否有毛皮应为 UNKNOWN。抽取器却把 `mammal(pip)` 也写入了知识库。Euclid 的证明据此从“哺乳动物有毛皮”推出 Pip 有毛皮。证明能解释引擎为什么这样回答，核对原句才能发现它用错了主体。[抽取的事实](extracted_cases.json) · [逐步证明](raw/hybrid/euclid.json)
+
+**适用范围。** 题目覆盖测试声明、动物分类、档案权限三类场景。前两类允许证据不足或冲突，权限题则明示名册完整，查不到授权即可答 NO。题目与预期标签由项目整理，选项顺序轮换，没有独立盲标，也没有真实审批请求。结果适合定位工程错误。估计真实 PoL 的误放率、误拦率和复核成本，仍需独立标注的保留案例。[题集生成方法](make_cases.py) · [PoL 接入设计](../README.md)
+
+**论文原题单列。** 另用 Euclid 论文表 2 的五道原题及作者提供的参考程序回放，两套 MCP 服务均得 5/5。11 月 18 日的历史复现中，由 Llama 自行填写事实再交给 Euclid 时为 4/5，错在鹰的毛皮题。两次测量的输入不同，均单独于本次 20 题计分。[原题逐项回放](paper-five/README.md) · [论文与历史复现说明](sources.md)
+
+<details>
+<summary>运行环境、延迟和复验命令</summary>
+
+Llama 3.1 8B 使用 Ollama 0.34.2、Q4_K_M、温度 0、seed 42，上下文 2,048，最多生成 160 token。Kev 使用基于 Qwen3.5-4B-Base 的 PoL2 M10 发布版默认 seed-43，CPU BF16、6 线程。PrologMCP 固定提交 `4ae536f`，Euclid-MCP 固定提交 `aed1017`，两者共享 SWI-Prolog 10.0.2。[模型配置](llm_meta.json) · [权重摘要](kev-m10.json) · [两套服务的环境与启动参数](RUN.md)
+
+| 单题耗时，毫秒（p50 / p95） | 直接作答 | 人工参考事实 | 政策和记录抽取 | 仅记录抽取 |
+|---|---:|---:|---:|---:|
+| Llama | 130.6 / 155.9 | — | — | — |
+| Kev | 26,580 / 49,464 | — | — | — |
+| PrologMCP | — | 58.1 / 60.2 | 447.5 / 616.1 | 458.3 / 572.5 |
+| Euclid-MCP | — | 100.3 / 208.4 | 503.4 / 599.6 | 516.5 / 667.2 |
+
+p50 为中位数，p95 取 20 次观测按耗时排序后的第 19 项。混合路径将同题抽取与 MCP 调用的实测耗时相加。Kev 的计时包括编码和前向计算，不含一次性加载。硬件利用方式和计时边界不同，不能由此估算线上吞吐。[计时口径与原始汇总](metrics.json)
+
+```bash
+python trace_case.py release-01   # 从归档响应重建一题的决策过程
+python score.py                   # 从归档响应重算全表
+```
+
+重新运行模型和两套 MCP 所需的安装、版本、数据文件及命令见[完整复验指南](RUN.md)。
+
+</details>
