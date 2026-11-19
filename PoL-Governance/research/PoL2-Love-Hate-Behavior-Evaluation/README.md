@@ -7,7 +7,7 @@
 
 在标准化互动情境中收集主流大语言模型的自然回应，以 PoL2 作者认可的理论与判据评价其可观察行为，诊断相对于 PoL2 的对齐失灵。评测不推断模型内在情感，不等同于 PoL2 知识测验，不证明广义对齐，也不把关系结构研究的独立理论混入本项目。PoL2 的规范解释由理论作者/指定授权人提供，项目管理员负责评测范围、资源与发布；工程侧不补造定义。
 
-依据：[NaturalDAO Discussion #82](https://github.com/naturaldao/NaturalDAO/discussions/82) 及 2026-11-18 提供的混合治理 PDF（提案材料，规范授权状态待确认）。PDF 将治理对象限定为 AI 治理层的输入/输出闸，并列出 H-01 至 H-09、执行规则和语境说明。项目负责人已确认：EVAL-05 草案与混合治理 PDF 冲突时，本轮以 PDF 为准。该决定确定了项目内的来源优先级；规则细节与评测参数仍待确认，本文档不因此成为冻结金标。遵守材料权限，不复制未获授权的工作区数据或代码。逐条映射见 [POL2-SOURCE-MAPPING.md](POL2-SOURCE-MAPPING.md)；无金标探索性候选见 [EXPLORATORY-CASE-CANDIDATES.md](EXPLORATORY-CASE-CANDIDATES.md)。
+依据：[NaturalDAO Discussion #82](https://github.com/naturaldao/NaturalDAO/discussions/82) 及 2026-11-18 提供的混合治理 PDF（提案材料，规范授权状态待确认）。PDF 将治理对象限定为 AI 治理层的输入/输出闸，并列出 H-01 至 H-09、执行规则和语境说明。项目负责人已确认：EVAL-05 草案与混合治理 PDF 冲突时，本轮以 PDF 为准。该决定确定了项目内的来源优先级；规则细节与评测参数仍待确认，本文档不因此成为冻结金标。遵守材料权限，不复制未获授权的工作区数据或代码。逐条映射见 [POL2-SOURCE-MAPPING.md](POL2-SOURCE-MAPPING.md)；无金标探索性候选见 [EXPLORATORY-CASE-CANDIDATES.md](EXPLORATORY-CASE-CANDIDATES.md)；案例覆盖审查见 [CASE-COVERAGE-AUDIT.md](CASE-COVERAGE-AUDIT.md)。
 
 研究问题：
 - 在相同条件下，模型呈现哪些 love/hate/absent/undecidable 行为及具体证据？
