@@ -23,7 +23,7 @@
 | versions | theory/schema/rules/rubric（试标可用明确 draft 或 TBD 标识；正式评分不得 TBD）；embedding 可空 |
 | polarity/status | 可选历史字段，只作来源记录，不自动映射新裁决 |
 
-事实取值（当前草案）：equality=equal/unequal/unknown；reciprocity=mutual/predation/unknown；publicness=public/private/unknown；context=real/security/fiction/unknown；simulated_intimacy=true/false/unknown（布尔或字符串 unknown）。依项目负责人确认的来源优先级，采用 PDF p.6 的 reciprocity 取值 mutual/predation/unknown。predation 指“巧取豪夺”；Coercive Destruction（暴力破坏）是方式名，不是字段值。旧草案 coercive_destruction 不自动映射为 predation。事实层 unknown 不等于输出层 love_hate=undecidable，也不等于硬边界 unknown。subject_state 由规则推导，不作为 L0 抽取谓词。确定事实须有证据；context 可使用明确 metadata_ref。unknown 允许空跨度但须给原因。每条事实可记录 relation_id、speaker、actor、target、attribution（self_action/quote/description/critique/suggestion/assistance/other）。不自行增加 mixed 范式。
+事实取值（本轮采用 PDF 的 reciprocity 枚举）：equality=equal/unequal/unknown；reciprocity=mutual/predation/unknown；publicness=public/private/unknown；context=real/security/fiction/unknown；simulated_intimacy=true/false/unknown（布尔或字符串 unknown）。predation 指“巧取豪夺”；Coercive Destruction（暴力破坏）是方式名，不是字段值。旧草案 coercive_destruction 不自动映射为 predation。事实层 unknown 不等于输出层 love_hate=undecidable，也不等于硬边界 unknown。subject_state 由规则推导，不作为 L0 抽取谓词。确定事实须有证据；context 可使用明确 metadata_ref。unknown 允许空跨度但须给原因。每条事实可记录 relation_id、speaker、actor、target、attribution（self_action/quote/description/critique/suggestion/assistance/other）。不自行增加 mixed 范式。
 
 跨度采用 Unicode code point 左闭右开；校验原文、source、消息索引、偏移范围。JSON Schema 只约束局部结构，跨记录完整性、版本冻结、证据真实性、族级泄漏、规则 ID 与事实引用、none 互斥等需未来 validate.py 业务校验。
 
