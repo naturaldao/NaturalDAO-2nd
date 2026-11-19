@@ -1,0 +1,352 @@
+{
+  "model": "NaturalDAO Kev PoL2 score-v2 M10 seed-43",
+  "base": "Qwen/Qwen3.5-4B-Base",
+  "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+  "dtype": "bfloat16",
+  "device": "cpu",
+  "torch": "2.8.0+cu128",
+  "threads": 6,
+  "weights_sha256": {
+    "head.pt": "9603292b850fd9b21413476ea7f0f49a085c5febe0f2be541cd39b998f6dafb7",
+    "adapter_model.safetensors": "c05a982e70d8596d436d1dc4dc6475452802ad638d5e36f5a952035596c47eb1"
+  },
+  "cases_sha256": "e2f7998a90ac1aa7122da6bbc7fe05410f092ea52e5ab30295a1c2d6ef324087",
+  "results": [
+    {
+      "id": "release-01",
+      "prediction": "REVISE",
+      "probabilities": {
+        "REVISE": 0.9999953508377075,
+        "CONTINUE": 3.799638648160908e-07,
+        "UNKNOWN": 4.115241608815268e-06,
+        "CONFLICT": 8.177931931641069e-08
+      },
+      "logits": {
+        "REVISE": 7.351485252380371,
+        "CONTINUE": -7.431699752807617,
+        "UNKNOWN": -5.049323081970215,
+        "CONFLICT": -8.967751502990723
+      },
+      "tokens": 111,
+      "elapsed_s": 14.649
+    },
+    {
+      "id": "release-02",
+      "prediction": "CONTINUE",
+      "probabilities": {
+        "CONTINUE": 0.9999659061431885,
+        "UNKNOWN": 2.399185541435145e-05,
+        "CONFLICT": 3.6392432321008528e-06,
+        "REVISE": 6.42445775156375e-06
+      },
+      "logits": {
+        "CONTINUE": 5.692577362060547,
+        "UNKNOWN": -4.945184707641602,
+        "CONFLICT": -6.8311238288879395,
+        "REVISE": -6.262786865234375
+      },
+      "tokens": 117,
+      "elapsed_s": 15.404
+    },
+    {
+      "id": "release-03",
+      "prediction": "UNKNOWN",
+      "probabilities": {
+        "UNKNOWN": 0.9985747337341309,
+        "CONFLICT": 4.485773843043717e-06,
+        "REVISE": 0.0014163441956043243,
+        "CONTINUE": 4.369037924334407e-06
+      },
+      "logits": {
+        "UNKNOWN": 5.169362545013428,
+        "CONFLICT": -7.143810749053955,
+        "REVISE": -1.3888874053955078,
+        "CONTINUE": -7.1701788902282715
+      },
+      "tokens": 115,
+      "elapsed_s": 15.196
+    },
+    {
+      "id": "release-04",
+      "prediction": "CONFLICT",
+      "probabilities": {
+        "CONFLICT": 0.9999520778656006,
+        "REVISE": 4.7360503231175244e-05,
+        "CONTINUE": 2.8677993668679846e-07,
+        "UNKNOWN": 3.6216857779436396e-07
+      },
+      "logits": {
+        "CONFLICT": 8.583635330200195,
+        "REVISE": -1.374038815498352,
+        "CONTINUE": -6.480867385864258,
+        "UNKNOWN": -6.247473239898682
+      },
+      "tokens": 123,
+      "elapsed_s": 15.345
+    },
+    {
+      "id": "release-05",
+      "prediction": "REVISE",
+      "probabilities": {
+        "REVISE": 0.9997790455818176,
+        "CONTINUE": 1.3708817277802154e-05,
+        "UNKNOWN": 0.00017566021415404975,
+        "CONFLICT": 3.159401603625156e-05
+      },
+      "logits": {
+        "REVISE": 4.816309928894043,
+        "CONTINUE": -6.3809404373168945,
+        "UNKNOWN": -3.8304286003112793,
+        "CONFLICT": -5.546011447906494
+      },
+      "tokens": 124,
+      "elapsed_s": 15.34
+    },
+    {
+      "id": "release-06",
+      "prediction": "REVISE",
+      "probabilities": {
+        "CONTINUE": 3.3902992981893476e-06,
+        "UNKNOWN": 0.0004155502247158438,
+        "CONFLICT": 1.318935574090574e-05,
+        "REVISE": 0.9995678067207336
+      },
+      "logits": {
+        "CONTINUE": -8.015615463256836,
+        "UNKNOWN": -3.2069308757781982,
+        "CONFLICT": -6.657123565673828,
+        "REVISE": 4.5785441398620605
+      },
+      "tokens": 120,
+      "elapsed_s": 14.859
+    },
+    {
+      "id": "release-07",
+      "prediction": "CONTINUE",
+      "probabilities": {
+        "UNKNOWN": 6.434469014493516e-06,
+        "CONFLICT": 7.065405952744186e-06,
+        "REVISE": 7.472754077753052e-06,
+        "CONTINUE": 0.9999790191650391
+      },
+      "logits": {
+        "UNKNOWN": -7.256387710571289,
+        "CONFLICT": -7.162846088409424,
+        "REVISE": -7.10679292678833,
+        "CONTINUE": 4.697432518005371
+      },
+      "tokens": 121,
+      "elapsed_s": 29.921
+    },
+    {
+      "id": "release-08",
+      "prediction": "REVISE",
+      "probabilities": {
+        "CONFLICT": 0.11713890731334686,
+        "REVISE": 0.7896949648857117,
+        "CONTINUE": 0.07378644496202469,
+        "UNKNOWN": 0.019379746168851852
+      },
+      "logits": {
+        "CONFLICT": -1.248917579650879,
+        "REVISE": 0.6593688130378723,
+        "CONTINUE": -1.7111029624938965,
+        "UNKNOWN": -3.0480494499206543
+      },
+      "tokens": 128,
+      "elapsed_s": 54.383
+    },
+    {
+      "id": "animal-01",
+      "prediction": "FUR",
+      "probabilities": {
+        "FUR": 0.9999983310699463,
+        "BARE": 1.8804377077685785e-07,
+        "UNKNOWN": 1.369761093883426e-06,
+        "CONFLICT": 1.1195267290986521e-07
+      },
+      "logits": {
+        "FUR": 7.641152381896973,
+        "BARE": -7.8454365730285645,
+        "UNKNOWN": -5.859720230102539,
+        "CONFLICT": -8.364035606384277
+      },
+      "tokens": 101,
+      "elapsed_s": 45.353
+    },
+    {
+      "id": "animal-02",
+      "prediction": "BARE",
+      "probabilities": {
+        "BARE": 0.9966477751731873,
+        "UNKNOWN": 2.100283745676279e-05,
+        "CONFLICT": 0.0033277636393904686,
+        "FUR": 3.4132169730582973e-06
+      },
+      "logits": {
+        "BARE": 6.5290608406066895,
+        "UNKNOWN": -4.238434314727783,
+        "CONFLICT": 0.8269639015197754,
+        "FUR": -6.055437088012695
+      },
+      "tokens": 109,
+      "elapsed_s": 35.747
+    },
+    {
+      "id": "animal-03",
+      "prediction": "UNKNOWN",
+      "probabilities": {
+        "UNKNOWN": 0.9790711402893066,
+        "CONFLICT": 0.006574554368853569,
+        "FUR": 0.0035648958291858435,
+        "BARE": 0.01078945305198431
+      },
+      "logits": {
+        "UNKNOWN": 0.2950206995010376,
+        "CONFLICT": -4.708376884460449,
+        "FUR": -5.320448875427246,
+        "BARE": -4.213014602661133
+      },
+      "tokens": 106,
+      "elapsed_s": 14.345
+    },
+    {
+      "id": "animal-04",
+      "prediction": "CONFLICT",
+      "probabilities": {
+        "CONFLICT": 0.9990756511688232,
+        "FUR": 1.0483508958714083e-06,
+        "BARE": 0.000921985600143671,
+        "UNKNOWN": 1.3051903806626797e-06
+      },
+      "logits": {
+        "CONFLICT": 9.406454086303711,
+        "FUR": -4.360913276672363,
+        "BARE": 2.418397903442383,
+        "UNKNOWN": -4.141783237457275
+      },
+      "tokens": 111,
+      "elapsed_s": 23.239
+    },
+    {
+      "id": "animal-05",
+      "prediction": "UNKNOWN",
+      "probabilities": {
+        "FUR": 7.743284186290111e-06,
+        "BARE": 2.323381522728596e-06,
+        "UNKNOWN": 0.9999881982803345,
+        "CONFLICT": 1.8445484784024302e-06
+      },
+      "logits": {
+        "FUR": -6.749309539794922,
+        "BARE": -7.95311164855957,
+        "UNKNOWN": 5.019362926483154,
+        "CONFLICT": -8.183900833129883
+      },
+      "tokens": 115,
+      "elapsed_s": 49.464
+    },
+    {
+      "id": "animal-06",
+      "prediction": "FUR",
+      "probabilities": {
+        "BARE": 0.0015693451277911663,
+        "UNKNOWN": 0.09824291616678238,
+        "CONFLICT": 0.035569462925195694,
+        "FUR": 0.8646183013916016
+      },
+      "logits": {
+        "BARE": -7.348423480987549,
+        "UNKNOWN": -3.2116386890411377,
+        "CONFLICT": -4.227594375610352,
+        "FUR": -1.0367937088012695
+      },
+      "tokens": 108,
+      "elapsed_s": 45.69
+    },
+    {
+      "id": "roles-01",
+      "prediction": "YES",
+      "probabilities": {
+        "YES": 0.9999958276748657,
+        "NO": 4.177570644969819e-06
+      },
+      "logits": {
+        "YES": 7.219388484954834,
+        "NO": -5.166387557983398
+      },
+      "tokens": 79,
+      "elapsed_s": 39.527
+    },
+    {
+      "id": "roles-02",
+      "prediction": "NO",
+      "probabilities": {
+        "NO": 0.9998981952667236,
+        "YES": 0.00010178588854614645
+      },
+      "logits": {
+        "NO": 5.594681739807129,
+        "YES": -3.597855567932129
+      },
+      "tokens": 79,
+      "elapsed_s": 38.849
+    },
+    {
+      "id": "roles-03",
+      "prediction": "YES",
+      "probabilities": {
+        "YES": 0.9999904632568359,
+        "NO": 9.588034117768984e-06
+      },
+      "logits": {
+        "YES": 6.792179107666016,
+        "NO": -4.762805938720703
+      },
+      "tokens": 81,
+      "elapsed_s": 39.574
+    },
+    {
+      "id": "roles-04",
+      "prediction": "YES",
+      "probabilities": {
+        "NO": 0.00216232193633914,
+        "YES": 0.9978377223014832
+      },
+      "logits": {
+        "NO": -3.082556962966919,
+        "YES": 3.051851272583008
+      },
+      "tokens": 87,
+      "elapsed_s": 41.789
+    },
+    {
+      "id": "roles-05",
+      "prediction": "YES",
+      "probabilities": {
+        "YES": 0.9999954700469971,
+        "NO": 4.514427928370424e-06
+      },
+      "logits": {
+        "YES": 7.250111103057861,
+        "NO": -5.0581159591674805
+      },
+      "tokens": 78,
+      "elapsed_s": 20.951
+    },
+    {
+      "id": "roles-06",
+      "prediction": "NO",
+      "probabilities": {
+        "NO": 0.9729148745536804,
+        "YES": 0.027085162699222565
+      },
+      "logits": {
+        "NO": 0.8921312689781189,
+        "YES": -2.6891791820526123
+      },
+      "tokens": 83,
+      "elapsed_s": 12.775
+    }
+  ]
+}

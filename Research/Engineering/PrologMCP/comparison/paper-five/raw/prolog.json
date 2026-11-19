@@ -1,0 +1,306 @@
+{
+  "server": "prolog",
+  "server_commit": "4ae536fd9b1cef8419d1798b5d4cb1569cba3cae",
+  "server_entry": "python -m prolog_mcp.server",
+  "server_runtime": "3.13.15 mcp 1.30.0",
+  "swipl": "SWI-Prolog version 10.0.2 for x64-win64",
+  "client_sdk": "1.30.0",
+  "cases_sha256": "af733e4b4aef8f805782d48e00a2bcc7a80ea038db35d980ed3c166a015df01d",
+  "cases": [
+    {
+      "id": "Q1",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "parent(tom, bob).\nparent(bob, ann).\nparent(bob, pat).\nparent(tom, liz).\nparent(liz, mia).\nancestor(X, Y) :- parent(X, Y).\nancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"70ae25a60f40\", \"module_name\": \"m_70ae25a60f40\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 53.25
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "70ae25a60f40",
+            "goal": "ancestor(tom, ann)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.24
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "70ae25a60f40"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.09
+        }
+      ],
+      "predicted": "Yes",
+      "bits": "1",
+      "elapsed_ms": 58.63
+    },
+    {
+      "id": "Q2",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "is_a(siamese, cat).\nis_a(cat, felinae).\nis_a(felinae, felidae).\nis_a(felidae, carnivoran).\nproperty(felidae, retractable_claws).\nhas_property(X, P) :- property(X, P).\nhas_property(X, P) :- is_a(X, Parent), has_property(Parent, P)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"0a8e07d61ec7\", \"module_name\": \"m_0a8e07d61ec7\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 48.89
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "0a8e07d61ec7",
+            "goal": "has_property(siamese, retractable_claws)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.23
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "0a8e07d61ec7"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.58
+        }
+      ],
+      "predicted": "Yes",
+      "bits": "1",
+      "elapsed_ms": 54.76
+    },
+    {
+      "id": "Q3",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "is_a(eagle, raptor).\nis_a(raptor, bird).\nis_a(bird, vertebrate).\nproperty(mammal, has_fur).\nhas_property(X, P) :- property(X, P).\nhas_property(X, P) :- is_a(X, Parent), has_property(Parent, P)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"0a8e17830894\", \"module_name\": \"m_0a8e17830894\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 47.74
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "0a8e17830894",
+            "goal": "has_property(eagle, has_fur)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"failure\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.26
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "0a8e17830894"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.62
+        }
+      ],
+      "predicted": "No",
+      "bits": "0",
+      "elapsed_ms": 53.67
+    },
+    {
+      "id": "Q4",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "has_role(alice, admin).\ninherits(admin, editor).\ninherits(editor, viewer).\npermission(viewer, read).\npermission(editor, write).\npermission(admin, delete).\nrole_has_permission(R, P) :- permission(R, P).\nrole_has_permission(R, P) :- inherits(R, Sub), role_has_permission(Sub, P).\nuser_has_permission(U, P) :- has_role(U, R), role_has_permission(R, P)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"0b3795497f58\", \"module_name\": \"m_0b3795497f58\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 47.94
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "0b3795497f58",
+            "goal": "user_has_permission(alice, write)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.28
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "0b3795497f58"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.29
+        }
+      ],
+      "predicted": "Yes",
+      "bits": "1",
+      "elapsed_ms": 53.57
+    },
+    {
+      "id": "Q5",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "has_role(bob, viewer).\ninherits(admin, editor).\ninherits(editor, viewer).\npermission(viewer, read).\npermission(editor, write).\npermission(admin, delete).\nrole_has_permission(R, P) :- permission(R, P).\nrole_has_permission(R, P) :- inherits(R, Sub), role_has_permission(Sub, P).\nuser_has_permission(U, P) :- has_role(U, R), role_has_permission(R, P)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"3af4df01c53e\", \"module_name\": \"m_3af4df01c53e\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 48.12
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "3af4df01c53e",
+            "goal": "user_has_permission(bob, delete)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"failure\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.34
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "3af4df01c53e"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.36
+        }
+      ],
+      "predicted": "No",
+      "bits": "0",
+      "elapsed_ms": 53.88
+    }
+  ]
+}

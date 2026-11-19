@@ -1,0 +1,71 @@
+{
+  "benchmark_commit": "aed10179131fc990739f5d69b0584f4a065f0faa",
+  "benchmark_path": "benchmarks/reasoning_benchmark.py",
+  "source_sha256_lf": "f98eb9a39d56fff4d04695f9b0aecc40c9583bcc3b0a1546b9a2550bdb45b1a8",
+  "results": {
+    "prolog": {
+      "Q1": {
+        "predicted": "Yes",
+        "expected": "Yes",
+        "correct": true,
+        "error": null
+      },
+      "Q2": {
+        "predicted": "Yes",
+        "expected": "Yes",
+        "correct": true,
+        "error": null
+      },
+      "Q3": {
+        "predicted": "No",
+        "expected": "No",
+        "correct": true,
+        "error": null
+      },
+      "Q4": {
+        "predicted": "Yes",
+        "expected": "Yes",
+        "correct": true,
+        "error": null
+      },
+      "Q5": {
+        "predicted": "No",
+        "expected": "No",
+        "correct": true,
+        "error": null
+      }
+    },
+    "euclid": {
+      "Q1": {
+        "predicted": "Yes",
+        "expected": "Yes",
+        "correct": true,
+        "error": null
+      },
+      "Q2": {
+        "predicted": "Yes",
+        "expected": "Yes",
+        "correct": true,
+        "error": null
+      },
+      "Q3": {
+        "predicted": "No",
+        "expected": "No",
+        "correct": true,
+        "error": null
+      },
+      "Q4": {
+        "predicted": "Yes",
+        "expected": "Yes",
+        "correct": true,
+        "error": null
+      },
+      "Q5": {
+        "predicted": "No",
+        "expected": "No",
+        "correct": true,
+        "error": null
+      }
+    }
+  }
+}

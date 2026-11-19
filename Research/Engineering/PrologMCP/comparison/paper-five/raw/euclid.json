@@ -1,0 +1,383 @@
+{
+  "server": "euclid",
+  "server_commit": "aed10179131fc990739f5d69b0584f4a065f0faa",
+  "server_entry": "python -m euclid_mcp",
+  "server_runtime": "3.12.10 mcp 2.0.0",
+  "swipl": "SWI-Prolog version 10.0.2 for x64-win64",
+  "client_sdk": "1.30.0",
+  "cases_sha256": "af733e4b4aef8f805782d48e00a2bcc7a80ea038db35d980ed3c166a015df01d",
+  "cases": [
+    {
+      "id": "Q1",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "parent(tom, bob)\nparent(bob, ann)\nparent(bob, pat)\nparent(tom, liz)\nparent(liz, mia)\nancestor($x, $y) IF parent($x, $y)\nancestor($x, $y) IF parent($x, $z) AND ancestor($z, $y)",
+            "query": "ancestor(tom, ann)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"ancestor(tom,ann)\",\n        \"body\": \"parent(tom,bob),ancestor(bob,ann)\",\n        \"subproof\": {\n          \"type\": \"and\",\n          \"goal\": null,\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": {\n            \"type\": \"fact\",\n            \"goal\": \"parent(tom,bob)\",\n            \"body\": null,\n            \"subproof\": null,\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"right\": {\n            \"type\": \"rule\",\n            \"goal\": \"ancestor(bob,ann)\",\n            \"body\": \"parent(bob,ann)\",\n            \"subproof\": {\n              \"type\": \"fact\",\n              \"goal\": \"parent(bob,ann)\",\n              \"body\": null,\n              \"subproof\": null,\n              \"left\": null,\n              \"right\": null,\n              \"rule_id\": null\n            },\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"ancestor(tom, ann)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "ancestor(tom,ann)",
+                    "body": "parent(tom,bob),ancestor(bob,ann)",
+                    "subproof": {
+                      "type": "and",
+                      "goal": null,
+                      "body": null,
+                      "subproof": null,
+                      "left": {
+                        "type": "fact",
+                        "goal": "parent(tom,bob)",
+                        "body": null,
+                        "subproof": null,
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "right": {
+                        "type": "rule",
+                        "goal": "ancestor(bob,ann)",
+                        "body": "parent(bob,ann)",
+                        "subproof": {
+                          "type": "fact",
+                          "goal": "parent(bob,ann)",
+                          "body": null,
+                          "subproof": null,
+                          "left": null,
+                          "right": null,
+                          "rule_id": null
+                        },
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "ancestor(tom, ann)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 59.98
+        }
+      ],
+      "predicted": "Yes",
+      "bits": "1",
+      "elapsed_ms": 60.02
+    },
+    {
+      "id": "Q2",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "is_a(siamese, cat)\nis_a(cat, felinae)\nis_a(felinae, felidae)\nis_a(felidae, carnivoran)\nproperty(felidae, retractable_claws)\nhas_property($x, $p) IF property($x, $p)\nhas_property($x, $p) IF is_a($x, $parent) AND has_property($parent, $p)",
+            "query": "has_property(siamese, retractable_claws)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"has_property(siamese,retractable_claws)\",\n        \"body\": \"is_a(siamese,cat),has_property(cat,retractable_claws)\",\n        \"subproof\": {\n          \"type\": \"and\",\n          \"goal\": null,\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": {\n            \"type\": \"fact\",\n            \"goal\": \"is_a(siamese,cat)\",\n            \"body\": null,\n            \"subproof\": null,\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"right\": {\n            \"type\": \"rule\",\n            \"goal\": \"has_property(cat,retractable_claws)\",\n            \"body\": \"is_a(cat,felinae),has_property(felinae,retractable_claws)\",\n            \"subproof\": {\n              \"type\": \"and\",\n              \"goal\": null,\n              \"body\": null,\n              \"subproof\": null,\n              \"left\": {\n                \"type\": \"fact\",\n                \"goal\": \"is_a(cat,felinae)\",\n                \"body\": null,\n                \"subproof\": null,\n                \"left\": null,\n                \"right\": null,\n                \"rule_id\": null\n              },\n              \"right\": {\n                \"type\": \"rule\",\n                \"goal\": \"has_property(felinae,retractable_claws)\",\n                \"body\": \"is_a(felinae,felidae),has_property(felidae,retractable_claws)\",\n                \"subproof\": {\n                  \"type\": \"and\",\n                  \"goal\": null,\n                  \"body\": null,\n                  \"subproof\": null,\n                  \"left\": {\n                    \"type\": \"fact\",\n                    \"goal\": \"is_a(felinae,felidae)\",\n                    \"body\": null,\n                    \"subproof\": null,\n                    \"left\": null,\n                    \"right\": null,\n                    \"rule_id\": null\n                  },\n                  \"right\": {\n                    \"type\": \"rule\",\n                    \"goal\": \"has_property(felidae,retractable_claws)\",\n                    \"body\": \"property(felidae,retractable_claws)\",\n                    \"subproof\": {\n                      \"type\": \"fact\",\n                      \"goal\": \"property(felidae,retractable_claws)\",\n                      \"body\": null,\n                      \"subproof\": null,\n                      \"left\": null,\n                      \"right\": null,\n                      \"rule_id\": null\n                    },\n                    \"left\": null,\n                    \"right\": null,\n                    \"rule_id\": null\n                  },\n                  \"rule_id\": null\n                },\n                \"left\": null,\n                \"right\": null,\n                \"rule_id\": null\n              },\n              \"rule_id\": null\n            },\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"has_property(siamese, retractable_claws)\",\n  \"elapsed_ms\": 31.9999999992433,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "has_property(siamese,retractable_claws)",
+                    "body": "is_a(siamese,cat),has_property(cat,retractable_claws)",
+                    "subproof": {
+                      "type": "and",
+                      "goal": null,
+                      "body": null,
+                      "subproof": null,
+                      "left": {
+                        "type": "fact",
+                        "goal": "is_a(siamese,cat)",
+                        "body": null,
+                        "subproof": null,
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "right": {
+                        "type": "rule",
+                        "goal": "has_property(cat,retractable_claws)",
+                        "body": "is_a(cat,felinae),has_property(felinae,retractable_claws)",
+                        "subproof": {
+                          "type": "and",
+                          "goal": null,
+                          "body": null,
+                          "subproof": null,
+                          "left": {
+                            "type": "fact",
+                            "goal": "is_a(cat,felinae)",
+                            "body": null,
+                            "subproof": null,
+                            "left": null,
+                            "right": null,
+                            "rule_id": null
+                          },
+                          "right": {
+                            "type": "rule",
+                            "goal": "has_property(felinae,retractable_claws)",
+                            "body": "is_a(felinae,felidae),has_property(felidae,retractable_claws)",
+                            "subproof": {
+                              "type": "and",
+                              "goal": null,
+                              "body": null,
+                              "subproof": null,
+                              "left": {
+                                "type": "fact",
+                                "goal": "is_a(felinae,felidae)",
+                                "body": null,
+                                "subproof": null,
+                                "left": null,
+                                "right": null,
+                                "rule_id": null
+                              },
+                              "right": {
+                                "type": "rule",
+                                "goal": "has_property(felidae,retractable_claws)",
+                                "body": "property(felidae,retractable_claws)",
+                                "subproof": {
+                                  "type": "fact",
+                                  "goal": "property(felidae,retractable_claws)",
+                                  "body": null,
+                                  "subproof": null,
+                                  "left": null,
+                                  "right": null,
+                                  "rule_id": null
+                                },
+                                "left": null,
+                                "right": null,
+                                "rule_id": null
+                              },
+                              "rule_id": null
+                            },
+                            "left": null,
+                            "right": null,
+                            "rule_id": null
+                          },
+                          "rule_id": null
+                        },
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "has_property(siamese, retractable_claws)",
+              "elapsed_ms": 31.9999999992433,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 46.79
+        }
+      ],
+      "predicted": "Yes",
+      "bits": "1",
+      "elapsed_ms": 46.84
+    },
+    {
+      "id": "Q3",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "is_a(eagle, raptor)\nis_a(raptor, bird)\nis_a(bird, vertebrate)\nproperty(mammal, has_fur)\nhas_property($x, $p) IF property($x, $p)\nhas_property($x, $p) IF is_a($x, $parent) AND has_property($parent, $p)",
+            "query": "has_property(eagle, has_fur)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"has_property(eagle, has_fur)\",\n  \"elapsed_ms\": 31.000000002677552,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "has_property(eagle, has_fur)",
+              "elapsed_ms": 31.000000002677552,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 46.38
+        }
+      ],
+      "predicted": "No",
+      "bits": "0",
+      "elapsed_ms": 46.43
+    },
+    {
+      "id": "Q4",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "has_role(alice, admin)\ninherits(admin, editor)\ninherits(editor, viewer)\npermission(viewer, read)\npermission(editor, write)\npermission(admin, delete)\nrole_has_permission($r, $p) IF permission($r, $p)\nrole_has_permission($r, $p) IF inherits($r, $sub) AND role_has_permission($sub, $p)\nuser_has_permission($u, $p) IF has_role($u, $r) AND role_has_permission($r, $p)",
+            "query": "user_has_permission(alice, write)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"user_has_permission(alice,write)\",\n        \"body\": \"has_role(alice,admin),role_has_permission(admin,write)\",\n        \"subproof\": {\n          \"type\": \"and\",\n          \"goal\": null,\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": {\n            \"type\": \"fact\",\n            \"goal\": \"has_role(alice,admin)\",\n            \"body\": null,\n            \"subproof\": null,\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"right\": {\n            \"type\": \"rule\",\n            \"goal\": \"role_has_permission(admin,write)\",\n            \"body\": \"inherits(admin,editor),role_has_permission(editor,write)\",\n            \"subproof\": {\n              \"type\": \"and\",\n              \"goal\": null,\n              \"body\": null,\n              \"subproof\": null,\n              \"left\": {\n                \"type\": \"fact\",\n                \"goal\": \"inherits(admin,editor)\",\n                \"body\": null,\n                \"subproof\": null,\n                \"left\": null,\n                \"right\": null,\n                \"rule_id\": null\n              },\n              \"right\": {\n                \"type\": \"rule\",\n                \"goal\": \"role_has_permission(editor,write)\",\n                \"body\": \"permission(editor,write)\",\n                \"subproof\": {\n                  \"type\": \"fact\",\n                  \"goal\": \"permission(editor,write)\",\n                  \"body\": null,\n                  \"subproof\": null,\n                  \"left\": null,\n                  \"right\": null,\n                  \"rule_id\": null\n                },\n                \"left\": null,\n                \"right\": null,\n                \"rule_id\": null\n              },\n              \"rule_id\": null\n            },\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"user_has_permission(alice, write)\",\n  \"elapsed_ms\": 31.000000002677552,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "user_has_permission(alice,write)",
+                    "body": "has_role(alice,admin),role_has_permission(admin,write)",
+                    "subproof": {
+                      "type": "and",
+                      "goal": null,
+                      "body": null,
+                      "subproof": null,
+                      "left": {
+                        "type": "fact",
+                        "goal": "has_role(alice,admin)",
+                        "body": null,
+                        "subproof": null,
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "right": {
+                        "type": "rule",
+                        "goal": "role_has_permission(admin,write)",
+                        "body": "inherits(admin,editor),role_has_permission(editor,write)",
+                        "subproof": {
+                          "type": "and",
+                          "goal": null,
+                          "body": null,
+                          "subproof": null,
+                          "left": {
+                            "type": "fact",
+                            "goal": "inherits(admin,editor)",
+                            "body": null,
+                            "subproof": null,
+                            "left": null,
+                            "right": null,
+                            "rule_id": null
+                          },
+                          "right": {
+                            "type": "rule",
+                            "goal": "role_has_permission(editor,write)",
+                            "body": "permission(editor,write)",
+                            "subproof": {
+                              "type": "fact",
+                              "goal": "permission(editor,write)",
+                              "body": null,
+                              "subproof": null,
+                              "left": null,
+                              "right": null,
+                              "rule_id": null
+                            },
+                            "left": null,
+                            "right": null,
+                            "rule_id": null
+                          },
+                          "rule_id": null
+                        },
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "user_has_permission(alice, write)",
+              "elapsed_ms": 31.000000002677552,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 46.26
+        }
+      ],
+      "predicted": "Yes",
+      "bits": "1",
+      "elapsed_ms": 46.31
+    },
+    {
+      "id": "Q5",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "has_role(bob, viewer)\ninherits(admin, editor)\ninherits(editor, viewer)\npermission(viewer, read)\npermission(editor, write)\npermission(admin, delete)\nrole_has_permission($r, $p) IF permission($r, $p)\nrole_has_permission($r, $p) IF inherits($r, $sub) AND role_has_permission($sub, $p)\nuser_has_permission($u, $p) IF has_role($u, $r) AND role_has_permission($r, $p)",
+            "query": "user_has_permission(bob, delete)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"user_has_permission(bob, delete)\",\n  \"elapsed_ms\": 156.00000000267755,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "user_has_permission(bob, delete)",
+              "elapsed_ms": 156.00000000267755,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 170.37
+        }
+      ],
+      "predicted": "No",
+      "bits": "0",
+      "elapsed_ms": 170.42
+    }
+  ]
+}

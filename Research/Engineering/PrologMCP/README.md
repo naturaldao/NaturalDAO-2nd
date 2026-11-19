@@ -2,6 +2,8 @@
 
 调研日期为 2026 年 11 月 19 日。**建议先把 PrologMCP 用作 PoL Gate 的只读规则复核器。** 例如，智能体报告“所有测试都通过了”，同一任务的上下文却写着“只做了静态检查”。NaturalDAO 的 Proof of Love2（PoL2）治理服务已有要求改写这类输出的规则。本次调研把这一条冲突条件写成 Prolog，通过作者的 MCP 服务实际查到了命中它的两项事实。这个结果支持将工具用于核对规则、解释命中原因。至于记录是否可信、当事人是否真正同意、某项行动能否放行，分别需要证据核验、情境判断和治理服务授权。[NaturalDAO 现有回归用例](https://github.com/naturaldao/NaturalDAO-2nd/blob/b075616aa4e59eeed59d2bd603bf5f6aa53f80fa/POL2-Steward/pol2-service/tests/test_governance.py#L148-L187)
 
+**同题对照实测**　[PrologMCP、Euclid-MCP、Llama 与本地 Kev M10](comparison/README.md) 在 20 道合成题上分别检验从原文判断、抽取事实和执行规则，并回放 Euclid 论文表 2 五道原题。[逐题输出](comparison/predictions.csv) · [复验方法](comparison/RUN.md)
+
 ## 从一句话到一次可检查的推导
 
 本文讨论的是 Agnieszka Mensfelt 等人论文对应的开源项目 **dicelab-rhul/PrologMCP**。Prolog 让开发者写下事实和“满足哪些条件就能推出什么”的规则，再用查询询问某项结论能否成立。SWI-Prolog 是实际执行这些查询的软件。MCP（Model Context Protocol，模型上下文协议）规定应用如何发现和调用工具。PrologMCP 把这三件事连起来：客户端提交程序，服务器为它保留独立的运行会话，后续查询可以沿用同一套事实和规则。自然语言翻译由调用方完成。论文中的 **MCPFormalizer** 是使用这个服务解题的智能体，也是独立的评测项目。[论文](https://arxiv.org/abs/2606.14935) · [MCP 官方架构](https://modelcontextprotocol.io/docs/learn/architecture) · [MCPFormalizer 代码与日志](https://github.com/dicelab-rhul/MCPFormalizer)

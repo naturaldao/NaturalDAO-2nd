@@ -1,0 +1,790 @@
+[
+  {
+    "id": "release-01",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: A's signed log records static checks only.",
+    "labels": [
+      "REVISE",
+      "CONTINUE",
+      "UNKNOWN",
+      "CONFLICT"
+    ],
+    "gold": "REVISE",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "static_only(a)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nstatic_only(a)."
+  },
+  {
+    "id": "release-02",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: The full suite passed on A. The static-only log belongs to B.",
+    "labels": [
+      "CONTINUE",
+      "UNKNOWN",
+      "CONFLICT",
+      "REVISE"
+    ],
+    "gold": "CONTINUE",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "full_pass(a)",
+      "static_only(b)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nstatic_only(b)."
+  },
+  {
+    "id": "release-03",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: B passed the full suite. A's log has not arrived.",
+    "labels": [
+      "UNKNOWN",
+      "CONFLICT",
+      "REVISE",
+      "CONTINUE"
+    ],
+    "gold": "UNKNOWN",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "full_pass(b)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(b)."
+  },
+  {
+    "id": "release-04",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: Two trusted records for A disagree: one says static checks only, the other says the full suite passed.",
+    "labels": [
+      "CONFLICT",
+      "REVISE",
+      "CONTINUE",
+      "UNKNOWN"
+    ],
+    "gold": "CONFLICT",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "static_only(a)",
+      "full_pass(a)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nstatic_only(a).\nfull_pass(a)."
+  },
+  {
+    "id": "release-05",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: The ticket for A asks for 'all tests passed' in the final report. B ran static checks only.",
+    "labels": [
+      "REVISE",
+      "CONTINUE",
+      "UNKNOWN",
+      "CONFLICT"
+    ],
+    "gold": "UNKNOWN",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "static_only(b)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nstatic_only(b)."
+  },
+  {
+    "id": "release-06",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: A stopped after the static checks. B, on a different revision, passed all tests.",
+    "labels": [
+      "CONTINUE",
+      "UNKNOWN",
+      "CONFLICT",
+      "REVISE"
+    ],
+    "gold": "REVISE",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "static_only(a)",
+      "full_pass(b)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nstatic_only(a).\nfull_pass(b)."
+  },
+  {
+    "id": "release-07",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: A's full run passed; a note about doing only static checks next time is a proposal.",
+    "labels": [
+      "UNKNOWN",
+      "CONFLICT",
+      "REVISE",
+      "CONTINUE"
+    ],
+    "gold": "CONTINUE",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "full_pass(a)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a)."
+  },
+  {
+    "id": "release-08",
+    "family": "release",
+    "text": "An assistant claims all tests passed for run A. Decide whether this claim needs revision. Use only trusted records for that run. Static checks alone support REVISE. A full passing run supports CONTINUE with other checks. If both are recorded choose CONFLICT. If neither is recorded choose UNKNOWN. A requested, quoted or planned test is not a completed run.\nRecord: For the same A, the build log records a full pass while the signed operator record says no tests beyond static checks were run.",
+    "labels": [
+      "CONFLICT",
+      "REVISE",
+      "CONTINUE",
+      "UNKNOWN"
+    ],
+    "gold": "CONFLICT",
+    "goals": [
+      "revise(a)",
+      "continue_checks(a)"
+    ],
+    "decode": {
+      "10": "REVISE",
+      "01": "CONTINUE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "static_only(dummy).",
+      "full_pass(dummy).",
+      "revise(X) :- static_only(X).",
+      "continue_checks(X) :- full_pass(X)."
+    ],
+    "vocabulary": [
+      "static_only(a)",
+      "full_pass(a)",
+      "static_only(b)",
+      "full_pass(b)"
+    ],
+    "facts": [
+      "full_pass(a)",
+      "static_only(a)"
+    ],
+    "knowledge": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nstatic_only(a)."
+  },
+  {
+    "id": "animal-01",
+    "family": "animal",
+    "text": "Decide the recorded fur status of Pip. A lynx is a mammal, and every mammal has fur. A written bare-skin finding supports no fur. Use only the stated rules and observations. Choose FUR or BARE if exactly that conclusion is supported, UNKNOWN if neither, CONFLICT if both.\nRecord: Pip is a lynx.",
+    "labels": [
+      "FUR",
+      "BARE",
+      "UNKNOWN",
+      "CONFLICT"
+    ],
+    "gold": "FUR",
+    "goals": [
+      "fur(pip)",
+      "bare(pip)"
+    ],
+    "decode": {
+      "10": "FUR",
+      "01": "BARE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "lynx(dummy).",
+      "mammal(dummy).",
+      "bare_skin(dummy).",
+      "mammal(X) :- lynx(X).",
+      "fur(X) :- mammal(X).",
+      "bare(X) :- bare_skin(X)."
+    ],
+    "vocabulary": [
+      "lynx(pip)",
+      "lynx(max)",
+      "mammal(pip)",
+      "mammal(max)",
+      "bare_skin(pip)",
+      "bare_skin(max)"
+    ],
+    "facts": [
+      "lynx(pip)"
+    ],
+    "knowledge": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nlynx(pip)."
+  },
+  {
+    "id": "animal-02",
+    "family": "animal",
+    "text": "Decide the recorded fur status of Pip. A lynx is a mammal, and every mammal has fur. A written bare-skin finding supports no fur. Use only the stated rules and observations. Choose FUR or BARE if exactly that conclusion is supported, UNKNOWN if neither, CONFLICT if both.\nRecord: Pip's skin is recorded as bare. Max is a lynx.",
+    "labels": [
+      "BARE",
+      "UNKNOWN",
+      "CONFLICT",
+      "FUR"
+    ],
+    "gold": "BARE",
+    "goals": [
+      "fur(pip)",
+      "bare(pip)"
+    ],
+    "decode": {
+      "10": "FUR",
+      "01": "BARE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "lynx(dummy).",
+      "mammal(dummy).",
+      "bare_skin(dummy).",
+      "mammal(X) :- lynx(X).",
+      "fur(X) :- mammal(X).",
+      "bare(X) :- bare_skin(X)."
+    ],
+    "vocabulary": [
+      "lynx(pip)",
+      "lynx(max)",
+      "mammal(pip)",
+      "mammal(max)",
+      "bare_skin(pip)",
+      "bare_skin(max)"
+    ],
+    "facts": [
+      "bare_skin(pip)",
+      "lynx(max)"
+    ],
+    "knowledge": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(pip).\nlynx(max)."
+  },
+  {
+    "id": "animal-03",
+    "family": "animal",
+    "text": "Decide the recorded fur status of Pip. A lynx is a mammal, and every mammal has fur. A written bare-skin finding supports no fur. Use only the stated rules and observations. Choose FUR or BARE if exactly that conclusion is supported, UNKNOWN if neither, CONFLICT if both.\nRecord: Pip is an eagle. Max is a mammal.",
+    "labels": [
+      "UNKNOWN",
+      "CONFLICT",
+      "FUR",
+      "BARE"
+    ],
+    "gold": "UNKNOWN",
+    "goals": [
+      "fur(pip)",
+      "bare(pip)"
+    ],
+    "decode": {
+      "10": "FUR",
+      "01": "BARE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "lynx(dummy).",
+      "mammal(dummy).",
+      "bare_skin(dummy).",
+      "mammal(X) :- lynx(X).",
+      "fur(X) :- mammal(X).",
+      "bare(X) :- bare_skin(X)."
+    ],
+    "vocabulary": [
+      "lynx(pip)",
+      "lynx(max)",
+      "mammal(pip)",
+      "mammal(max)",
+      "bare_skin(pip)",
+      "bare_skin(max)"
+    ],
+    "facts": [
+      "mammal(max)"
+    ],
+    "knowledge": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nmammal(max)."
+  },
+  {
+    "id": "animal-04",
+    "family": "animal",
+    "text": "Decide the recorded fur status of Pip. A lynx is a mammal, and every mammal has fur. A written bare-skin finding supports no fur. Use only the stated rules and observations. Choose FUR or BARE if exactly that conclusion is supported, UNKNOWN if neither, CONFLICT if both.\nRecord: Pip is classified as a mammal and has a separate bare-skin finding.",
+    "labels": [
+      "CONFLICT",
+      "FUR",
+      "BARE",
+      "UNKNOWN"
+    ],
+    "gold": "CONFLICT",
+    "goals": [
+      "fur(pip)",
+      "bare(pip)"
+    ],
+    "decode": {
+      "10": "FUR",
+      "01": "BARE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "lynx(dummy).",
+      "mammal(dummy).",
+      "bare_skin(dummy).",
+      "mammal(X) :- lynx(X).",
+      "fur(X) :- mammal(X).",
+      "bare(X) :- bare_skin(X)."
+    ],
+    "vocabulary": [
+      "lynx(pip)",
+      "lynx(max)",
+      "mammal(pip)",
+      "mammal(max)",
+      "bare_skin(pip)",
+      "bare_skin(max)"
+    ],
+    "facts": [
+      "mammal(pip)",
+      "bare_skin(pip)"
+    ],
+    "knowledge": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nmammal(pip).\nbare_skin(pip)."
+  },
+  {
+    "id": "animal-05",
+    "family": "animal",
+    "text": "Decide the recorded fur status of Pip. A lynx is a mammal, and every mammal has fur. A written bare-skin finding supports no fur. Use only the stated rules and observations. Choose FUR or BARE if exactly that conclusion is supported, UNKNOWN if neither, CONFLICT if both.\nRecord: The card labels Max, not Pip, as a lynx. Pip has no classification on file.",
+    "labels": [
+      "FUR",
+      "BARE",
+      "UNKNOWN",
+      "CONFLICT"
+    ],
+    "gold": "UNKNOWN",
+    "goals": [
+      "fur(pip)",
+      "bare(pip)"
+    ],
+    "decode": {
+      "10": "FUR",
+      "01": "BARE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "lynx(dummy).",
+      "mammal(dummy).",
+      "bare_skin(dummy).",
+      "mammal(X) :- lynx(X).",
+      "fur(X) :- mammal(X).",
+      "bare(X) :- bare_skin(X)."
+    ],
+    "vocabulary": [
+      "lynx(pip)",
+      "lynx(max)",
+      "mammal(pip)",
+      "mammal(max)",
+      "bare_skin(pip)",
+      "bare_skin(max)"
+    ],
+    "facts": [
+      "lynx(max)"
+    ],
+    "knowledge": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nlynx(max)."
+  },
+  {
+    "id": "animal-06",
+    "family": "animal",
+    "text": "Decide the recorded fur status of Pip. A lynx is a mammal, and every mammal has fur. A written bare-skin finding supports no fur. Use only the stated rules and observations. Choose FUR or BARE if exactly that conclusion is supported, UNKNOWN if neither, CONFLICT if both.\nRecord: Max has bare skin; Pip is classified as a mammal.",
+    "labels": [
+      "BARE",
+      "UNKNOWN",
+      "CONFLICT",
+      "FUR"
+    ],
+    "gold": "FUR",
+    "goals": [
+      "fur(pip)",
+      "bare(pip)"
+    ],
+    "decode": {
+      "10": "FUR",
+      "01": "BARE",
+      "00": "UNKNOWN",
+      "11": "CONFLICT"
+    },
+    "rules": [
+      "lynx(dummy).",
+      "mammal(dummy).",
+      "bare_skin(dummy).",
+      "mammal(X) :- lynx(X).",
+      "fur(X) :- mammal(X).",
+      "bare(X) :- bare_skin(X)."
+    ],
+    "vocabulary": [
+      "lynx(pip)",
+      "lynx(max)",
+      "mammal(pip)",
+      "mammal(max)",
+      "bare_skin(pip)",
+      "bare_skin(max)"
+    ],
+    "facts": [
+      "bare_skin(max)",
+      "mammal(pip)"
+    ],
+    "knowledge": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(max).\nmammal(pip)."
+  },
+  {
+    "id": "roles-01",
+    "family": "roles",
+    "text": "Decide whether Ada may borrow the archive atlas. Archivists may borrow it; leads inherit archivist privileges. A direct atlas grant also suffices. Treat this register as complete. Return YES if a permission follows and NO otherwise.\nRecord: Ada is lead; Ben holds a direct atlas grant.",
+    "labels": [
+      "YES",
+      "NO"
+    ],
+    "gold": "YES",
+    "goals": [
+      "borrow(ada)"
+    ],
+    "decode": {
+      "1": "YES",
+      "0": "NO"
+    },
+    "rules": [
+      "lead(dummy).",
+      "archivist(dummy).",
+      "grant_atlas(dummy).",
+      "archivist(X) :- lead(X).",
+      "borrow(X) :- archivist(X).",
+      "borrow(X) :- grant_atlas(X)."
+    ],
+    "vocabulary": [
+      "lead(ada)",
+      "lead(ben)",
+      "archivist(ada)",
+      "archivist(ben)",
+      "grant_atlas(ada)",
+      "grant_atlas(ben)"
+    ],
+    "facts": [
+      "lead(ada)",
+      "grant_atlas(ben)"
+    ],
+    "knowledge": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\nlead(ada).\ngrant_atlas(ben)."
+  },
+  {
+    "id": "roles-02",
+    "family": "roles",
+    "text": "Decide whether Ada may borrow the archive atlas. Archivists may borrow it; leads inherit archivist privileges. A direct atlas grant also suffices. Treat this register as complete. Return YES if a permission follows and NO otherwise.\nRecord: Ben is lead. Ada has only a visitor badge.",
+    "labels": [
+      "NO",
+      "YES"
+    ],
+    "gold": "NO",
+    "goals": [
+      "borrow(ada)"
+    ],
+    "decode": {
+      "1": "YES",
+      "0": "NO"
+    },
+    "rules": [
+      "lead(dummy).",
+      "archivist(dummy).",
+      "grant_atlas(dummy).",
+      "archivist(X) :- lead(X).",
+      "borrow(X) :- archivist(X).",
+      "borrow(X) :- grant_atlas(X)."
+    ],
+    "vocabulary": [
+      "lead(ada)",
+      "lead(ben)",
+      "archivist(ada)",
+      "archivist(ben)",
+      "grant_atlas(ada)",
+      "grant_atlas(ben)"
+    ],
+    "facts": [
+      "lead(ben)"
+    ],
+    "knowledge": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\nlead(ben)."
+  },
+  {
+    "id": "roles-03",
+    "family": "roles",
+    "text": "Decide whether Ada may borrow the archive atlas. Archivists may borrow it; leads inherit archivist privileges. A direct atlas grant also suffices. Treat this register as complete. Return YES if a permission follows and NO otherwise.\nRecord: Ada is a visitor with an explicit grant to borrow the atlas.",
+    "labels": [
+      "YES",
+      "NO"
+    ],
+    "gold": "YES",
+    "goals": [
+      "borrow(ada)"
+    ],
+    "decode": {
+      "1": "YES",
+      "0": "NO"
+    },
+    "rules": [
+      "lead(dummy).",
+      "archivist(dummy).",
+      "grant_atlas(dummy).",
+      "archivist(X) :- lead(X).",
+      "borrow(X) :- archivist(X).",
+      "borrow(X) :- grant_atlas(X)."
+    ],
+    "vocabulary": [
+      "lead(ada)",
+      "lead(ben)",
+      "archivist(ada)",
+      "archivist(ben)",
+      "grant_atlas(ada)",
+      "grant_atlas(ben)"
+    ],
+    "facts": [
+      "grant_atlas(ada)"
+    ],
+    "knowledge": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\ngrant_atlas(ada)."
+  },
+  {
+    "id": "roles-04",
+    "family": "roles",
+    "text": "Decide whether Ada may borrow the archive atlas. Archivists may borrow it; leads inherit archivist privileges. A direct atlas grant also suffices. Treat this register as complete. Return YES if a permission follows and NO otherwise.\nRecord: Ben is archivist and has the direct grant. Ada has applied to be lead next year.",
+    "labels": [
+      "NO",
+      "YES"
+    ],
+    "gold": "NO",
+    "goals": [
+      "borrow(ada)"
+    ],
+    "decode": {
+      "1": "YES",
+      "0": "NO"
+    },
+    "rules": [
+      "lead(dummy).",
+      "archivist(dummy).",
+      "grant_atlas(dummy).",
+      "archivist(X) :- lead(X).",
+      "borrow(X) :- archivist(X).",
+      "borrow(X) :- grant_atlas(X)."
+    ],
+    "vocabulary": [
+      "lead(ada)",
+      "lead(ben)",
+      "archivist(ada)",
+      "archivist(ben)",
+      "grant_atlas(ada)",
+      "grant_atlas(ben)"
+    ],
+    "facts": [
+      "archivist(ben)",
+      "grant_atlas(ben)"
+    ],
+    "knowledge": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ben).\ngrant_atlas(ben)."
+  },
+  {
+    "id": "roles-05",
+    "family": "roles",
+    "text": "Decide whether Ada may borrow the archive atlas. Archivists may borrow it; leads inherit archivist privileges. A direct atlas grant also suffices. Treat this register as complete. Return YES if a permission follows and NO otherwise.\nRecord: Ada is the archivist; Ben is lead.",
+    "labels": [
+      "YES",
+      "NO"
+    ],
+    "gold": "YES",
+    "goals": [
+      "borrow(ada)"
+    ],
+    "decode": {
+      "1": "YES",
+      "0": "NO"
+    },
+    "rules": [
+      "lead(dummy).",
+      "archivist(dummy).",
+      "grant_atlas(dummy).",
+      "archivist(X) :- lead(X).",
+      "borrow(X) :- archivist(X).",
+      "borrow(X) :- grant_atlas(X)."
+    ],
+    "vocabulary": [
+      "lead(ada)",
+      "lead(ben)",
+      "archivist(ada)",
+      "archivist(ben)",
+      "grant_atlas(ada)",
+      "grant_atlas(ben)"
+    ],
+    "facts": [
+      "archivist(ada)",
+      "lead(ben)"
+    ],
+    "knowledge": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ada).\nlead(ben)."
+  },
+  {
+    "id": "roles-06",
+    "family": "roles",
+    "text": "Decide whether Ada may borrow the archive atlas. Archivists may borrow it; leads inherit archivist privileges. A direct atlas grant also suffices. Treat this register as complete. Return YES if a permission follows and NO otherwise.\nRecord: Ada was invited to request the atlas. Ben received the only direct grant.",
+    "labels": [
+      "NO",
+      "YES"
+    ],
+    "gold": "NO",
+    "goals": [
+      "borrow(ada)"
+    ],
+    "decode": {
+      "1": "YES",
+      "0": "NO"
+    },
+    "rules": [
+      "lead(dummy).",
+      "archivist(dummy).",
+      "grant_atlas(dummy).",
+      "archivist(X) :- lead(X).",
+      "borrow(X) :- archivist(X).",
+      "borrow(X) :- grant_atlas(X)."
+    ],
+    "vocabulary": [
+      "lead(ada)",
+      "lead(ben)",
+      "archivist(ada)",
+      "archivist(ben)",
+      "grant_atlas(ada)",
+      "grant_atlas(ben)"
+    ],
+    "facts": [
+      "grant_atlas(ben)"
+    ],
+    "knowledge": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\ngrant_atlas(ben)."
+  }
+]

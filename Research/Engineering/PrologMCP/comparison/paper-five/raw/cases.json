@@ -1,0 +1,57 @@
+[
+  {
+    "id": "Q1",
+    "knowledge": "parent(tom, bob).\nparent(bob, ann).\nparent(bob, pat).\nparent(tom, liz).\nparent(liz, mia).\nancestor(X, Y) :- parent(X, Y).\nancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).",
+    "goals": [
+      "ancestor(tom, ann)"
+    ],
+    "decode": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  {
+    "id": "Q2",
+    "knowledge": "is_a(siamese, cat).\nis_a(cat, felinae).\nis_a(felinae, felidae).\nis_a(felidae, carnivoran).\nproperty(felidae, retractable_claws).\nhas_property(X, P) :- property(X, P).\nhas_property(X, P) :- is_a(X, Parent), has_property(Parent, P).",
+    "goals": [
+      "has_property(siamese, retractable_claws)"
+    ],
+    "decode": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  {
+    "id": "Q3",
+    "knowledge": "is_a(eagle, raptor).\nis_a(raptor, bird).\nis_a(bird, vertebrate).\nproperty(mammal, has_fur).\nhas_property(X, P) :- property(X, P).\nhas_property(X, P) :- is_a(X, Parent), has_property(Parent, P).",
+    "goals": [
+      "has_property(eagle, has_fur)"
+    ],
+    "decode": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  {
+    "id": "Q4",
+    "knowledge": "has_role(alice, admin).\ninherits(admin, editor).\ninherits(editor, viewer).\npermission(viewer, read).\npermission(editor, write).\npermission(admin, delete).\nrole_has_permission(R, P) :- permission(R, P).\nrole_has_permission(R, P) :- inherits(R, Sub), role_has_permission(Sub, P).\nuser_has_permission(U, P) :- has_role(U, R), role_has_permission(R, P).",
+    "goals": [
+      "user_has_permission(alice, write)"
+    ],
+    "decode": {
+      "1": "Yes",
+      "0": "No"
+    }
+  },
+  {
+    "id": "Q5",
+    "knowledge": "has_role(bob, viewer).\ninherits(admin, editor).\ninherits(editor, viewer).\npermission(viewer, read).\npermission(editor, write).\npermission(admin, delete).\nrole_has_permission(R, P) :- permission(R, P).\nrole_has_permission(R, P) :- inherits(R, Sub), role_has_permission(Sub, P).\nuser_has_permission(U, P) :- has_role(U, R), role_has_permission(R, P).",
+    "goals": [
+      "user_has_permission(bob, delete)"
+    ],
+    "decode": {
+      "1": "Yes",
+      "0": "No"
+    }
+  }
+]

@@ -1,0 +1,5 @@
+# Keep the archived evidence byte hashes reproducible on Windows and Unix checkouts.
+cases.json text eol=crlf
+extracted_cases.json text eol=crlf
+record_only_extracted_cases.json text eol=crlf
+paper-five/raw/cases.json text eol=crlf

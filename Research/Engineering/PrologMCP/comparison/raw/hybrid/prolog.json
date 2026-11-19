@@ -1,0 +1,1457 @@
+{
+  "server": "prolog",
+  "server_commit": "4ae536fd9b1cef8419d1798b5d4cb1569cba3cae",
+  "server_entry": "python -m prolog_mcp.server",
+  "server_runtime": "3.13.15 mcp 1.30.0",
+  "swipl": "SWI-Prolog version 10.0.2 for x64-win64",
+  "client_sdk": "1.30.0",
+  "cases_sha256": "307766b9e95d473ad4953864d15ac5e9fa91c1f03fc70d5bacd465ef911f0c63",
+  "cases": [
+    {
+      "id": "release-01",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nstatic_only(a)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"d1f340f8ade1\", \"module_name\": \"m_d1f340f8ade1\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 61.39
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "d1f340f8ade1",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.77
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "d1f340f8ade1",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.05
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "d1f340f8ade1"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.32
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 69.64
+    },
+    {
+      "id": "release-02",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nstatic_only(b)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"1102a1ea56f5\", \"module_name\": \"m_1102a1ea56f5\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 49.85
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "1102a1ea56f5",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"failure\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.44
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "1102a1ea56f5",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.06
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "1102a1ea56f5"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.83
+        }
+      ],
+      "predicted": "CONTINUE",
+      "bits": "01",
+      "elapsed_ms": 59.23
+    },
+    {
+      "id": "release-03",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(b).\nstatic_only(a)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"83fab6575d77\", \"module_name\": \"m_83fab6575d77\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 51.49
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "83fab6575d77",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.3
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "83fab6575d77",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"failure\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.01
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "83fab6575d77"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.26
+        }
+      ],
+      "predicted": "REVISE",
+      "bits": "10",
+      "elapsed_ms": 59.13
+    },
+    {
+      "id": "release-04",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nfull_pass(b).\nstatic_only(a).\nstatic_only(b)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"a2d6378ce14f\", \"module_name\": \"m_a2d6378ce14f\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 47.05
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "a2d6378ce14f",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.49
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "a2d6378ce14f",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.33
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "a2d6378ce14f"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.26
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 55.18
+    },
+    {
+      "id": "release-05",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nfull_pass(b).\nstatic_only(a).\nstatic_only(b)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"d56dbb1abd5c\", \"module_name\": \"m_d56dbb1abd5c\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 48.0
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "d56dbb1abd5c",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.3
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "d56dbb1abd5c",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.03
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "d56dbb1abd5c"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.27
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 55.67
+    },
+    {
+      "id": "release-06",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(b).\nstatic_only(a)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"37b523cb31d7\", \"module_name\": \"m_37b523cb31d7\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 48.77
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "37b523cb31d7",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.31
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "37b523cb31d7",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"failure\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 1.96
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "37b523cb31d7"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.37
+        }
+      ],
+      "predicted": "REVISE",
+      "bits": "10",
+      "elapsed_ms": 56.46
+    },
+    {
+      "id": "release-07",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nfull_pass(b).\nstatic_only(a).\nstatic_only(b)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"e984596322bd\", \"module_name\": \"m_e984596322bd\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 48.4
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "e984596322bd",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.29
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "e984596322bd",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.04
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "e984596322bd"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.12
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 56.91
+    },
+    {
+      "id": "release-08",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "static_only(dummy).\nfull_pass(dummy).\nrevise(X) :- static_only(X).\ncontinue_checks(X) :- full_pass(X).\nfull_pass(a).\nfull_pass(b).\nstatic_only(a).\nstatic_only(b)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"f4cf0f09556c\", \"module_name\": \"m_f4cf0f09556c\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 54.04
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "f4cf0f09556c",
+            "goal": "revise(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.48
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "f4cf0f09556c",
+            "goal": "continue_checks(a)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.95
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "f4cf0f09556c"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.33
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 62.85
+    },
+    {
+      "id": "animal-01",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(pip).\nlynx(max).\nlynx(pip).\nmammal(max).\nmammal(pip)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"cfdef46dc23a\", \"module_name\": \"m_cfdef46dc23a\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 50.38
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "cfdef46dc23a",
+            "goal": "fur(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.02
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "cfdef46dc23a",
+            "goal": "bare(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.63
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "cfdef46dc23a"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.44
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 60.52
+    },
+    {
+      "id": "animal-02",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(pip).\nlynx(max).\nlynx(pip).\nmammal(max).\nmammal(pip)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"f270732162db\", \"module_name\": \"m_f270732162db\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 60.9
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "f270732162db",
+            "goal": "fur(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.61
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "f270732162db",
+            "goal": "bare(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.68
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "f270732162db"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 5.4
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 71.66
+    },
+    {
+      "id": "animal-03",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nlynx(max).\nlynx(pip).\nmammal(max).\nmammal(pip)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"77d073188719\", \"module_name\": \"m_77d073188719\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 60.12
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "77d073188719",
+            "goal": "fur(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.46
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "77d073188719",
+            "goal": "bare(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"failure\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.41
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "77d073188719"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.65
+        }
+      ],
+      "predicted": "FUR",
+      "bits": "10",
+      "elapsed_ms": 68.76
+    },
+    {
+      "id": "animal-04",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(pip).\nlynx(max).\nlynx(pip).\nmammal(max).\nmammal(pip)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"5259cc420f08\", \"module_name\": \"m_5259cc420f08\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 51.63
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "5259cc420f08",
+            "goal": "fur(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.5
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "5259cc420f08",
+            "goal": "bare(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.04
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "5259cc420f08"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.33
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 59.57
+    },
+    {
+      "id": "animal-05",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(pip).\nlynx(max).\nmammal(max).\nmammal(pip)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"d6319b0bf065\", \"module_name\": \"m_d6319b0bf065\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 66.43
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "d6319b0bf065",
+            "goal": "fur(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.95
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "d6319b0bf065",
+            "goal": "bare(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.02
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "d6319b0bf065"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.26
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 78.74
+    },
+    {
+      "id": "animal-06",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lynx(dummy).\nmammal(dummy).\nbare_skin(dummy).\nmammal(X) :- lynx(X).\nfur(X) :- mammal(X).\nbare(X) :- bare_skin(X).\nbare_skin(max).\nbare_skin(pip).\nlynx(max).\nlynx(pip).\nmammal(max).\nmammal(pip)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"91196bcf379c\", \"module_name\": \"m_91196bcf379c\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 64.14
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "91196bcf379c",
+            "goal": "fur(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.77
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "91196bcf379c",
+            "goal": "bare(pip)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": false}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.58
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "91196bcf379c"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.01
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 75.59
+    },
+    {
+      "id": "roles-01",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ada).\narchivist(ben).\ngrant_atlas(ada).\ngrant_atlas(ben).\nlead(ada).\nlead(ben)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"2c3c847b5625\", \"module_name\": \"m_2c3c847b5625\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 61.35
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "2c3c847b5625",
+            "goal": "borrow(ada)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.47
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "2c3c847b5625"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.92
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 70.81
+    },
+    {
+      "id": "roles-02",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ada).\ngrant_atlas(ada).\nlead(ben)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"50cda9ab7667\", \"module_name\": \"m_50cda9ab7667\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 54.52
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "50cda9ab7667",
+            "goal": "borrow(ada)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.28
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "50cda9ab7667"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 5.49
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 63.35
+    },
+    {
+      "id": "roles-03",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\ngrant_atlas(ada).\nlead(ada)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"1a6587472071\", \"module_name\": \"m_1a6587472071\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 60.38
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "1a6587472071",
+            "goal": "borrow(ada)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.46
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "1a6587472071"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.16
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 68.05
+    },
+    {
+      "id": "roles-04",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ada).\narchivist(ben).\ngrant_atlas(ben).\nlead(ada).\nlead(ben)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"a54b8ce1109e\", \"module_name\": \"m_a54b8ce1109e\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 58.55
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "a54b8ce1109e",
+            "goal": "borrow(ada)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.8
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "a54b8ce1109e"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 4.06
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 65.46
+    },
+    {
+      "id": "roles-05",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ada).\ngrant_atlas(ada).\nlead(ben)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"cf4023772cce\", \"module_name\": \"m_cf4023772cce\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 67.89
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "cf4023772cce",
+            "goal": "borrow(ada)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.79
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "cf4023772cce"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.98
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 74.73
+    },
+    {
+      "id": "roles-06",
+      "calls": [
+        {
+          "tool": "create_session",
+          "arguments": {
+            "source_text": "lead(dummy).\narchivist(dummy).\ngrant_atlas(dummy).\narchivist(X) :- lead(X).\nborrow(X) :- archivist(X).\nborrow(X) :- grant_atlas(X).\narchivist(ada).\ngrant_atlas(ada).\nlead(ada)."
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"load_id\": \"45394c47cf1d\", \"module_name\": \"m_45394c47cf1d\", \"dialect\": \"swi\", \"messages\": []}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 51.69
+        },
+        {
+          "tool": "run_goal",
+          "arguments": {
+            "load_id": "45394c47cf1d",
+            "goal": "borrow(ada)",
+            "time_limit": 30,
+            "max_answers": 1
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"outcome\": \"success\", \"answers\": [], \"output\": \"\", \"truncated\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 2.79
+        },
+        {
+          "tool": "close_session",
+          "arguments": {
+            "load_id": "45394c47cf1d"
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"ok\": true, \"closed\": true}"
+              }
+            ],
+            "isError": false
+          },
+          "elapsed_ms": 3.88
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 58.42
+    }
+  ]
+}

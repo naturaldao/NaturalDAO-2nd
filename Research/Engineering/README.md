@@ -4,7 +4,7 @@
 
 | 材料 | 主题 | 说明 |
 |---|---|---|
-| [PrologMCP 与 PoL 规则复核](PrologMCP/README.md) | 逻辑推导与治理判断 | 论文架构原图、基准证据、PoL 规则的本地 MCP 复验和只读接入流程图。 |
+| [PrologMCP 与 PoL 规则复核](PrologMCP/README.md) · [四种方法同题实测](PrologMCP/comparison/README.md) | 逻辑推导与治理判断 | 论文架构原图、基准证据、PoL 规则的本地 MCP 复验和只读接入流程图。 |
 | [Euclid-MCP 论文实验复现](Euclid-MCP-复现/README.md) · [中文译文](Euclid-MCP_中文全文翻译.md) | 确定性逻辑推理 | 两个历史版本的本地 8B 对照、千用户 RBAC、32 条合规案例记录及重跑方法。 |
 | [NaturalDAO PoL Gate 软件工程设计](NaturalDAO%20PoL%20软件工程设计.md) | PoL Gate 架构与实现 | 组件结构、请求流程和实现约束，面向首次接触系统的工程师。 |
 | [Memory Tax: Dissecting the Net Value of Agent Memory (PDF)](Memory-Tax-Dissecting-the-Net-Value-of-Agent-Memory-arXiv-2610.34073v1.pdf) | 智能体记忆评估 | He et al., arXiv:2610.34073v1 (2026-10-25)。比较专用记忆系统与朴素 RAG，并从 memory benefit、memory tax、faithfulness、accessibility 与 robustness 分析记忆的净价值。 |

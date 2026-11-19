@@ -1,0 +1,138 @@
+{
+  "scores": {
+    "llama-direct": {
+      "correct": 14,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 4,
+        "release": 6,
+        "roles": 4
+      },
+      "p50_ms": 130.6,
+      "p95_ms": 155.9
+    },
+    "oracle-prolog": {
+      "correct": 20,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 6,
+        "release": 8,
+        "roles": 6
+      },
+      "p50_ms": 58.1,
+      "p95_ms": 60.2
+    },
+    "oracle-euclid": {
+      "correct": 20,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 6,
+        "release": 8,
+        "roles": 6
+      },
+      "p50_ms": 100.3,
+      "p95_ms": 208.4
+    },
+    "hybrid-prolog": {
+      "correct": 8,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 1,
+        "release": 4,
+        "roles": 3
+      },
+      "p50_ms": 447.5,
+      "p95_ms": 616.1
+    },
+    "hybrid-euclid": {
+      "correct": 8,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 1,
+        "release": 4,
+        "roles": 3
+      },
+      "p50_ms": 503.4,
+      "p95_ms": 599.6
+    },
+    "record-only-prolog": {
+      "correct": 11,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 4,
+        "release": 4,
+        "roles": 3
+      },
+      "p50_ms": 458.3,
+      "p95_ms": 572.5
+    },
+    "record-only-euclid": {
+      "correct": 11,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 4,
+        "release": 4,
+        "roles": 3
+      },
+      "p50_ms": 516.5,
+      "p95_ms": 667.2
+    },
+    "kev-m10": {
+      "correct": 17,
+      "total": 20,
+      "missing": 0,
+      "groups": {
+        "animal": 6,
+        "release": 6,
+        "roles": 5
+      },
+      "p50_ms": 26580.0,
+      "p95_ms": 49464.0
+    }
+  },
+  "fact_checks": {
+    "hybrid": {
+      "exact": 2,
+      "extra": 46,
+      "missing": 1,
+      "total": 20,
+      "invalid": 0,
+      "true_positives": 29
+    },
+    "record-only": {
+      "exact": 4,
+      "extra": 34,
+      "missing": 1,
+      "total": 20,
+      "invalid": 0,
+      "true_positives": 29
+    }
+  },
+  "agreement": {
+    "direct+hybrid": {
+      "agree": 10,
+      "correct_agreements": 7,
+      "wrong_agreements": [
+        "animal-03",
+        "roles-04",
+        "roles-06"
+      ],
+      "review": 10
+    },
+    "direct+hybrid+kev": {
+      "agree": 7,
+      "correct_agreements": 6,
+      "wrong_agreements": [
+        "roles-04"
+      ],
+      "review": 13
+    }
+  }
+}

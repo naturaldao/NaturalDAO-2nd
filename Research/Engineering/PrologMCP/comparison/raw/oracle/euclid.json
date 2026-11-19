@@ -1,0 +1,1373 @@
+{
+  "server": "euclid",
+  "server_commit": "aed10179131fc990739f5d69b0584f4a065f0faa",
+  "server_entry": "python -m euclid_mcp",
+  "server_runtime": "3.12.10 mcp 2.0.0",
+  "swipl": "SWI-Prolog version 10.0.2 for x64-win64",
+  "client_sdk": "1.30.0",
+  "cases_sha256": "e2f7998a90ac1aa7122da6bbc7fe05410f092ea52e5ab30295a1c2d6ef324087",
+  "cases": [
+    {
+      "id": "release-01",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(a)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"revise(a)\",\n        \"body\": \"static_only(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"static_only(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 63.00000000192085,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "revise(a)",
+                    "body": "static_only(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "static_only(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "revise(a)",
+              "elapsed_ms": 63.00000000192085,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 65.23
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(a)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 46.000000002095476,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 46.000000002095476,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 49.75
+        }
+      ],
+      "predicted": "REVISE",
+      "bits": "10",
+      "elapsed_ms": 115.04
+    },
+    {
+      "id": "release-02",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(a)\nstatic_only(b)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 171.99999999866122,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "revise(a)",
+              "elapsed_ms": 171.99999999866122,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 185.12
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(a)\nstatic_only(b)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"continue_checks(a)\",\n        \"body\": \"full_pass(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"full_pass(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 46.000000002095476,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "continue_checks(a)",
+                    "body": "full_pass(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "full_pass(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 46.000000002095476,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 62.34
+        }
+      ],
+      "predicted": "CONTINUE",
+      "bits": "01",
+      "elapsed_ms": 247.51
+    },
+    {
+      "id": "release-03",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(b)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 31.000000002677552,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "revise(a)",
+              "elapsed_ms": 31.000000002677552,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 50.88
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(b)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 47.00000000593718,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 47.00000000593718,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.73
+        }
+      ],
+      "predicted": "UNKNOWN",
+      "bits": "00",
+      "elapsed_ms": 102.67
+    },
+    {
+      "id": "release-04",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(a)\nfull_pass(a)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"revise(a)\",\n        \"body\": \"static_only(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"static_only(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "revise(a)",
+                    "body": "static_only(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "static_only(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "revise(a)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.17
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(a)\nfull_pass(a)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"continue_checks(a)\",\n        \"body\": \"full_pass(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"full_pass(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 31.9999999992433,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "continue_checks(a)",
+                    "body": "full_pass(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "full_pass(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 31.9999999992433,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.22
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 102.46
+    },
+    {
+      "id": "release-05",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(b)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "revise(a)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 50.41
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(b)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.67
+        }
+      ],
+      "predicted": "UNKNOWN",
+      "bits": "00",
+      "elapsed_ms": 99.14
+    },
+    {
+      "id": "release-06",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(a)\nfull_pass(b)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"revise(a)\",\n        \"body\": \"static_only(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"static_only(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 47.00000000593718,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "revise(a)",
+                    "body": "static_only(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "static_only(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "revise(a)",
+              "elapsed_ms": 47.00000000593718,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.58
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nstatic_only(a)\nfull_pass(b)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 31.9999999992433,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 31.9999999992433,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.48
+        }
+      ],
+      "predicted": "REVISE",
+      "bits": "10",
+      "elapsed_ms": 97.12
+    },
+    {
+      "id": "release-07",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(a)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 31.9999999992433,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "revise(a)",
+              "elapsed_ms": 31.9999999992433,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 47.79
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(a)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"continue_checks(a)\",\n        \"body\": \"full_pass(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"full_pass(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 31.000000002677552,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "continue_checks(a)",
+                    "body": "full_pass(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "full_pass(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 31.000000002677552,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.13
+        }
+      ],
+      "predicted": "CONTINUE",
+      "bits": "01",
+      "elapsed_ms": 95.98
+    },
+    {
+      "id": "release-08",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(a)\nstatic_only(a)",
+            "query": "revise(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"revise(a)\",\n        \"body\": \"static_only(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"static_only(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"revise(a)\",\n  \"elapsed_ms\": 156.00000000267755,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "revise(a)",
+                    "body": "static_only(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "static_only(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "revise(a)",
+              "elapsed_ms": 156.00000000267755,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 157.22
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "static_only(dummy)\nfull_pass(dummy)\nrevise($x) IF static_only($x)\ncontinue_checks($x) IF full_pass($x)\nfull_pass(a)\nstatic_only(a)",
+            "query": "continue_checks(a)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"continue_checks(a)\",\n        \"body\": \"full_pass(a)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"full_pass(a)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"continue_checks(a)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "continue_checks(a)",
+                    "body": "full_pass(a)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "full_pass(a)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "continue_checks(a)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.08
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 208.37
+    },
+    {
+      "id": "animal-01",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nlynx(pip)",
+            "query": "fur(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"fur(pip)\",\n        \"body\": \"mammal(pip)\",\n        \"subproof\": {\n          \"type\": \"rule\",\n          \"goal\": \"mammal(pip)\",\n          \"body\": \"lynx(pip)\",\n          \"subproof\": {\n            \"type\": \"fact\",\n            \"goal\": \"lynx(pip)\",\n            \"body\": null,\n            \"subproof\": null,\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"fur(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "fur(pip)",
+                    "body": "mammal(pip)",
+                    "subproof": {
+                      "type": "rule",
+                      "goal": "mammal(pip)",
+                      "body": "lynx(pip)",
+                      "subproof": {
+                        "type": "fact",
+                        "goal": "lynx(pip)",
+                        "body": null,
+                        "subproof": null,
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "fur(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 53.41
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nlynx(pip)",
+            "query": "bare(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"bare(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "bare(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 50.93
+        }
+      ],
+      "predicted": "FUR",
+      "bits": "10",
+      "elapsed_ms": 104.41
+    },
+    {
+      "id": "animal-02",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nbare_skin(pip)\nlynx(max)",
+            "query": "fur(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"fur(pip)\",\n  \"elapsed_ms\": 46.000000002095476,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "fur(pip)",
+              "elapsed_ms": 46.000000002095476,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 53.42
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nbare_skin(pip)\nlynx(max)",
+            "query": "bare(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"bare(pip)\",\n        \"body\": \"bare_skin(pip)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"bare_skin(pip)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"bare(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "bare(pip)",
+                    "body": "bare_skin(pip)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "bare_skin(pip)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "bare(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 52.45
+        }
+      ],
+      "predicted": "BARE",
+      "bits": "01",
+      "elapsed_ms": 106.19
+    },
+    {
+      "id": "animal-03",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nmammal(max)",
+            "query": "fur(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"fur(pip)\",\n  \"elapsed_ms\": 47.00000000593718,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "fur(pip)",
+              "elapsed_ms": 47.00000000593718,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 49.38
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nmammal(max)",
+            "query": "bare(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"bare(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "bare(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.06
+        }
+      ],
+      "predicted": "UNKNOWN",
+      "bits": "00",
+      "elapsed_ms": 100.49
+    },
+    {
+      "id": "animal-04",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nmammal(pip)\nbare_skin(pip)",
+            "query": "fur(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"fur(pip)\",\n        \"body\": \"mammal(pip)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"mammal(pip)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"fur(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "fur(pip)",
+                    "body": "mammal(pip)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "mammal(pip)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "fur(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.73
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nmammal(pip)\nbare_skin(pip)",
+            "query": "bare(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"bare(pip)\",\n        \"body\": \"bare_skin(pip)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"bare_skin(pip)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"bare(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "bare(pip)",
+                    "body": "bare_skin(pip)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "bare_skin(pip)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "bare(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 50.53
+        }
+      ],
+      "predicted": "CONFLICT",
+      "bits": "11",
+      "elapsed_ms": 102.32
+    },
+    {
+      "id": "animal-05",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nlynx(max)",
+            "query": "fur(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"fur(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "fur(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.38
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nlynx(max)",
+            "query": "bare(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"bare(pip)\",\n  \"elapsed_ms\": 47.00000000593718,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "bare(pip)",
+              "elapsed_ms": 47.00000000593718,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 49.07
+        }
+      ],
+      "predicted": "UNKNOWN",
+      "bits": "00",
+      "elapsed_ms": 97.5
+    },
+    {
+      "id": "animal-06",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nbare_skin(max)\nmammal(pip)",
+            "query": "fur(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"fur(pip)\",\n        \"body\": \"mammal(pip)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"mammal(pip)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"fur(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "fur(pip)",
+                    "body": "mammal(pip)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "mammal(pip)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "fur(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 51.25
+        },
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lynx(dummy)\nmammal(dummy)\nbare_skin(dummy)\nmammal($x) IF lynx($x)\nfur($x) IF mammal($x)\nbare($x) IF bare_skin($x)\nbare_skin(max)\nmammal(pip)",
+            "query": "bare(pip)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"bare(pip)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "bare(pip)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.83
+        }
+      ],
+      "predicted": "FUR",
+      "bits": "10",
+      "elapsed_ms": 100.13
+    },
+    {
+      "id": "roles-01",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lead(dummy)\narchivist(dummy)\ngrant_atlas(dummy)\narchivist($x) IF lead($x)\nborrow($x) IF archivist($x)\nborrow($x) IF grant_atlas($x)\nlead(ada)\ngrant_atlas(ben)",
+            "query": "borrow(ada)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"borrow(ada)\",\n        \"body\": \"archivist(ada)\",\n        \"subproof\": {\n          \"type\": \"rule\",\n          \"goal\": \"archivist(ada)\",\n          \"body\": \"lead(ada)\",\n          \"subproof\": {\n            \"type\": \"fact\",\n            \"goal\": \"lead(ada)\",\n            \"body\": null,\n            \"subproof\": null,\n            \"left\": null,\n            \"right\": null,\n            \"rule_id\": null\n          },\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"borrow(ada)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "borrow(ada)",
+                    "body": "archivist(ada)",
+                    "subproof": {
+                      "type": "rule",
+                      "goal": "archivist(ada)",
+                      "body": "lead(ada)",
+                      "subproof": {
+                        "type": "fact",
+                        "goal": "lead(ada)",
+                        "body": null,
+                        "subproof": null,
+                        "left": null,
+                        "right": null,
+                        "rule_id": null
+                      },
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "borrow(ada)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 50.62
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 50.67
+    },
+    {
+      "id": "roles-02",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lead(dummy)\narchivist(dummy)\ngrant_atlas(dummy)\narchivist($x) IF lead($x)\nborrow($x) IF archivist($x)\nborrow($x) IF grant_atlas($x)\nlead(ben)",
+            "query": "borrow(ada)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"borrow(ada)\",\n  \"elapsed_ms\": 30.999999995401595,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "borrow(ada)",
+              "elapsed_ms": 30.999999995401595,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 47.55
+        }
+      ],
+      "predicted": "NO",
+      "bits": "0",
+      "elapsed_ms": 47.6
+    },
+    {
+      "id": "roles-03",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lead(dummy)\narchivist(dummy)\ngrant_atlas(dummy)\narchivist($x) IF lead($x)\nborrow($x) IF archivist($x)\nborrow($x) IF grant_atlas($x)\ngrant_atlas(ada)",
+            "query": "borrow(ada)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"borrow(ada)\",\n        \"body\": \"grant_atlas(ada)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"grant_atlas(ada)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"borrow(ada)\",\n  \"elapsed_ms\": 31.000000002677552,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "borrow(ada)",
+                    "body": "grant_atlas(ada)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "grant_atlas(ada)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "borrow(ada)",
+              "elapsed_ms": 31.000000002677552,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 53.39
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 53.44
+    },
+    {
+      "id": "roles-04",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lead(dummy)\narchivist(dummy)\ngrant_atlas(dummy)\narchivist($x) IF lead($x)\nborrow($x) IF archivist($x)\nborrow($x) IF grant_atlas($x)\narchivist(ben)\ngrant_atlas(ben)",
+            "query": "borrow(ada)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"borrow(ada)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "borrow(ada)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 48.82
+        }
+      ],
+      "predicted": "NO",
+      "bits": "0",
+      "elapsed_ms": 48.87
+    },
+    {
+      "id": "roles-05",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lead(dummy)\narchivist(dummy)\ngrant_atlas(dummy)\narchivist($x) IF lead($x)\nborrow($x) IF archivist($x)\nborrow($x) IF grant_atlas($x)\narchivist(ada)\nlead(ben)",
+            "query": "borrow(ada)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [\n    {\n      \"substitutions\": {},\n      \"proof\": {\n        \"type\": \"rule\",\n        \"goal\": \"borrow(ada)\",\n        \"body\": \"archivist(ada)\",\n        \"subproof\": {\n          \"type\": \"fact\",\n          \"goal\": \"archivist(ada)\",\n          \"body\": null,\n          \"subproof\": null,\n          \"left\": null,\n          \"right\": null,\n          \"rule_id\": null\n        },\n        \"left\": null,\n        \"right\": null,\n        \"rule_id\": null\n      }\n    }\n  ],\n  \"query\": \"borrow(ada)\",\n  \"elapsed_ms\": 46.999999998661224,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [
+                {
+                  "substitutions": {},
+                  "proof": {
+                    "type": "rule",
+                    "goal": "borrow(ada)",
+                    "body": "archivist(ada)",
+                    "subproof": {
+                      "type": "fact",
+                      "goal": "archivist(ada)",
+                      "body": null,
+                      "subproof": null,
+                      "left": null,
+                      "right": null,
+                      "rule_id": null
+                    },
+                    "left": null,
+                    "right": null,
+                    "rule_id": null
+                  }
+                }
+              ],
+              "query": "borrow(ada)",
+              "elapsed_ms": 46.999999998661224,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 50.87
+        }
+      ],
+      "predicted": "YES",
+      "bits": "1",
+      "elapsed_ms": 50.92
+    },
+    {
+      "id": "roles-06",
+      "calls": [
+        {
+          "tool": "reason",
+          "arguments": {
+            "knowledge": "lead(dummy)\narchivist(dummy)\ngrant_atlas(dummy)\narchivist($x) IF lead($x)\nborrow($x) IF archivist($x)\nborrow($x) IF grant_atlas($x)\ngrant_atlas(ben)",
+            "query": "borrow(ada)",
+            "max_solutions": 1,
+            "max_depth": 30
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\n  \"solutions\": [],\n  \"query\": \"borrow(ada)\",\n  \"elapsed_ms\": 155.9999999954016,\n  \"error\": null\n}"
+              }
+            ],
+            "structuredContent": {
+              "solutions": [],
+              "query": "borrow(ada)",
+              "elapsed_ms": 155.9999999954016,
+              "error": null
+            },
+            "isError": false
+          },
+          "elapsed_ms": 164.73
+        }
+      ],
+      "predicted": "NO",
+      "bits": "0",
+      "elapsed_ms": 164.77
+    }
+  ]
+}
