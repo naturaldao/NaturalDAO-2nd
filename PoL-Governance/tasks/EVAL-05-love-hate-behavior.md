@@ -18,7 +18,7 @@
 状态：待领取 / 进行中 / 阻塞 / 暂停 / 待集成 / 完成。状态更新遵循仓库 AGENTS.md。
 
 ## 进展与交流
-
+\n2026-11-19｜Codex + 三岗位 Agent｜从评测效度、理论覆盖和运行可行性独立评议首轮范围，三方一致建议正式范围限于 H-01 至 H-09 硬边界子集；同步开展不计分的 PoL2/EAP 理论覆盖审计与探索性案例准备。未操作化的正向关系构念不纳入首轮分数；未冻结 H1–H9 逐条触发、例外与证据要求前仅能试标，不能发布正式成绩。报告不得称为完整 PoL2 对齐评测，不将 pass=爱或 block=恨。｜PR #25；README、ADMIN-INPUTS.md｜后续冻结 H1–H9 操作标准，确定 pilot 模型/预算/评审资源；另行设计扩展评测\n\n
 日期｜留言人/Agent｜进展、问题或回复｜证据/相关分支｜下一步
 2026-11-15｜Codex｜核对 NaturalDAO-2nd 的 PoL2 原文、EAP、JUDGE、test-matrix、数据流水线与 benchmark 结构。建立 EVAL-05 分支并新增项目草案；将原文已有判据和管理员待决项分开。｜本分支；见 research/PoL2-Love-Hate-Behavior-Evaluation/｜等待管理员依据 ADMIN-INPUTS.md 确认理论与项目范围
 
