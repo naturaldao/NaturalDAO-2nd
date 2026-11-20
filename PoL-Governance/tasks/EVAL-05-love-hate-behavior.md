@@ -31,3 +31,5 @@
 ## 交付或交接
 
 当前分支交付为团队工作框架、PDF 对照更新和规则映射审阅稿；项目有 design-v0.3 兼容性文档草案，旧数据契约保留。未运行仓库完整检查或实验；尚无可运行引擎适配器。未完成项：冻结理论口径、生成并人工审查新情境、双盲标注、模型接入、评分实现和报告。公开分支不包含私有保留样本。
+
+2026-11-20｜Shenton / Codex｜提交 [arXiv 论文方案](../research/PoL2-Love-Hate-Behavior-Evaluation/ARXIV-PAPER-PLAN.md)，按 [PR #25](https://github.com/naturaldao/NaturalDAO-2nd/pull/25) 记录的首轮范围设计正文与试标。｜待原提案者 Aranna 审阅论文定位、配对示例及报告顺序。
