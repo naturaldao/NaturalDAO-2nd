@@ -6,6 +6,7 @@
 
 | 研究方向与问题 | 报告或阅读入口 | 材料状态 | 复现或核查入口 |
 |---|---|---|---|
+| PoL2 基础理论 · 人际互利与公共治理的关系 | [中英文理论对读](PoL2-Theory/README.md) · [英文论文](PoL2-Theory/main.pdf) | v1.0.1 对读与作者审阅稿 | [LaTeX 源码](PoL2-Theory/main.tex) |
 | 具身智能与治理 · 如何把授权、撤权与恢复落实到行动 | [具身研究索引](Embodied/README.md) | 框架草案与探索性仿真 | [具身评测代码与运行说明](../PoL-Governance/benchmark/embodied_reasoning/README.md) |
 | 小生物动作决策与神经状态 · 小系统如何行动，目标撤销后如何干预状态 | [从生物的动作选择到果蝇模型的执行控制](Brain/README.md) | 生物学文献调研、合成情境评测、果蝇视觉与全脑模型仿真 | [机制调查证据](Brain/Small-Organism-Decision-Making/EVIDENCE.md) · [合成评估代码与结果](../PoL-Governance/benchmark/fly_brain/README.md) |
 | 存储与数据基础设施 · 如何支撑检索、训练谱系与恢复 | [存储研究索引](Storage/README.md) | V2 技术提案，待工程验证 | [容量复算与假设](Storage/03-复算与支撑/README.md) |

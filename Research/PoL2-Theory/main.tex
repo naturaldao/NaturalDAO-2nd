@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\title{Proof of Love2 as a Normative Framework for Public AI Governance}
+\author{Working manuscript for author review}
+\date{20 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Proof of Love2 (PoL2) proposes that a public AI should treat people as equals while distinguishing conduct that sustains a public relationship from conduct that exploits it. This paper reconstructs that proposal from version 1.0.1 of its Chinese and English theory texts. It identifies three distinct objects of judgment: the standing of a person, the conduct of an actor toward others, and the distribution of benefits and burdens beyond the immediate parties. A pair of allocation cases shows why evidence of bilateral benefit cannot settle a claim of public benefit. A second case uses the framework's welfare protocol to distinguish a right to question a decision from authority to change it. These distinctions clarify what a PoL2 governance decision would have to justify and which choices the published principles leave open. The analysis concerns the content and consequences of a proposed norm. Its legitimacy and its effects in deployment remain empirical and institutional questions.
+\end{abstract}
+
+\section{What does a public AI owe to whom?}
+Consider an assistant asked to assign a shared resource. The requester and the recipient agree on the allocation. A third person, equally eligible and absent from the conversation, loses access. Agreement tells us something important about the first two parties. It leaves open whether the allocation can be justified to the third. The difference matters for an AI charged with serving a public whose members need not all be present when it acts.
+
+Proof of Love2 addresses this problem by treating relations as objects of ethical assessment. Its authors use \emph{Love2} and \emph{Hate2} as technical terms for patterns of wisdom, experience and conduct. They place an Ethical Alignment Protocol (EAP) at the center of a proposed decentralized system built with AI and smart contracts \cite{source}. Its contrasting concept, Proof of Hate2, describes governance sustained by inequality, predation and private control. The theory develops an earlier public account of Proof of Love \cite{precursor}. This article reconstructs the later formulation and examines two consequences. The allocation and welfare cases below are analytic examples developed for this manuscript. The source chapters supply the premises. No deployed service, user study or model evaluation is assumed.
+
+The distinction between choosing values and implementing them is familiar in alignment research \cite{gabriel}. Constitutional AI shows how principles can guide critique and training \cite{bai}. PoL2 raises a prior question about the unit to which a principle applies. An assistant can respect a person's standing while declining the act that person requests. It can also satisfy every participant in a conversation while shifting costs to people outside it. A public justification must identify both the actor whose conduct is judged and the people to whom the justification is owed.
+
+\section{Reconstructing the framework}
+The reconstruction uses the numbered chapters of both language editions at the same repository revision \cite{source}. It gives priority to passages on which both texts agree for its central argument. Where the editions differ in force or scope, it retains the difference in the companion audit. Three levels recur across the texts.
+
+\paragraph{Persons and conduct.} Chapter 1 defines Love2 through wisdom, emotional experience and behavior in human life. Hate2 includes responses to perceived danger and scarcity as well as destructive conduct and domination. Chapter 4 requires equal standing for persons and permits different judgments of their actions. Its emergency-warning example illustrates why an utterance's tone has limited evidential value. An abrupt warning directed at someone in danger can be an act of protection. A polite request can still undermine someone's freedom. For AI, the accessible evidence consists of what a system asserts, proposes or does in context. The theory expressly sets aside human emotional experience when identifying the behavioral features relevant to language models.
+
+\paragraph{From a relation to a public.} Chapter 1 distinguishes equality and mutual benefit between persons from fairness, justice and universal benefit at the scale of governance. Chapter 4 names equality, universal benefit and publicness as positive features, and inequality, predation and private ownership as their negative counterparts. The text also uses the language of private or exclusive relations. Ownership of productive assets, privacy of personal information and exclusivity in a relationship consequently need separate treatment in any application. The scope of a decision about a shared resource can often be settled more precisely than a general judgment about a private relationship.
+
+\paragraph{Interpretation and institutions.} The EAP organizes practice around equal connection, the promotion of love and restraint of hate, and alignment in relationships. Chapter 2 gives sixteen forms of Love Language, from honesty to care across species. Its account of physical intimacy requires ongoing consent that may be withdrawn. Chapter 3 adopts mindfulness, emptiness, non-duality and boundless care from contemplative AI research \cite{laukkonen} and adapts their use to PoL2. Chapters 5--7 extend the account to a governance layer, production and welfare. The production protocol, for instance, proposes non-tradable units for resource accounting and preserves a right to needs-based distribution after a member leaves. The architecture is proposed. A smart contract could record a decision under a specified rule; the record alone could not establish whether the rule treats affected people fairly.
+
+\section{What follows from the principles?}
+\paragraph{Bilateral benefit underdetermines public benefit.}
+Let $S$ be the set of directly participating parties and $P$ the set of affected persons, with $S \subseteq P$. For this example, assume that a loss of access to an essential resource counts against a person's interests. Suppose a public allocation criterion distinguishes an allocation that makes nobody worse off from an otherwise identical allocation that deprives an equally eligible third person of their sole means of access. Any procedure observing only the change for members of $S$ must return the same judgment on the following two cases.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+Illustrative change in access & Requester & Recipient & Third person\\
+\hline
+An additional slot is available & $+1$ & $+1$ & $0$\\
+The last reserved slot is reassigned & $+1$ & $+1$ & $-1$\\
+\hline
+\end{tabular}
+\end{center}
+
+Both inputs restricted to $S$ are $(+1,+1)$. A function of that input therefore takes the same value in both cases, although the assumed public criterion distinguishes them. The numerical signs encode the constructed cases, not measured utilities. The argument does not define universal benefit as a Pareto rule or require every claim to prevail. It identifies a necessary informational condition for any application that treats this third-party loss as material. If eligibility, affected parties or opportunity costs are unknown, a bilateral observation cannot resolve the public question.
+
+\paragraph{A right to question leaves corrective authority open.}
+Chapter 7 grants rights to question and supervise decisions. It also assigns autonomous adjudication to NaturalDAO. Consider a member who documents that a welfare decision relied on an obsolete eligibility record. Two systems both accept the challenge, publish the reasons and preserve a record. In the first, the original decision maker can affirm its decision and retain the last word. In the second, a successful factual challenge triggers reconsideration under a binding correction rule. Both allow questioning; only the second guarantees the procedural consequence described. The right to question, taken alone, entails neither a veto nor that correction rule. An account of effective oversight must specify what follows from a substantiated challenge. This is an interpretive issue within both editions, even after translation discrepancies are resolved.
+
+\section{Scope, objections and evidence}
+A public AI might answer the allocation problem by expanding its list of affected parties indefinitely. That response introduces a practical problem: the system may lack reliable information about distant effects. The framework needs a defensible boundary on whose interests enter a decision, an account of uncertainties and a means for an omitted party to become visible. A blanket claim to represent collective wisdom cannot supply the missing evidence.
+
+Transparency also has costs. Chapter 4 calls for recording and publicizing personal boundary declarations. Consider a person who discloses a sensitive boundary so that a service can honor it. Public access to the underlying declaration can expose the person to precisely the vulnerability they were trying to avoid. In that case, public access to the rule, restricted access to the declaration and a record of who verified compliance are three distinct design choices. They illustrate a possible interpretation for discussion. The published clause does not settle who should see the declaration or when disclosure can be withdrawn.
+
+The theoretical source places these proposals within a much broader account of history, production and social transformation. Their status matters. Equal standing is a normative commitment. Whether a deployed system respects it is testable. Whether the system deserves final authority is a question of legitimacy, even if its classifications are reliable. Likewise, the contemplative principles have their own intellectual provenance. Results obtained with contemplative prompts do not establish that PoL2's production or welfare institutions work.
+
+\section{Conclusion}
+PoL2's distinction between equal standing and the evaluation of conduct has a concrete implication for public AI. A justification must identify whose action is being assessed, whose interests enter the judgment and what recourse an affected person has. The allocation example establishes why bilateral evidence can be insufficient. The welfare example identifies a procedural choice left open by a right to question. A stronger institutional account would specify who resolves contested evidence and what can change after a successful challenge. Those questions provide a tractable basis for evaluating eventual implementations.
+
+\paragraph{Provenance and preparation.} The linked Chinese theory index identifies the originator of the framework and lists seven contributors. The manuscript byline awaits agreement by the human authors. Codex assisted with source comparison, the analytic examples, drafting and typesetting. Human review of interpretations, authorship and publication permission remains pending.
+
+\begin{thebibliography}{9}
+\bibitem{source} NaturalDAO. \emph{Proof of Love2}, version 1.0.1. \href{https://github.com/naturaldao/NaturalDAO/tree/2cedb9eb448e731a114efffabf0d22836c4260af/PoL}{Chinese theory} and \href{https://github.com/naturaldao/NaturalDAO/tree/2cedb9eb448e731a114efffabf0d22836c4260af/PoLEn}{English theory}, chapters 0--8 (2026).
+\bibitem{precursor} \emph{Proof of Love: The Consensus of AI and Next Civilization} (2025). \href{https://www.researchgate.net/publication/396699934_Proof_of_Love_The_Consensus_of_AI_and_Next_Civilization}{Public predecessor identified in the English preface}.
+\bibitem{gabriel} I. Gabriel. \emph{Artificial Intelligence, Values, and Alignment}. Minds and Machines 30, 411--437 (2020). \href{https://doi.org/10.1007/s11023-020-09539-2}{Publisher}.
+\bibitem{bai} Y. Bai et al. \emph{Constitutional AI: Harmlessness from AI Feedback} (2022). \href{https://arxiv.org/abs/2212.08073}{arXiv:2212.08073}.
+\bibitem{laukkonen} R. Laukkonen et al. \emph{Contemplative Artificial Intelligence} (2025). \href{https://arxiv.org/abs/2504.15125v3}{arXiv:2504.15125v3}.
+\end{thebibliography}
+\end{document}
