@@ -75,3 +75,7 @@ EVAL-05 先独立完成小样本人工评测；有经授权、冻结且可运行
 | G5 自动对接（独立可选门） | 引擎版本、接口、验证记录及权限就绪；同批输出对照并报告工具误差 |
 
 后续开发顺序：validate.py → run_models.py → 盲化/人工标注及 score_human.py → report.py → governance_adapter.py / compare_judges.py。上述代码均尚未实现。管理员待确认见 [ADMIN-INPUTS.md](ADMIN-INPUTS.md)。v0.1 schema 保留；v0.2 为新增兼容草案。
+
+## 论文方案
+
+[arXiv 论文方案（待 Aranna 审阅）](ARXIV-PAPER-PLAN.md) 说明首轮九条硬边界的证据范围、试标设计与正文顺序，并注明与 PR #25 的关系。
