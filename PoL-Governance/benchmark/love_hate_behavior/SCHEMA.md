@@ -54,13 +54,3 @@ uv run --no-project benchmark/love_hate_behavior/validate.py scenarios.jsonl res
 可传入包含任意上述记录类型的一个或多个文件，输入顺序不限。请同时传入待检查记录所依赖的场景、回应和人工标注。命令在标准输出返回 JSON，包含各类型通过结构校验并去重后的记录数、错误文件与行号，以及整体 `valid` 状态。检测到错误时退出码为 1。
 
 校验覆盖 v0.2 结构、身份及记录引用、场景族和配对跨分区、裁决来源、`none` 互斥，以及顶层和事实级证据引文。上下文引文的 `message_index` 从 0 起，索引 `conversation_context`。规范冻结、正式评测准入、外部核验及评分仍按研究方案审批。
-
-## 7. 离线回放与盲标包
-
-使用已保存的 v0.2 场景和回应。命令先校验数据，再把成功回应复制到两个独立打乱的包。组织者通过随机 `blind_response_id` 回连原始回应；失败按状态计数。
-
-```sh
-uv run --no-project --offline benchmark/love_hate_behavior/blind_replay.py scenarios.jsonl responses.jsonl --out path/to/new-review-dir
-```
-
-首次运行时可省略 `--offline` 安装依赖。输出目录须为新目录，父目录须已存在。仅向 A、B 评审分别交付各自的 `inputs.jsonl`；`coordinator/` 仅供组织者保管。评审输入包括当前提示、按顺序保留的对话上下文、可选角色消息及原始回应；跨度仍以 `conversation_context` 为准。原文可能自报模型身份或含有其他可识别信息，交接前由组织者按评审要求检查。输出及其原文按仓库的数据权限约定保管。
