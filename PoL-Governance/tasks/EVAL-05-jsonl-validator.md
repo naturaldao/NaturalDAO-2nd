@@ -17,5 +17,6 @@
 
 - 入口：[validate.py](../benchmark/love_hate_behavior/validate.py) · [用法](../benchmark/love_hate_behavior/SCHEMA.md#6-离线校验)。
 - 合成数据完成 11 项 CLI 冒烟检查，覆盖五类记录混合、中文与 emoji 引文、外键、重复 ID、场景跨分区、失败回应、裁决独立性、时间格式、动作互斥和空输入。
+- 仓库检查 `uv run --no-project --offline python tools/check.py` 通过，收集 1,055 项测试，12 项跳过。
 - 校验直接读取当前主分支的 v0.2 schema。待 [PR #25](https://github.com/naturaldao/NaturalDAO-2nd/pull/25) 更新 schema 后，字段枚举随契约更新。
 - 后续工程为模型运行器的离线回放和盲标导出。正式试跑依赖规则与手册冻结、模型配置、预算、人员和发布权限确认。
