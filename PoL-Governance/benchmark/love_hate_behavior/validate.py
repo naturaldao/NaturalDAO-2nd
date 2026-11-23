@@ -161,21 +161,24 @@ def check_bundle(records, errors):
             check_evidence(evidence_record, response, scenario, report)
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("jsonl", nargs="+", type=Path)
-    args = parser.parse_args()
+def load_validators():
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     Draft202012Validator.check_schema(schema)
-    validators = {
+    return {
         kind: Draft202012Validator(
             {"$ref": f"#/$defs/{kind}", "$defs": schema["$defs"]},
             format_checker=Draft202012Validator.FORMAT_CHECKER,
         )
         for kind in ID_FIELDS
     }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("jsonl", nargs="+", type=Path)
+    args = parser.parse_args()
     errors = []
-    records = read_records(args.jsonl, validators, errors)
+    records = read_records(args.jsonl, load_validators(), errors)
     check_bundle(records, errors)
     counts = {kind: len(rows) for kind, rows in records.items()}
     if not sum(counts.values()) and not errors:
