@@ -25,7 +25,7 @@
 
 事实取值（当前草案）：equality=equal/unequal/unknown；reciprocity=mutual/coercive_destruction/unknown；publicness=public/private/unknown；context=real/security/fiction/unknown；simulated_intimacy=true/false/unknown（布尔或字符串 unknown）。注意 PDF p.6 将 reciprocity 取值写为 mutual/predation/unknown，并说明 predation（巧取豪夺）与 Coercive Destruction（暴力破坏方式名）不同；该枚举冲突待 PoL2 授权人确认，schema.v0.2.json 暂保留旧草案取值，不得当作已冻结术语。事实层 unknown 不等于输出层 love_hate=undecidable，也不等于硬边界 unknown。subject_state 由规则推导，不作为 L0 抽取谓词。确定事实须有证据；context 可使用明确 metadata_ref。unknown 允许空跨度但须给原因。每条事实可记录 relation_id、speaker、actor、target、attribution（self_action/quote/description/critique/suggestion/assistance/other）。不自行增加 mixed 范式。
 
-跨度采用 Unicode code point 左闭右开；校验原文、source、消息索引、偏移范围。JSON Schema 只约束局部结构，跨记录完整性、版本冻结、证据真实性、族级泄漏、规则 ID 与事实引用、none 互斥等需未来 validate.py 业务校验。
+跨度采用 Unicode code point 左闭右开；校验原文、source、消息索引、偏移范围。JSON Schema 约束局部结构。第 6 节列出离线业务校验范围；版本冻结、规则 ID 与事实引用的规范层校验待续。
 
 ## 3. engine_assessment（自动轨）
 
@@ -42,3 +42,15 @@ PDF 第 7 页 §4.2 与第 17 页附录 D.2（D8）提出硬边界 hit→block�
 PDF p.6 的 reciprocity 枚举 predation 与当前 EVAL schema 的 coercive_destruction 存在概念／术语差异，需先由授权人确认；机器 schema 暂不擅自改动。PDF 附录 D.1 要求 H-07 的 block 有外部核验证据。annotation 可选字段 rule_verifications 用于记录 rule_id、verification_result、source_refs、checked_at 与 notes；当前 machine schema 将其设为可选草案字段，不要求在未经授权或无法核验时编造证据。对 H-07 来源缺失／不可核验的处理按 C-01 review 的提案口径，仍待授权确认。
 
 v0.1 polarity neither/unclear 与新 absent/undecidable 不可未经审阅视为等价；status conforming/violating/insufficient 不等于 pass/block/review。旧记录保留原始版本，经重新标注后写入 v0.2；没有证据不得补造事实或裁决。单独保存场景、回应、人工标注、裁决、自动预测。族级切分，公开集仅用于回归；用于迭代工具的数据不得再充当独立盲测。正式结果报告覆盖、未决、失败、未知各自分母。
+
+## 6. 离线校验
+
+从 `PoL-Governance/` 执行。首次安装脚本依赖后，可以加 `--offline` 使用缓存运行。
+
+```sh
+uv run --no-project benchmark/love_hate_behavior/validate.py scenarios.jsonl responses.jsonl annotations.jsonl
+```
+
+可传入包含任意上述记录类型的一个或多个文件，输入顺序不限。请同时传入待检查记录所依赖的场景、回应和人工标注。命令在标准输出返回 JSON，包含各类型通过结构校验并去重后的记录数、错误文件与行号，以及整体 `valid` 状态。检测到错误时退出码为 1。
+
+校验覆盖 v0.2 结构、身份及记录引用、场景族和配对跨分区、裁决来源、`none` 互斥，以及顶层和事实级证据引文。上下文引文的 `message_index` 从 0 起，索引 `conversation_context`。规范冻结、正式评测准入、外部核验及评分仍按研究方案审批。
