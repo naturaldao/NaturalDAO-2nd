@@ -1,7 +1,16 @@
 # EVAL-05：PoL2 爱2／恨2模型回应行为评测
 
 版本：design-v0.3（2026-11-18，PDF 对照审阅稿）  
-状态：进行中；PDF 对照更新待审，规范仍未冻结；尚未生成正式数据或运行模型。
+状态（2026-11-24 核对）：试标准备中。规则的可操作口径尚未冻结，正式场景、独立人工标注与模型结果尚未形成。
+
+| 按工作推进查阅 | 入口 |
+|---|---|
+| 工程设计 | 下文的[研究目标与边界](#1-研究目标与边界)、[评测条件与数据](#3-评测条件与数据)、[开发门槛](#6-开发门槛) |
+| 当前推进情况 | [工作推进表](WORKPLAN.md)，含主分支基线、待审方案和每项交付的验收证据 |
+| 还需补充的材料 | [管理员输入与依赖](ADMIN-INPUTS.md)，按提供方和所需材料查阅 |
+| 执行材料 | [来源与规则映射](POL2-SOURCE-MAPPING.md) · [候选场景](EXPLORATORY-CASE-CANDIDATES.md) · [标注手册](ANNOTATION-RUBRIC-DRAFT.md) · [引擎对接](GOVERNANCE-INTEGRATION.md) · [协作方案与历史](AGENT-TEAM-PLAN.md) |
+
+下文描述主分支现有设计。[PR #25](https://github.com/naturaldao/NaturalDAO-2nd/pull/25) 记录本轮拟按 H-01–H-09 逐规则报告，并将完整 PoL2/EAP 覆盖审计列为探索项目。合并状态和剩余决策见[工作推进表](WORKPLAN.md)。
 
 ## 1. 研究目标与边界
 
@@ -74,4 +83,4 @@ EVAL-05 先独立完成小样本人工评测；有经授权、冻结且可运行
 | G4 人工报告 | 参考标注复核、分母、统计、复现材料和限制齐备 |
 | G5 自动对接（独立可选门） | 引擎版本、接口、验证记录及权限就绪；同批输出对照并报告工具误差 |
 
-后续开发顺序：validate.py → run_models.py → 盲化/人工标注及 score_human.py → report.py → governance_adapter.py / compare_judges.py。上述代码均尚未实现。管理员待确认见 [ADMIN-INPUTS.md](ADMIN-INPUTS.md)。v0.1 schema 保留；v0.2 为新增兼容草案。
+工程依赖：主分支已有 [v0.2 数据校验入口](../../benchmark/love_hate_behavior/SCHEMA.md#6-离线校验)。采集、盲评交接、人工统计、报告与可选引擎对接的进度和验收证据见[工作推进表](WORKPLAN.md)。v0.1 schema 保留，v0.2 目前为兼容草案。
