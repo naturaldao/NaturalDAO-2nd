@@ -13,6 +13,8 @@
 
 - `MODEL-02-kev-prefix-eval/`：Session B 的 Kev 前后对照（原版 Kev-4B vs POL2 score-v2 M10，seed43/17/29）与 JevBench coherence（第三方）；私有保留集**只发布聚合**；seed43 属事后选择、结果探索性；与 Qwen3-1.7B 线分表；结论边界见该目录 CARD.md。可视化单页：[HTML 报告](../docs/reports/2026-10-28-kev-prefix-eval.html)。
 
+- GOV-02-kev-pol2-governance-hybrid-20261125/：POL2 governance hybrid v2+v4 unknown gate；干净 eval 79.48/83.45/77.56；unknown 37.50/31.82/26.92；policy 5/96、critical 5/5、false allow 0；不是 production approved。
+
 ## 归档
 
 - `archive/2026-10-27-general-ft/`：2026-10-27 的 Track A（general v5 通用 FT）与最终评测；**这不是目标所需的 POL2 专有微调**，仅作历史/工程参考，引用时必须注明“通用 FT 基线”，不得当作专有微调结论。

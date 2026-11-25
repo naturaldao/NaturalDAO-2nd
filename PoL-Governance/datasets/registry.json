@@ -56,6 +56,16 @@
     "license": "Proof of Love2; MRI-derived replay under MIT",
     "notes": "Laya/Kev training exports plus paired public samples; canonical PoL2 four-layer conversion is still pending; sealed/fresh blind is not included.",
     "eligible_for_ranking": false
-
+  },
+  {
+    "id": "pol2-governance-v2",
+    "card": "datasets/pol2/governance-v2/README.md",
+    "data": "datasets/pol2/governance-v2/manifests/full-release.json",
+    "external_url": "https://github.com/naturaldao/NaturalDAO-2nd/releases/download/pol2-governance-v2-data-v1/pol2-governance-v2-data-v1.zip",
+    "status": "release_candidate_holdout_public",
+    "split": "train/validation/calibration/holdout; sealed blind excluded",
+    "license": "Proof of Love2",
+    "notes": "240-case/60-family governance pilot lineage plus reviewed supplements; 376 eval and 584 train adjudications; holdout public by owner decision.",
+    "eligible_for_ranking": false
   }
 ]

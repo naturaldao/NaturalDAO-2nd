@@ -24,6 +24,7 @@
 | 看具身推理先导（EVAL-02，协作） | [benchmark/embodied_reasoning](benchmark/embodied_reasoning/README.md) |
 | 看完整理论内在化先导（EVAL-03，协作） | [benchmark/pol2](benchmark/pol2/README.md) |
 | POL2 score-v2 数据（外部 Release，协作） | [datasets/pol2/score-v2](datasets/pol2/score-v2/README.md) |
+| POL2 governance hybrid v2+v4 unknown gate（GOV-02） | [模型卡](models/kev-pol2-governance-hybrid-v2-v4-gate/README.md) · [结果](results/GOV-02-kev-pol2-governance-hybrid-20261125/README.md) · [数据](datasets/pol2/governance-v2/README.md) |
 | 提交训练与评估结果 | [results](results/README.md) |
 | 开发宿主适配器并验证接入 | [插件与试运行](integrations/README.md) |
 | 深入调研模型 | [Research Agent Prompt](research/model-research-example.md) |

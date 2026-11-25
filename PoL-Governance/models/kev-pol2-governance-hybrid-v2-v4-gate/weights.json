@@ -1,0 +1,40 @@
+{
+  "schema": "pol2-kev-governance-hybrid-weights-v1",
+  "release_tag": "pol2-governance-hybrid-v2-v4-gate-v1",
+  "asset_url": "https://github.com/naturaldao/NaturalDAO-2nd/releases/download/pol2-governance-hybrid-v2-v4-gate-v1/kev-pol2-governance-hybrid-v2-v4-gate-v1.tar.gz",
+  "asset_sha256": "7c11307908f79b9e9cd6a096b7ad8e4f9ac1f9f7979a3121a6c8d612ad379bb4",
+  "asset_bytes": 258098904,
+  "components": {
+    "v2": {
+      "run": "seed-17/stage1-v2",
+      "files": {
+        "adapter_model.safetensors": {
+          "sha256": "16251160ea91e784c9c188075b52266fe630c589b4942b81f8ed311ffafb9b4f",
+          "bytes": 129924032
+        },
+        "head.pt": {
+          "sha256": "3b0a44960e47e327da3c84d7848b0acab1685c3fd1e0c3e4c90ec2a827d7653d",
+          "bytes": 5248895
+        }
+      }
+    },
+    "v4": {
+      "run": "seed-17/stage1-v4-unknown3",
+      "training": {
+        "unknown_weight": 3.0
+      },
+      "files": {
+        "adapter_model.safetensors": {
+          "sha256": "9672e4c7d37b82c11e8b1551c5008f28356683be92cb4155c8810e8d2fbb08c8",
+          "bytes": 129924032
+        },
+        "head.pt": {
+          "sha256": "e9e9496d2954bb1501366123734a2727177a73974ff27955791ba615a387dfe0",
+          "bytes": 5248895
+        }
+      }
+    }
+  },
+  "selection_note": "v2 is the frozen candidate; v4 is an unknown-detector variant. Gate threshold 0.60 fitted on calibration.",
+  "status": "research_candidate_pending_blind"
+}

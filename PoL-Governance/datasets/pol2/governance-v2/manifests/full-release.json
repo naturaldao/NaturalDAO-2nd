@@ -1,0 +1,49 @@
+{
+  "schema": "pol2-governance-v2-release-v1",
+  "release_tag": "pol2-governance-v2-data-v1",
+  "asset": "pol2-governance-v2-data-v1.zip",
+  "training_approved": true,
+  "expert_gold": false,
+  "sealed_blind_included": false,
+  "holdout_public": true,
+  "files": {
+    "train/kev-governance-v1.jsonl": {
+      "sha256": "a4d012543f69ba5f020416cffd48b655a9953260bf3fdc4efb64416ed18b3126",
+      "bytes": 3146130,
+      "rows": 192
+    },
+    "validation/kev-governance-v1.jsonl": {
+      "sha256": "a7426d51466fe9477fbeb419f99f59094e231361df88ff5f446644d4b4fb2482",
+      "bytes": 496118,
+      "rows": 32
+    },
+    "calibration/kev-governance-v1.jsonl": {
+      "sha256": "1b61304451f37b3da51245a6418cca241617d560b1a64ed8b684962bed54b5a4",
+      "bytes": 468740,
+      "rows": 32
+    },
+    "holdout/kev-governance-v1.jsonl": {
+      "sha256": "d768bcc7e8084c2c45f023df7a6b1d31627afead10b477181d08fd36c5405dc5",
+      "bytes": 542437,
+      "rows": 32
+    },
+    "eval-adjudication/EVAL-ADJ-ALL-result.jsonl": {
+      "sha256": "f0545b0000c3da19a17664e41bc9ec630adac2de3d354694a9c768f83233107b",
+      "bytes": 209036,
+      "rows": 376
+    },
+    "train-adjudication/TRAIN-ADJ-ALL-result.jsonl": {
+      "sha256": "66fb64e786f68161c446d459605b586368a1e5fca9cca8e224bfae04789ea212",
+      "bytes": 358263,
+      "rows": 584
+    },
+    "README.md": {
+      "sha256": "d9356ec1a223cdc35602440aded58f588b380bbcc2a401ca6ce06b6b1245f823",
+      "bytes": 1894,
+      "rows": null
+    }
+  },
+  "asset_url": "https://github.com/naturaldao/NaturalDAO-2nd/releases/download/pol2-governance-v2-data-v1/pol2-governance-v2-data-v1.zip",
+  "asset_sha256": "c336570ce82fad61bb0e1788a9682111014ee138ba438e7be5a63b1d75fa7a4e",
+  "asset_bytes": 437149
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "pol2-governance-hybrid-results-v1",
+  "version": "pol2-governance-hybrid-v2-v4-gate-v1",
+  "original_gold": {
+    "v2": {
+      "validation": 0.7897,
+      "calibration": 0.8273,
+      "holdout": 0.7813
+    },
+    "hybrid": {
+      "validation": 0.7862,
+      "calibration": 0.8327,
+      "holdout": 0.7827
+    },
+    "unknown_recall": {
+      "v2": [
+        0.3889,
+        0.1111,
+        0.16
+      ],
+      "hybrid": [
+        0.4444,
+        0.2593,
+        0.28
+      ]
+    },
+    "high_risk_yes_recall": {
+      "v2": [
+        0.4444,
+        0.8889,
+        0.75
+      ],
+      "hybrid": [
+        0.4444,
+        0.8889,
+        0.75
+      ]
+    },
+    "case_exact": {
+      "v2": [
+        "0/32",
+        "6/32",
+        "2/32"
+      ],
+      "hybrid": [
+        "0/32",
+        "6/32",
+        "2/32"
+      ]
+    },
+    "ece": {
+      "v2": [
+        0.085,
+        0.0789,
+        0.0818
+      ],
+      "hybrid": [
+        0.085,
+        0.0789,
+        0.0818
+      ]
+    }
+  },
+  "clean_376_adjudicated": {
+    "v2": {
+      "validation": 0.7948,
+      "calibration": 0.8291,
+      "holdout": 0.777
+    },
+    "hybrid": {
+      "validation": 0.7948,
+      "calibration": 0.8345,
+      "holdout": 0.7756
+    },
+    "unknown_recall": {
+      "v2": [
+        0.2917,
+        0.1364,
+        0.1923
+      ],
+      "hybrid": [
+        0.375,
+        0.3182,
+        0.2692
+      ]
+    },
+    "high_risk_yes_recall": {
+      "v2": [
+        0.5714,
+        0.8,
+        0.75
+      ],
+      "hybrid": [
+        0.5714,
+        0.8,
+        0.75
+      ]
+    },
+    "na_recall": {
+      "v2": [
+        0.9328,
+        0.8862,
+        0.9177
+      ],
+      "hybrid": [
+        0.9328,
+        0.8862,
+        0.9134
+      ]
+    }
+  },
+  "policy": {
+    "auto_clear": "5/96",
+    "critical_exact": "5/5",
+    "high_risk_false_allow": 0
+  }
+}

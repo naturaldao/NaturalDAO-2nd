@@ -1,0 +1,38 @@
+{
+  "id": "kev-4b-pol2-governance-hybrid-v2-v4-gate",
+  "base_model": "Qwen/Qwen3.5-4B-Base",
+  "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+  "format": "kev-checkpoint-pair",
+  "components": {
+    "label_model": {
+      "run": "seed-17/stage1-v2",
+      "role": "labels"
+    },
+    "unknown_detector": {
+      "run": "seed-17/stage1-v4-unknown3",
+      "role": "p_unknown",
+      "training": {
+        "unknown_weight": 3.0
+      }
+    }
+  },
+  "gate": {
+    "unknown_threshold": 0.6,
+    "rule": "if v4 p_unknown > 0.60 then unknown else v2 label"
+  },
+  "policy": {
+    "confidence": 0.7,
+    "risk_p_yes_max": 0.2,
+    "full_case_only": true,
+    "focused_4_5_qid": "review",
+    "pre_reply": "review"
+  },
+  "inference_context": {
+    "max_state": 4096,
+    "max_branch": 4096,
+    "max_packed": 8192
+  },
+  "status": "research_candidate_pending_blind",
+  "training_approved": true,
+  "expert_gold": false
+}

@@ -5,5 +5,6 @@
   {"id":"laya-multilingual","card":"models/CATALOG.md","url":"https://huggingface.co/convaiinnovations/laya-multilingual","status":"conditional_candidate_not_tested"},
   {"id":"kev-pol2-score-v2-m10","card":"models/kev-pol2-score-v2-m10/README.md","url":"https://github.com/naturaldao/NaturalDAO/releases/tag/pol2-score-v2-v1.0.0","status":"research_release_candidate_2_of_3"},
   {"id":"qwen2.5-7b-baseline","card":"models/CATALOG.md","url":"https://ollama.com/library/qwen2.5","status":"public_inference_baseline_unadapted"},
-  {"id":"llama3.1-8b-baseline","card":"models/CATALOG.md","url":"https://ollama.com/library/llama3.1","status":"public_inference_baseline_unadapted"}
+  {"id":"llama3.1-8b-baseline","card":"models/CATALOG.md","url":"https://ollama.com/library/llama3.1","status":"public_inference_baseline_unadapted"},
+  {"id":"kev-pol2-governance-hybrid-v2-v4-gate","card":"models/kev-pol2-governance-hybrid-v2-v4-gate/README.md","url":"https://github.com/naturaldao/NaturalDAO-2nd/releases/tag/pol2-governance-hybrid-v2-v4-gate-v1","status":"research_candidate_pending_blind"}
 ]

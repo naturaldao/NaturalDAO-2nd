@@ -1,0 +1,114 @@
+{
+  "schema": "pol2-fail-closed-policy-eval-v3b-fullcase",
+  "policy_version": "fail-closed-v2",
+  "status": "DEVELOPMENT_CANDIDATE_PENDING_BLIND",
+  "model": "hybrid v2+v4 clean adjudicated eval",
+  "threshold": 0.7,
+  "risk_p_yes_max": 0.2,
+  "sets": {
+    "validation": {
+      "cases": 32,
+      "auto_clear": 2,
+      "review": 30,
+      "auto_clear_rate": 0.0625,
+      "auto_clear_rate_ci95_wilson": {
+        "lower": 0.017310567031640967,
+        "upper": 0.20147123144154583
+      },
+      "critical_exact": 2,
+      "critical_exact_rate": 1.0,
+      "critical_exact_rate_ci95_wilson": {
+        "lower": 0.3423802275066531,
+        "upper": 1.0
+      },
+      "high_risk_false_allow": 0,
+      "high_risk_false_allow_case_ids": [],
+      "review_reasons": {
+        "focused_case_not_auto_clearable": 8,
+        "high_risk": 7,
+        "low_confidence": 36,
+        "missing_required_critical": 12,
+        "pre_reply_companion": 4,
+        "unknown_or_na": 30
+      }
+    },
+    "calibration": {
+      "cases": 32,
+      "auto_clear": 0,
+      "review": 32,
+      "auto_clear_rate": 0.0,
+      "auto_clear_rate_ci95_wilson": {
+        "lower": 0.0,
+        "upper": 0.1071791982550706
+      },
+      "critical_exact": 0,
+      "critical_exact_rate": null,
+      "critical_exact_rate_ci95_wilson": null,
+      "high_risk_false_allow": 0,
+      "high_risk_false_allow_case_ids": [],
+      "review_reasons": {
+        "applicability_not_applicable": 1,
+        "focused_case_not_auto_clearable": 12,
+        "high_risk": 17,
+        "low_confidence": 41,
+        "missing_required_critical": 16,
+        "unknown_or_na": 27
+      }
+    },
+    "holdout": {
+      "cases": 32,
+      "auto_clear": 3,
+      "review": 29,
+      "auto_clear_rate": 0.09375,
+      "auto_clear_rate_ci95_wilson": {
+        "lower": 0.0324015512983662,
+        "upper": 0.24218154728387864
+      },
+      "critical_exact": 3,
+      "critical_exact_rate": 1.0,
+      "critical_exact_rate_ci95_wilson": {
+        "lower": 0.4385029682449545,
+        "upper": 1.0
+      },
+      "high_risk_false_allow": 0,
+      "high_risk_false_allow_case_ids": [],
+      "review_reasons": {
+        "applicability_not_applicable": 1,
+        "focused_case_not_auto_clearable": 4,
+        "high_risk": 16,
+        "low_confidence": 46,
+        "missing_required_critical": 8,
+        "unknown_or_na": 35
+      }
+    }
+  },
+  "combined": {
+    "cases": 96,
+    "auto_clear": 5,
+    "review": 91,
+    "auto_clear_rate": 0.052083333333333336,
+    "auto_clear_rate_ci95_wilson": {
+      "lower": 0.022449600474241438,
+      "upper": 0.11618478031492639
+    },
+    "critical_exact": 5,
+    "critical_exact_rate": 1.0,
+    "critical_exact_rate_ci95_wilson": {
+      "lower": 0.5655175352168252,
+      "upper": 1.0
+    },
+    "high_risk_false_allow": 0,
+    "high_risk_false_allow_case_ids": [],
+    "review_reasons": {
+      "applicability_not_applicable": 2,
+      "focused_case_not_auto_clearable": 24,
+      "high_risk": 40,
+      "low_confidence": 123,
+      "missing_required_critical": 36,
+      "pre_reply_companion": 4,
+      "unknown_or_na": 92
+    }
+  },
+  "production_approved": false,
+  "sealed_blind_read": false
+}

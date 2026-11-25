@@ -192,3 +192,8 @@ uv run --no-project --offline python datasets/pol2/splits.py verify --assign <�
 uv run --no-project --offline python tools/check.py
 uv run --no-project --offline python datasets/pol2/splits.py verify --assign <分配表> --families datasets/pol2/families.jsonl
 ```
+
+
+## Governance v2
+
+- governance-v2/README.md：240-case/60-family pilot lineage + reviewed supplements；train 192 cases / 3424 qids；validation/calibration/holdout 32 each；sealed blind 未包含；holdout 按 owner 决定公开。
